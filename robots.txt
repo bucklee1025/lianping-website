@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://37a6567be388483d91d949fd274b18ca.app.codebuddy.work/sitemap.xml
