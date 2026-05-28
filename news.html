@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻资讯 | 广西联屏传媒科技有限公司</title>
+    <meta name="description" content="广西联屏传媒新闻资讯，提供机场广告、高铁站广告行业动态、投放攻略、案例分析等专业内容。">
+    <meta name="keywords" content="机场广告,高铁广告,南宁机场广告,玉林北站广告,广告投放攻略,联屏传媒">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lianpingmedia.com/news.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="新闻资讯 - 广西联屏传媒">
+    <meta property="og:description" content="机场广告、高铁站广告行业动态与投放攻略，联屏传媒专业分享。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2563eb;
+            --accent: #f59e0b;
+            --dark: #111827;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --white: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--gray-800);
+            line-height: 1.7;
+            background: var(--gray-50);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon {
+            width: 44px; height: 44px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 18px; color: var(--dark);
+        }
+        .logo-text h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+        .logo-text p { font-size: 11px; opacity: 0.7; letter-spacing: 0.5px; }
+        .header-contact { display: flex; align-items: center; gap: 20px; font-size: 14px; }
+        .header-contact a { color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+        .header-contact a:hover { opacity: 0.85; }
+        .phone-btn { background: var(--accent); color: var(--dark) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+
+        /* Navigation */
+        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; }
+        .nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 20px; font-size: 14px; transition: all 0.2s; border-bottom: 2px solid transparent; }
+        .nav a:hover, .nav a.active { color: var(--white); background: rgba(255,255,255,0.05); border-bottom-color: var(--accent); }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: var(--white);
+            padding: 60px 24px;
+            text-align: center;
+        }
+        .page-header h2 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+        .page-header p { font-size: 16px; opacity: 0.8; }
+
+        /* News Grid */
+        .news-section { padding: 60px 24px; }
+        .news-inner { max-width: 1200px; margin: 0 auto; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        .news-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 8px 30px rgba(37,99,235,0.1);
+            transform: translateY(-4px);
+        }
+        .news-card-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: rgba(255,255,255,0.3);
+        }
+        .news-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .news-card-meta { display: flex; gap: 12px; margin-bottom: 12px; }
+        .news-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .tag-airport { background: #dbeafe; color: #1d4ed8; }
+        .tag-rail { background: #d1fae5; color: #059669; }
+        .tag-industry { background: #fef3c7; color: #92400e; }
+        .tag-data { background: #ede9fe; color: #5b21b6; }
+        .news-card-date { font-size: 13px; color: var(--gray-600); }
+        .news-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--dark); line-height: 1.5; }
+        .news-card h3 a { color: inherit; text-decoration: none; }
+        .news-card h3 a:hover { color: var(--primary-light); }
+        .news-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; flex: 1; }
+        .news-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+        .news-card-link:hover { gap: 10px; }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+        .page-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .page-btn:hover, .page-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        /* Footer */
+        .footer {
+            background: #0a0f1a;
+            color: rgba(255,255,255,0.5);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+        @media (max-width: 900px) {
+            .news-grid { grid-template-columns: 1fr; }
+            .header-contact { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">LP</div>
+                <div class="logo-text">
+                    <h1>联屏传媒</h1>
+                    <p>广西联屏传媒科技有限公司</p>
+                </div>
+            </div>
+            <div class="header-contact">
+                <a href="tel:18878774848">&#9742; 188-7877-4848</a>
+                <a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a>
+                <a href="#contact" class="phone-btn">立即咨询</a>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="nav-inner">
+                <a href="index.html">首页</a>
+                <a href="index.html#resources">媒体资源</a>
+                <a href="index.html#advantages">核心优势</a>
+                <a href="index.html#pricing">刊例价格</a>
+                <a href="news.html" class="active">新闻资讯</a>
+                <a href="index.html#industries">服务行业</a>
+                <a href="index.html#contact">联系我们</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h2>新闻资讯</h2>
+        <p>机场广告 · 高铁站广告 · 行业动态 · 投放攻略</p>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-section">
+        <div class="news-inner">
+            <div class="news-grid">
+
+                <!-- Article 1 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #1a3a5c, #2563eb);">&#9992;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-airport">机场广告</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article1.html">广西联屏传媒——南宁机场与南珠高铁广告独家运营商</a></h3>
+                        <p>广西联屏传媒科技有限公司独家运营南宁机场T2航站楼及南珠高铁南玉段广告媒体，年覆盖客流量超2600万人次，为品牌提供高端出行场景广告投放服务。</p>
+                        <a href="news/article1.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #065f46, #059669);">&#128200;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-industry">行业分析</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article2.html">为什么越来越多的品牌选择在机场和高铁站投放广告？</a></h3>
+                        <p>机场和高铁站因其独特的人群优势和场景特性，正在成为品牌营销的重要选择。本文从人群质量、到达率、场景营销等角度深度分析。</p>
+                        <a href="news/article2.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #1a3a5c, #1d4ed8);">&#128640;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-airport">机场广告</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article3.html">南宁机场T2航站楼广告投放全攻略：36个刷屏机独家运营</a></h3>
+                        <p>南宁机场T2航站楼年旅客吞吐量1600万人次，36台86寸LCD刷屏机独家运营，本文详解投放优势、刊例价格及适合行业。</p>
+                        <a href="news/article3.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #134e5e, #0e7490);">&#128644;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-rail">高铁广告</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article4.html">南珠高铁南玉段广告投放指南：三大站点50+广告位独家运营</a></h3>
+                        <p>南珠高铁南玉段连接南宁与玉林，沿线覆盖人口超2000万。本文详解玉林北站、横州站、兴业南站三大站点广告资源及投放策略。</p>
+                        <a href="news/article4.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #312e81, #4338ca);">&#128202;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-data">数据分析</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article5.html">用数据说话：南宁机场+南珠高铁广告投放的ROI分析</a></h3>
+                        <p>广告投放最核心的问题就是——值不值？本文用数据深入分析南宁机场T2航站楼和南珠高铁南玉段广告投放的投资回报。</p>
+                        <a href="news/article5.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #92400e, #d97706);">&#127919;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-industry">行业适配</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article6.html">哪些行业最适合在南宁机场和高铁站投放广告？</a></h3>
+                        <p>机场和高铁站作为高端出行场景，其人群特征决定了某些行业在这里投放广告效果尤为突出。本文分析最适合投放的8大行业。</p>
+                        <a href="news/article6.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 7 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #064e3b, #047857);">&#128240;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-airport">新闻通稿</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article7.html">广西联屏传媒正式运营南宁机场T2航站楼及南珠高铁广告媒体资源</a></h3>
+                        <p>广西联屏传媒科技有限公司正式获得南宁机场T2航站楼及南珠高铁南玉段广告媒体独家运营权，标志着广西两大核心交通枢纽广告资源统一运营管理。</p>
+                        <a href="news/article7.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 8 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #1a3a5c, #1e40af);">&#128205;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-industry">本地服务</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article8.html">在南宁做广告投放，为什么首选联屏传媒？</a></h3>
+                        <p>南宁作为广西政治经济中心，是品牌进入广西市场的第一站。本文从独家资源、双场景覆盖、一站式服务等角度，分析选择联屏传媒的理由。</p>
+                        <a href="news/article8.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 9 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">&#9878;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-data">竞品对比</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article9.html">机场广告 vs 高铁广告 vs 线上广告：哪个更适合你的品牌？</a></h3>
+                        <p>本文从人群质量、广告效果、成本等多个维度，对比分析机场广告、高铁广告与线上广告的优劣，帮助品牌选择最合适的投放渠道。</p>
+                        <a href="news/article9.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+                <!-- Article 10 -->
+                <div class="news-card">
+                    <div class="news-card-img" style="background: linear-gradient(135deg, #0c4a6e, #0284c7);">&#127919;</div>
+                    <div class="news-card-body">
+                        <div class="news-card-meta">
+                            <span class="news-tag tag-industry">实战指南</span>
+                            <span class="news-card-date">2025-01</span>
+                        </div>
+                        <h3><a href="news/article10.html">品牌如何在广西实现高效曝光？——出行场景广告投放实战指南</a></h3>
+                        <p>本文结合实际案例，分析出行场景广告投放的策略和效果，并提供三套不同预算的投放方案，帮助品牌在广西市场实现高效曝光。</p>
+                        <a href="news/article10.html" class="news-card-link">阅读全文 &#10132;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="news.html" class="page-btn active">1</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 广西联屏传媒科技有限公司 版权所有 | 南宁机场T2航站楼 &amp; 南珠高铁南玉段广告独家运营商</p>
+        <p style="margin-top:8px;">地址：广西南宁市东葛路绿地中央广场D1栋2908 | 电话：<a href="tel:18878774848">188-7877-4848</a> | 邮箱：<a href="mailto:57078889@qq.com">57078889@qq.com</a></p>
+    </footer>
+
+</body>
+</html>
