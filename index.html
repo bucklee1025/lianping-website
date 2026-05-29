@@ -210,6 +210,16 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
             position: relative;
@@ -624,6 +634,7 @@
         /* Responsive */
         @media (max-width: 900px) {
             .hero-inner { grid-template-columns: 1fr; }
+            .hero-image { order: -1; max-width: 400px; margin: 0 auto; }
             .resource-grid { grid-template-columns: 1fr; }
             .advantage-grid { grid-template-columns: repeat(2, 1fr); }
             .industry-grid { grid-template-columns: repeat(3, 1fr); }
@@ -685,27 +696,15 @@
                     广西联屏传媒科技有限公司，独家运营南宁机场T2航站楼登机口36个刷屏机广告、南珠高铁南玉段（玉林北站、兴业南站、横州站）广告媒体资源。
                     覆盖年客流量超2600万人次，精准触达高端商务出行人群。
                 </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">2600万+</span>
-                        <span class="stat-label">年覆盖客流量</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">50+</span>
-                        <span class="stat-label">广告媒体点位</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">80%+</span>
-                        <span class="stat-label">商务人群占比</span>
-                    </div>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">获取投放方案</a>
+                    <a href="#resources" class="btn btn-secondary">查看媒体资源</a>
                 </div>
-                <div class="hero-tags">
-                    <span class="tag">机场广告</span>
-                    <span class="tag">高铁广告</span>
-                    <span class="tag">LED大屏</span>
-                    <span class="tag">刷屏机</span>
-                    <span class="tag">灯箱广告</span>
-                    <span class="tag">独家运营</span>
+            </div>
+            <div class="hero-image">
+                <img src="assets/airport-screen-ad.png" alt="南宁机场T2登机口刷屏机广告">
+            </div>
+        </div>
                 </div>
             </div>
             <div class="hero-visual">
