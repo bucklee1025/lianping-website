@@ -367,7 +367,7 @@
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-// ===== 0. 浮动装饰粒子（持续运行，无依赖） =====
+// ===== 浮动装饰粒子（持续运行，不影响内容可见性） =====
 gsap.to(".hero-dot-1", { y: -30, x: 10, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-2", { y: 20, x: -15, duration: 5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-3", { y: -15, x: 8, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
@@ -376,47 +376,16 @@ gsap.to(".hero-dot-5", { y: -20, x: 12, duration: 4.5, ease: "sine.inOut", yoyo:
 gsap.to(".hero-dot-6", { y: 15, x: -8, duration: 3.8, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-glow", { scale: 1.3, opacity: 0.6, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
 
-// 辅助函数：滚动触发入场动画（元素默认可见，滚动到时再播动画）
-function fadeInOnScroll(elements, opts = {}) {
-  if (!elements || elements.length === 0) return;
-  const els = elements.length ? elements : [elements];
-  els.forEach((el, i) => {
-    const delay = opts.stagger ? (opts.stagger * i) : 0;
-    ScrollTrigger.create({
-      trigger: el,
-      start: opts.start || "top 85%",
-      once: true,
-      onEnter: () => {
-        gsap.from(el, {
-          y: opts.y || 30,
-          opacity: 0,
-          duration: opts.duration || 0.5,
-          ease: opts.ease || "power2.out",
-          delay: delay,
-          // 动画完成后清除内联样式，确保即使GSAP出问题也不影响
-          clearProps: "opacity"
-        });
-      }
-    });
-  });
-}
-
-// ===== 1. Hero 入场动画（不用ScrollTrigger，页面加载直接播） =====
+// ===== Hero 入场动画（直接播放，不用ScrollTrigger） =====
 const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 heroTl
-  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0)
-  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7, clearProps: "opacity" }, 0.15)
-  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0.35)
-  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0.35)
-  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, clearProps: "opacity" }, 0.55);
+  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, 0)
+  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7, clearProps: "all" }, 0.15)
+  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6, clearProps: "all" }, 0.35)
+  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, 0.35)
+  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, clearProps: "all" }, 0.55);
 
-// ===== 1b. Hero 视差 =====
-gsap.to(".hero", {
-  scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1 },
-  backgroundPosition: "50% 30%"
-});
-
-// ===== 2. 数据条数字动画 =====
+// ===== 数据条数字动画（滚动到时触发计数，不影响可见性） =====
 gsap.utils.toArray(".strip-num").forEach(el => {
   const finalText = el.textContent;
   const match = finalText.match(/^([\d,]+)(.*)$/);
@@ -441,15 +410,6 @@ gsap.utils.toArray(".strip-num").forEach(el => {
     }
   });
 });
-
-// ===== 3~7. 滚动入场动画 =====
-fadeInOnScroll(document.querySelectorAll(".card-grid .card"), { y: 50, duration: 0.7, stagger: 0.15 });
-fadeInOnScroll(document.querySelectorAll(".adv-item"), { y: 40, duration: 0.6, stagger: 0.12 });
-fadeInOnScroll(document.querySelectorAll(".price-block"), { y: 50, duration: 0.7, stagger: 0.2 });
-fadeInOnScroll(document.querySelectorAll(".ind-item"), { y: 30, duration: 0.4, stagger: 0.08, start: "top 85%" });
-fadeInOnScroll(document.querySelectorAll(".cta h2, .cta p, .cta .btn, .ccard"), { y: 30, duration: 0.5, stagger: 0.1 });
-
-window.addEventListener("load", () => ScrollTrigger.refresh());
 </script>
 
 </body>
