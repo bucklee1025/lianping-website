@@ -14,37 +14,32 @@
     <meta property="og:locale" content="zh_CN">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #7c3aed;
-            --primary-light: #2563eb;
-            --accent: #c084fc;
-            --dark: #111827;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --white: #ffffff;
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --navy:#0f1a3c;--blue:#2563eb;--teal:#0d9488;
+            --amber:#f59e0b;--text:#1e293b;--body:#64748b;
+            --bg:#fff;--bg-sky:#f0f7ff;
+            --border:#e2e8f0;--radius:16px;--radius-sm:10px;
+            --shadow:0 2px 24px rgba(15,26,60,0.06);
+            --shadow-lg:0 8px 48px rgba(15,26,60,0.1);
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: var(--gray-800); line-height: 1.8; background: var(--gray-50); }
+        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--body);background:var(--bg);line-height:1.6}
 
-        /* Header */
-        .header { background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); color: var(--white); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-        .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 44px; height: 44px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: var(--dark); }
-        .logo-text h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
-        .logo-text p { font-size: 11px; opacity: 0.7; letter-spacing: 0.5px; }
-        .header-contact { display: flex; align-items: center; gap: 20px; font-size: 14px; }
-        .header-contact a { color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
-        .header-contact a:hover { opacity: 0.85; }
-        .phone-btn { background: var(--accent); color: var(--dark) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
-        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; }
-        .nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 20px; font-size: 14px; transition: all 0.2s; border-bottom: 2px solid transparent; }
-        .nav a:hover, .nav a.active { color: var(--white); background: rgba(255,255,255,0.05); border-bottom-color: var(--accent); }
+        /* HEADER — same as index */
+        header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+        .hdr{max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo img{height:36px}.logo h1{font-size:16px;font-weight:700;color:var(--text)}
+        .logo p{font-size:11px;color:var(--body)}
+        .hdr-r{display:flex;align-items:center;gap:16px;font-size:14px}
+        .hdr-r a{color:var(--body);text-decoration:none;font-weight:500}
+        .hdr-r a:hover{color:var(--blue)}
+        .hdr-btn{background:var(--blue);color:#fff!important;padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px}
+        nav{border-top:1px solid var(--border);background:#fff}
+        .nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none}
+        .nav-i::-webkit-scrollbar{display:none}
+        .nav-i a{color:var(--body);text-decoration:none;padding:12px 20px;font-size:14px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}
+        .nav-i a:hover,.nav-i a.active{color:var(--blue);border-bottom-color:var(--blue)}
 
         /* Article */
         .article-container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
@@ -79,54 +74,52 @@
         .cta-btn.primary { background: var(--accent); color: var(--dark); }
         .cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
 
-        /* Footer */
-        .footer { background: #0a0f1a; color: rgba(255,255,255,0.5); padding: 32px 24px; text-align: center; font-size: 13px; }
-        .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        /* FOOTER */
+        footer{background:#0a1620;color:rgba(255,255,255,.4);padding:32px 24px;text-align:center;font-size:13px}
+        footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
-        @media (max-width: 900px) {
-            .article-title { font-size: 24px; }
-            .article-body h2 { font-size: 20px; }
-            .header-contact { display: none; }
-        }
+        @media(max-width:900px){
+            .article-title{font-size:22px}.article-cover{height:200px}.article-box{padding:28px 20px}
+            .hdr,.nav-i{padding-left:20px;padding-right:20px}
+            .hdr-r{display:none}
+
     </style>
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="联屏传媒" style="height:44px;">
-                <div class="logo-text">
-                    <h1>联屏传媒</h1>
-                    <p>广西联屏传媒科技有限公司</p>
-                </div>
-            </div>
-            <div class="header-contact">
-                <a href="tel:18878774848">&#9742; 188-7877-4848</a>
-                <a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a>
-                <a href="../index.html#contact" class="phone-btn">立即咨询</a>
-            </div>
+    <header>
+    <div class="hdr">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="联屏传媒" style="height:36px;">
+            <div><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div>
         </div>
-        <nav class="nav">
-            <div class="nav-inner">
-                <a href="../index.html">首页</a>
-                <a href="../index.html#resources">媒体资源</a>
-                <a href="../index.html#advantages">核心优势</a>
-                <a href="../index.html#pricing">刊例价格</a>
-                <a href="news.html" class="active">新闻资讯</a>
-                <a href="../index.html#industries">服务行业</a>
-                <a href="../about.html">关于我们</a>
-                <a href="../process.html">合作流程</a>
-                <a href="../cases.html">客户案例</a>
-                <a href="../faq.html">常见问题</a>
-                <a href="../index.html#contact">联系我们</a>
-            </div>
-        </nav>
+        <div class="hdr-r">
+            <a href="tel:18878774848">188-7877-4848</a>
+            <a href="mailto:57078889@qq.com">57078889@qq.com</a>
+            <a href="../index.html#contact" class="hdr-btn">立即咨询</a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-i">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#resources">媒体资源</a>
+            <a href="../index.html#advantages">核心优势</a>
+            <a href="../index.html#pricing">刊例价格</a>
+            <a href="../index.html#industries">服务行业</a>
+            <a href="../about.html">关于我们</a>
+            <a href="news.html" class="active">新闻资讯</a>
+            <a href="../index.html#contact">联系我们</a>
+        </div>
+    </nav>
     </header>
 
     <!-- Article -->
-    <div class="article-container">
+    <div class="article-wrap">
+    <div class="article-box">
         <div class="breadcrumb">
             <a href="../index.html">首页</a> &gt; <a href="news.html">新闻资讯</a> &gt; 正文
         </div>
@@ -142,6 +135,10 @@
             <div class="name">李洪鑫</div>
             <div class="role">广西联屏传媒科技有限公司</div>
         </div>
+
+        
+
+        <div class="article-cover" style="background-image: url('../assets/airport-ad-example.jpg');"></div>
 
         <div class="article-body">
 
@@ -296,9 +293,10 @@
             </div>
         </div>
 
-        <div style="text-align:center; margin-top:32px;">
-            <a href="news.html" style="color:var(--primary-light); text-decoration:none; font-size:14px;">&#8592; 返回新闻列表</a>
+        <div class="back-link">
+            <a href="news.html">&#8592; 返回新闻列表</a>
         </div>
+    </div>
     </div>
 
     <!-- Footer -->
@@ -307,5 +305,23 @@
         <p>南宁机场T2 & 南珠高铁南玉段 &middot; 广告独家运营方</p>
     </footer>
 
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// 文章页入场
+gsap.from(".article-box", {
+    scrollTrigger: { trigger: ".article-box", start: "top 90%", once: true },
+    y: 30, opacity: 0, duration: 0.7, ease: "power2.out"
+});
+
+// CTA入场
+gsap.from(".article-cta", {
+    scrollTrigger: { trigger: ".article-cta", start: "top 85%", once: true },
+    y: 30, opacity: 0, duration: 0.6, ease: "power2.out"
+});
+
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
 </body>
 </html>

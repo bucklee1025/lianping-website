@@ -15,112 +15,95 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #7c3aed;
-            --primary-light: #2563eb;
-            --accent: #c084fc;
-            --dark: #111827;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --white: #ffffff;
+                :root{
+            --navy:#0f1a3c;--blue:#2563eb;--teal:#0d9488;
+            --amber:#f59e0b;--text:#1e293b;--body:#64748b;
+            --bg:#fff;--bg-sky:#f0f7ff;
+            --border:#e2e8f0;--radius:16px;--radius-sm:10px;
+            --shadow:0 2px 24px rgba(15,26,60,0.06);
+            --shadow-lg:0 8px 48px rgba(15,26,60,0.1);
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: var(--gray-800); line-height: 1.8; background: var(--gray-50); }
+        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--body);background:var(--bg);line-height:1.6}
 
-        .header { background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); color: var(--white); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-        .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 44px; height: 44px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: var(--dark); }
-        .logo-text h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
-        .logo-text p { font-size: 11px; opacity: 0.7; letter-spacing: 0.5px; }
-        .header-contact { display: flex; align-items: center; gap: 20px; font-size: 14px; }
-        .header-contact a { color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
-        .header-contact a:hover { opacity: 0.85; }
-        .phone-btn { background: var(--accent); color: var(--dark) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
-        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; }
-        .nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 20px; font-size: 14px; transition: all 0.2s; border-bottom: 2px solid transparent; }
-        .nav a:hover, .nav a.active { color: var(--white); background: rgba(255,255,255,0.05); border-bottom-color: var(--accent); }
 
-        .article-container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
-        .breadcrumb { font-size: 13px; color: var(--gray-600); margin-bottom: 24px; }
-        .breadcrumb a { color: var(--primary-light); text-decoration: none; }
+        .header-contact a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+
+        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .breadcrumb { font-size: 13px; color: var(--body); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--blue); text-decoration: none; }
         .article-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; }
         .article-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: #d1fae5; color: #065f46; }
-        .article-date { font-size: 13px; color: var(--gray-600); }
-        .article-title { font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1.4; margin-bottom: 24px; }
-        .author-info { padding: 20px 0; border-bottom: 1px solid var(--gray-200); margin-bottom: 36px; }
-        .author-info .name { font-size: 14px; font-weight: 600; color: var(--dark); }
-        .author-info .role { font-size: 12px; color: var(--gray-600); }
-        .article-body { font-size: 16px; line-height: 2; color: var(--gray-700); }
-        .article-body h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin: 40px 0 16px; padding-bottom: 12px; border-bottom: 3px solid var(--accent); display: inline-block; }
-        .article-body h3 { font-size: 20px; font-weight: 700; color: var(--dark); margin: 32px 0 12px; }
+        .article-date { font-size: 13px; color: var(--body); }
+        .article-title{font-size:28px;font-weight:800;color:var(--text);line-height:1.4;margin-bottom:20px}
+        .author-info { padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 36px; }
+        .author-info .name { font-size: 14px; font-weight: 600; color: var(--text); }
+        .author-info .role { font-size: 12px; color: var(--body); }
+        .article-body { font-size: 16px; line-height: 2; color: var(--body); }
+        .article-body h2{font-size:22px;font-weight:700;color:var(--text);margin:36px 0 14px;padding-left:14px;border-left:4px solid var(--blue)}
+        .article-body h3 { font-size: 20px; font-weight: 700; color: var(--text); margin: 32px 0 12px; }
         .article-body p { margin-bottom: 16px; }
-        .article-body strong { color: var(--dark); }
-        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .article-body th { background: var(--primary); color: var(--white); padding: 12px 16px; font-size: 14px; text-align: left; }
-        .article-body td { padding: 12px 16px; border-bottom: 1px solid var(--gray-100); font-size: 14px; }
+        .article-body strong { color: var(--text); }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .article-body th { background: var(--navy); color: #fff; padding: 12px 16px; font-size: 14px; text-align: left; }
+        .article-body td { padding: 12px 16px; border-bottom: 1px solid var(--bg-sky); font-size: 14px; }
         .article-body tr:last-child td { border-bottom: none; }
         .article-body ul, .article-body ol { margin: 12px 0 20px 20px; }
         .article-body li { margin-bottom: 8px; }
-        .article-cta { background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); color: var(--white); padding: 32px; border-radius: 16px; margin: 48px 0; text-align: center; }
+        .article-cta{background:linear-gradient(135deg,#0f1a3c,#1e3a5f);color:#fff;padding:36px 32px;border-radius:var(--radius);margin:48px 0;text-align:center}
         .article-cta h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
         .article-cta p { font-size: 15px; opacity: 0.85; margin-bottom: 24px; }
         .cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
-        .cta-btn.primary { background: var(--accent); color: var(--dark); }
-        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+        .cta-btn.primary { background: var(--blue); color: var(--text); }
+        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
 
-        .footer { background: #0a0f1a; color: rgba(255,255,255,0.5); padding: 32px 24px; text-align: center; font-size: 13px; }
-        .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+                /* FOOTER */
+        footer{background:#0a1620;color:rgba(255,255,255,.4);padding:32px 24px;text-align:center;font-size:13px}
+        footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
-        @media (max-width: 900px) {
-            .article-title { font-size: 24px; }
-            .article-body h2 { font-size: 20px; }
-            .header-contact { display: none; }
-        }
+        @media(max-width:900px){.article-title{font-size:22px}.article-cover{height:200px}.hdr,.nav-i{padding-left:20px;padding-right:20px}.hdr-r{display:none}}.article-box{padding:28px 20px}
+            .hdr,.nav-i{padding-left:20px;padding-right:20px}
+            .hdr-r{display:none}
+
     </style>
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="联屏传媒" style="height:44px;">
-                <div class="logo-text">
-                    <h1>联屏传媒</h1>
-                    <p>广西联屏传媒科技有限公司</p>
-                </div>
-            </div>
-            <div class="header-contact">
-                <a href="tel:18878774848">&#9742; 188-7877-4848</a>
-                <a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a>
-                <a href="../index.html#contact" class="phone-btn">立即咨询</a>
-            </div>
+    <header>
+    <div class="hdr">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="联屏传媒" style="height:36px;">
+            <div><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div>
         </div>
-        <nav class="nav">
-            <div class="nav-inner">
-                <a href="../index.html">首页</a>
-                <a href="../index.html#resources">媒体资源</a>
-                <a href="../index.html#advantages">核心优势</a>
-                <a href="../index.html#pricing">刊例价格</a>
-                <a href="news.html" class="active">新闻资讯</a>
-                <a href="../index.html#industries">服务行业</a>
-                <a href="../about.html">关于我们</a>
-                <a href="../process.html">合作流程</a>
-                <a href="../cases.html">客户案例</a>
-                <a href="../faq.html">常见问题</a>
-                <a href="../index.html#contact">联系我们</a>
-            </div>
-        </nav>
+        <div class="hdr-r">
+            <a href="tel:18878774848">188-7877-4848</a>
+            <a href="mailto:57078889@qq.com">57078889@qq.com</a>
+            <a href="../index.html#contact" class="hdr-btn">立即咨询</a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-i">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#resources">媒体资源</a>
+            <a href="../index.html#advantages">核心优势</a>
+            <a href="../index.html#pricing">刊例价格</a>
+            <a href="../index.html#industries">服务行业</a>
+            <a href="../about.html">关于我们</a>
+            <a href="news.html" class="active">新闻资讯</a>
+            <a href="../index.html#contact">联系我们</a>
+        </div>
+    </nav>
     </header>
 
     <!-- Article -->
-    <div class="article-container">
+    <div class="article-wrap">
+    <div class="article-box">
         <div class="breadcrumb">
             <a href="../index.html">首页</a> &gt; <a href="news.html">新闻资讯</a> &gt; 正文
         </div>
@@ -136,6 +119,10 @@
             <div class="name">联屏传媒编辑部</div>
             <div class="role">广西联屏传媒科技有限公司</div>
         </div>
+
+        
+
+        <div class="article-cover" style="background-image: url('../assets/yulin-station-led.jpg');"></div>
 
         <div class="article-body">
             <p>2026年5月，由广西壮族自治区商务厅牵头、20个厅局联合制定的<strong>《2026年广西促消费提质扩容总体方案》</strong>正式印发。这份重磅文件圈定了九大重点消费领域——<strong>文化旅游、康养旅居、体育赛事、亲子研学、网络数字、入境消费、餐饮住宿、下沉市场、大宗商品</strong>——并推出了四大消费品牌活动，覆盖从城市到县域的全域消费场景。</p>
@@ -230,7 +217,7 @@
 
             <p><strong>政策的窗口期不会等人。高铁站的好位置，也不会。</strong></p>
 
-            <hr style="margin:32px 0; border:none; border-top:1px dashed var(--gray-200);">
+            <hr style="margin:32px 0; border:none; border-top:1px dashed var(--border);">
 
             <p>广西联屏传媒是南玉高铁南玉段广告媒体的独家运营商，拥有玉林北站、横州站、兴业南站全部广告位的运营权。如您的品牌希望在2026年广西消费扩容的大背景下抢占高铁广告先机，欢迎联系我们获取定制投放方案。</p>
             <p>联系人：李洪鑫 18878774848（微信同号）</p>
@@ -248,9 +235,10 @@
             </div>
         </div>
 
-        <div style="text-align:center; margin-top:32px;">
-            <a href="news.html" style="color:var(--primary-light); text-decoration:none; font-size:14px;">&#8592; 返回新闻列表</a>
+        <div class="back-link">
+            <a href="news.html">&#8592; 返回新闻列表</a>
         </div>
+    </div>
     </div>
 
     <!-- Footer -->
@@ -260,5 +248,22 @@
         <p style="margin-top:4px;">李洪鑫 18878774848（微信同号）</p>
     </footer>
 
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// 文章页入场
+gsap.from(".article-box", {
+    scrollTrigger: { trigger: ".article-box", start: "top 90%", once: true },
+    y: 30, opacity: 0, duration: 0.7, ease: "power2.out"
+});
+
+// CTA入场
+gsap.from(".article-cta", {
+    scrollTrigger: { trigger: ".article-cta", start: "top 85%", once: true },
+    y: 30, opacity: 0, duration: 0.6, ease: "power2.out"
+});
+
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
 </body>
 </html>

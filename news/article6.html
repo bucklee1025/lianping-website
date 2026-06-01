@@ -9,102 +9,84 @@
     <meta name="robots" content="index, follow">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #7c3aed;
-            --primary-light: #2563eb;
-            --accent: #c084fc;
-            --dark: #111827;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --white: #ffffff;
+                :root{
+            --navy:#0f1a3c;--blue:#2563eb;--teal:#0d9488;
+            --amber:#f59e0b;--text:#1e293b;--body:#64748b;
+            --bg:#fff;--bg-sky:#f0f7ff;
+            --border:#e2e8f0;--radius:16px;--radius-sm:10px;
+            --shadow:0 2px 24px rgba(15,26,60,0.06);
+            --shadow-lg:0 8px 48px rgba(15,26,60,0.1);
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: var(--gray-800); line-height: 1.8; background: var(--gray-50); }
+        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--body);background:var(--bg);line-height:1.6}
 
-        .header { background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); color: var(--white); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-        .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 44px; height: 44px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: var(--dark); }
-        .logo-text h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
-        .logo-text p { font-size: 11px; opacity: 0.7; letter-spacing: 0.5px; }
-        .header-contact { display: flex; align-items: center; gap: 20px; font-size: 14px; }
-        .header-contact a { color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
-        .header-contact a:hover { opacity: 0.85; }
-        .phone-btn { background: var(--accent); color: var(--dark) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
-        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; }
-        .nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 20px; font-size: 14px; transition: all 0.2s; border-bottom: 2px solid transparent; }
-        .nav a:hover, .nav a.active { color: var(--white); background: rgba(255,255,255,0.05); border-bottom-color: var(--accent); }
 
-        .article-container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
-        .breadcrumb { font-size: 13px; color: var(--gray-600); margin-bottom: 24px; }
-        .breadcrumb a { color: var(--primary-light); text-decoration: none; }
+        .header-contact a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
+
+        .nav { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .breadcrumb { font-size: 13px; color: var(--body); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--blue); text-decoration: none; }
         .article-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; }
         .article-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: #fef3c7; color: #92400e; }
-        .article-date { font-size: 13px; color: var(--gray-600); }
-        .article-title { font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1.4; margin-bottom: 24px; }
-        .article-body { font-size: 16px; line-height: 2; color: var(--gray-700); }
-        .article-body h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin: 40px 0 16px; padding-bottom: 12px; border-bottom: 3px solid var(--accent); display: inline-block; }
-        .article-body h3 { font-size: 20px; font-weight: 700; color: var(--dark); margin: 32px 0 12px; }
+        .article-date { font-size: 13px; color: var(--body); }
+        .article-title{font-size:28px;font-weight:800;color:var(--text);line-height:1.4;margin-bottom:20px}
+        .article-body { font-size: 16px; line-height: 2; color: var(--body); }
+        .article-body h2{font-size:22px;font-weight:700;color:var(--text);margin:36px 0 14px;padding-left:14px;border-left:4px solid var(--blue)}
+        .article-body h3 { font-size: 20px; font-weight: 700; color: var(--text); margin: 32px 0 12px; }
         .article-body p { margin-bottom: 16px; }
-        .article-body strong { color: var(--dark); }
+        .article-body strong { color: var(--text); }
         .article-body ul, .article-body ol { padding-left: 20px; margin: 16px 0; }
         .article-body li { margin-bottom: 8px; }
-        .industry-box { background: var(--white); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border-left: 4px solid var(--primary-light); }
+        .industry-box { background: #fff; border-radius: 12px; padding: 20px 24px; margin: 16px 0; border-left: 4px solid var(--blue); }
         .industry-box h3 { margin-top: 0; }
-        .article-cta { background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); color: var(--white); padding: 32px; border-radius: 16px; margin: 48px 0; text-align: center; }
+        .article-cta{background:linear-gradient(135deg,#0f1a3c,#1e3a5f);color:#fff;padding:36px 32px;border-radius:var(--radius);margin:48px 0;text-align:center}
         .article-cta h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
         .article-cta p { font-size: 15px; opacity: 0.85; margin-bottom: 24px; }
         .cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 24px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
-        .cta-btn.primary { background: var(--accent); color: var(--dark); }
-        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+        .cta-btn.primary { background: var(--blue); color: var(--text); }
+        .cta-btn.secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
 
-        .footer { background: #0a0f1a; color: rgba(255,255,255,0.5); padding: 32px 24px; text-align: center; font-size: 13px; }
-        .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+                /* FOOTER */
+        footer{background:#0a1620;color:rgba(255,255,255,.4);padding:32px 24px;text-align:center;font-size:13px}
+        footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
-        @media (max-width: 900px) {
-            .article-title { font-size: 24px; }
-            .article-body h2 { font-size: 20px; }
-            .header-contact { display: none; }
-        }
+        @media(max-width:900px){.article-title{font-size:22px}.article-cover{height:200px}.hdr,.nav-i{padding-left:20px;padding-right:20px}.hdr-r{display:none}}.article-box{padding:28px 20px}
+            .hdr,.nav-i{padding-left:20px;padding-right:20px}
+            .hdr-r{display:none}
+
     </style>
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="联屏传媒" style="height:44px;">
-                <div class="logo-text">
-                    <h1>联屏传媒</h1>
-                    <p>广西联屏传媒科技有限公司</p>
-                </div>
-            </div>
-            <div class="header-contact">
-                <a href="tel:18878774848">&#9742; 188-7877-4848</a>
-                <a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a>
-                <a href="../index.html#contact" class="phone-btn">立即咨询</a>
-            </div>
+    <header>
+    <div class="hdr">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="联屏传媒" style="height:36px;">
+            <div><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div>
         </div>
-        <nav class="nav">
-            <div class="nav-inner">
-                <a href="../index.html">首页</a>
-                <a href="../index.html#resources">媒体资源</a>
-                <a href="../index.html#advantages">核心优势</a>
-                <a href="../index.html#pricing">刊例价格</a>
-                <a href="news.html" class="active">新闻资讯</a>
-                <a href="../index.html#industries">服务行业</a>
-                <a href="../about.html">关于我们</a>
-                <a href="../process.html">合作流程</a>
-                <a href="../cases.html">客户案例</a>
-                <a href="../faq.html">常见问题</a>
-                <a href="../index.html#contact">联系我们</a>
-            </div>
-        </nav>
+        <div class="hdr-r">
+            <a href="tel:18878774848">188-7877-4848</a>
+            <a href="mailto:57078889@qq.com">57078889@qq.com</a>
+            <a href="../index.html#contact" class="hdr-btn">立即咨询</a>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-i">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#resources">媒体资源</a>
+            <a href="../index.html#advantages">核心优势</a>
+            <a href="../index.html#pricing">刊例价格</a>
+            <a href="../index.html#industries">服务行业</a>
+            <a href="../about.html">关于我们</a>
+            <a href="news.html" class="active">新闻资讯</a>
+            <a href="../index.html#contact">联系我们</a>
+        </div>
+    </nav>
     </header>
 
     <div class="article-container">
@@ -118,6 +100,10 @@
         </div>
 
         <h1 class="article-title">哪些行业最适合在南宁机场和高铁站投放广告？</h1>
+
+        
+
+        <div class="article-cover" style="background-image: url('../assets/airport-ad-example.jpg');"></div>
 
         <div class="article-body">
             <p>机场和高铁站作为高端出行场景，其人群特征决定了某些行业在这里投放广告效果尤为突出。以下是适合在南宁机场T2航站楼和南珠高铁南玉段投放广告的主要行业分析。</p>
@@ -174,23 +160,41 @@
 
         <!-- CTA -->
         <div class="article-cta">
-            <h3>立即咨询广告投放方案</h3>
-            <p>专业团队量身定制，为您提供最优出行场景广告投放策略</p>
+            <h3>聊聊你的投放需求？</h3>
+            <p>想知道你的品牌在这个场景里效果怎么样？直接打个电话聊聊</p>
             <div class="cta-btns">
                 <a href="tel:18878774848" class="cta-btn primary">&#9742; 电话咨询 188-7877-4848</a>
                 <a href="mailto:57078889@qq.com" class="cta-btn secondar">&#9993; 邮箱联系</a>
             </div>
         </div>
 
-        <div style="text-align:center; margin-top:32px;">
-            <a href="news.html" style="color:var(--primary-light); text-decoration:none; font-size:14px;">&#8592; 返回新闻列表</a>
+        <div class="back-link">
+            <a href="news.html">&#8592; 返回新闻列表</a>
         </div>
+    </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024copy; 2025 广西联屏传媒科技有限公司 版权所有 | 南宁机场T2航站楼 &amp; 南珠高铁南玉段广告独家运营商</p>
+        <p>&copy; 2025 广西联屏传媒科技有限公司 版权所有 | 南宁机场T2航站楼 &amp; 南珠高铁南玉段广告独家运营商</p>
         <p style="margin-top:8px;">地址：广西南宁市东葛路绿地中央广场D1栋2908 | 电话：<a href="tel:18878774848">188-7877-4848</a> | 邮箱：<a href="mailto:57078889@qq.com">57078889@qq.com</a></p>
     </footer>
 
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// 文章页入场
+gsap.from(".article-box", {
+    scrollTrigger: { trigger: ".article-box", start: "top 90%", once: true },
+    y: 30, opacity: 0, duration: 0.7, ease: "power2.out"
+});
+
+// CTA入场
+gsap.from(".article-cta", {
+    scrollTrigger: { trigger: ".article-cta", start: "top 85%", once: true },
+    y: 30, opacity: 0, duration: 0.6, ease: "power2.out"
+});
+
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
 </body>
 </html>

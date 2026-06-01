@@ -15,6 +15,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
 
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -54,7 +57,8 @@
         .news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
         .news-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s;display:flex;flex-direction:column}
         .news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-        .news-card-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:40px}
+        .news-card-img{height:180px;background-size:cover;background-position:center;position:relative}
+        .news-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.3) 0%,transparent 60%)}
         .news-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
         .news-card-meta{display:flex;gap:10px;margin-bottom:10px;align-items:center}
         .news-tag{display:inline-block;padding:3px 10px;border-radius:9999px;font-size:11px;font-weight:600}
@@ -134,7 +138,7 @@
 
                 <!-- Article 23 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #dc2626, #f97316);">&#128747;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-entrance.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#fee2e2;color:#991b1b;">前瞻分析</span><span class="news-card-date">2026-06-01</span></div>
                         <h3><a href="news/article23.html">南玉高铁+广东：玉岑段2026通车在即，桂粤7000万客群品牌走廊如何提前布局？</a></h3>
@@ -145,7 +149,7 @@
 
                 <!-- Article 22 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">&#129302;</div>
+                    <div class="news-card-img" style="background-image: url('assets/airport-screen-ad.png');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">技术前沿</span><span class="news-card-date">2026-06-01</span></div>
                         <h3><a href="news/article22.html">数字驱动的高铁广告：AI、程序化投放与数据闭环如何让南玉高铁广告更"智能"？</a></h3>
@@ -156,7 +160,7 @@
 
                 <!-- Article 21 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #0d9488, #2dd4bf);">&#127754;</div>
+                    <div class="news-card-img" style="background-image: url('assets/hengzhou-station-platform.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#ccfbf1;color:#0f766e;">行业趋势</span><span class="news-card-date">2026-05-31</span></div>
                         <h3><a href="news/article21.html">从"流量场"到"价值场"：文旅融合下高铁广告如何成为广西品牌场景营销新引擎？</a></h3>
@@ -167,7 +171,7 @@
 
                 <!-- Article 20 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #ea580c, #fbbf24);">&#128161;</div>
+                    <div class="news-card-img" style="background-image: url('assets/xingye-station-hall.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#fef3c7;color:#92400e;">实操指南</span><span class="news-card-date">2026-05-31</span></div>
                         <h3><a href="news/article20.html">中小品牌也能投高铁广告？2026县域品牌低成本占领南玉高铁2000万客群的实操指南</a></h3>
@@ -178,7 +182,7 @@
 
                 <!-- Article 19 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #065f46, #34d399);">&#128202;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-led.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#d1fae5;color:#065f46;">市场策略</span><span class="news-card-date">2026-05-30</span></div>
                         <h3><a href="news/article19.html">广西2026促消费九大领域升级：区域品牌如何借南玉高铁广告抢占先机？</a></h3>
@@ -189,7 +193,7 @@
 
                 <!-- Article 18 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #7c3aed, #2dd4bf);">&#128202;</div>
+                    <div class="news-card-img" style="background-image: url('assets/station-passage-ads.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#ede9fe;color:#5b21b6;">数据分析</span><span class="news-card-date">2026-05-30</span></div>
                         <h3><a href="news/article18.html">高铁广告ROI实战：用"位置×停留×可见"公式算清南玉高铁每一分钱</a></h3>
@@ -200,7 +204,7 @@
 
                 <!-- Article 17 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #d97706, #c084fc);">&#128205;</div>
+                    <div class="news-card-img" style="background-image: url('assets/xingye-station-platform.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#fef3c7;color:#92400e;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
                         <h3><a href="news/article17.html">兴业南站：一座高铁站如何改变59万人口小城的商业格局？</a></h3>
@@ -211,7 +215,7 @@
 
                 <!-- Article 16 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #047857, #34d399);">&#127803;</div>
+                    <div class="news-card-img" style="background-image: url('assets/hengzhou-station-platform.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#d1fae5;color:#065f46;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
                         <h3><a href="news/article16.html">一朵茉莉花值226亿——横州站广告投放背后的产业密码</a></h3>
@@ -222,7 +226,7 @@
 
                 <!-- Article 15 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">&#128640;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-entrance.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta"><span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
                         <h3><a href="news/article15.html">玉林北站高铁广告全解析：780万人口市场的品牌入口</a></h3>
@@ -233,7 +237,7 @@
 
                 <!-- Article 14 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #db2777, #f472b6);">&#127881;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-led.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag" style="background:#fce7f3;color:#be185d;">创意营销</span>
@@ -247,7 +251,7 @@
 
                 <!-- Article 13 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #059669, #10b981);">&#127919;</div>
+                    <div class="news-card-img" style="background-image: url('assets/station-passage-ads.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag" style="background:#d1fae5;color:#065f46;">行业分析</span>
@@ -261,7 +265,7 @@
 
                 <!-- Article 12 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #2563eb, #7c3aed);">&#128200;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-led.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">行业趋势</span>
@@ -275,7 +279,7 @@
 
                 <!-- Article 11 - NEW -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #dc2626, #c084fc);">&#128200;</div>
+                    <div class="news-card-img" style="background-image: url('assets/airport-ad-example.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag" style="background:#fef3c7;color:#92400e;">投放攻略</span>
@@ -317,7 +321,7 @@
 
                 <!-- Article 3 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #7c3aed, #1d4ed8);">&#128640;</div>
+                    <div class="news-card-img" style="background-image: url('assets/airport-screen-ad.png');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-airport">机场广告</span>
@@ -331,7 +335,7 @@
 
                 <!-- Article 4 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #134e5e, #0e7490);">&#128644;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-led.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-rail">高铁广告</span>
@@ -345,7 +349,7 @@
 
                 <!-- Article 5 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #312e81, #4338ca);">&#128202;</div>
+                    <div class="news-card-img" style="background-image: url('assets/station-passage-ads.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-data">数据分析</span>
@@ -359,7 +363,7 @@
 
                 <!-- Article 6 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #92400e, #d97706);">&#127919;</div>
+                    <div class="news-card-img" style="background-image: url('assets/airport-ad-example.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-industry">行业适配</span>
@@ -373,7 +377,7 @@
 
                 <!-- Article 7 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #064e3b, #047857);">&#128240;</div>
+                    <div class="news-card-img" style="background-image: url('assets/yulin-station-entrance.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-airport">新闻通稿</span>
@@ -387,7 +391,7 @@
 
                 <!-- Article 8 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #7c3aed, #1e40af);">&#128205;</div>
+                    <div class="news-card-img" style="background-image: url('assets/xingye-station-hall.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-industry">本地服务</span>
@@ -401,7 +405,7 @@
 
                 <!-- Article 9 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">&#9878;</div>
+                    <div class="news-card-img" style="background-image: url('assets/airport-screen-ad.png');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-data">竞品对比</span>
@@ -415,7 +419,7 @@
 
                 <!-- Article 10 -->
                 <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #0c4a6e, #0284c7);">&#127919;</div>
+                    <div class="news-card-img" style="background-image: url('assets/station-passage-ads.jpg');"></div>
                     <div class="news-card-body">
                         <div class="news-card-meta">
                             <span class="news-tag tag-industry">实战指南</span>
@@ -439,7 +443,7 @@
     <!-- CTA -->
     <section class="cta">
         <h2>立即咨询广告投放方案</h2>
-        <p>专业团队量身定制，为您提供最优出行场景广告投放策略</p>
+        <p>想知道你的品牌在这个场景里效果怎么样？直接打个电话聊聊</p>
         <div class="cta-btns">
             <a href="tel:18878774848" class="cta-btn primary">📞 电话咨询 188-7877-4848</a>
             <a href="https://weixin.qq.com" class="cta-btn secondary">💬 微信咨询（同号）</a>
@@ -451,6 +455,28 @@
         <p>&copy; 2025 广西联屏传媒科技有限公司 版权所有 | 南宁机场T2航站楼 &amp; 南珠高铁南玉段广告独家运营商</p>
         <p style="margin-top:8px;">地址：广西南宁市东葛路绿地中央广场D1栋2908 | 电话：<a href="tel:18878774848">188-7877-4848</a> | 邮箱：<a href="mailto:57078889@qq.com">57078889@qq.com</a></p>
     </footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Banner 入场
+gsap.from(".page-header h2", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out" });
+gsap.from(".page-header p",  { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.2 });
+
+// 新闻卡片入场
+gsap.from(".news-card", {
+    scrollTrigger: { trigger: ".news-grid", start: "top 85%", once: true },
+    y: 40, opacity: 0, duration: 0.5, stagger: 0.08, ease: "power2.out"
+});
+
+// CTA 入场
+gsap.from(".cta h2, .cta p, .cta .cta-btn", {
+    scrollTrigger: { trigger: ".cta", start: "top 85%", once: true },
+    y: 30, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out"
+});
+
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
 
 </body>
 </html>

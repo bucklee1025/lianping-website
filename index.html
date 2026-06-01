@@ -39,6 +39,18 @@
             background:linear-gradient(135deg,#0f1a3c 0%,#1e3a5f 40%,#2563eb 100%)}
         .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(245,158,11,0.08) 0%,transparent 60%)}
         .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,var(--bg),transparent)}
+        /* 浮动装饰粒子 */
+        .hero-dot{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+        .hero-dot-1{width:6px;height:6px;background:rgba(245,158,11,0.25);top:15%;left:10%}
+        .hero-dot-2{width:10px;height:10px;background:rgba(255,255,255,0.08);top:25%;right:18%}
+        .hero-dot-3{width:4px;height:4px;background:rgba(255,255,255,0.15);bottom:30%;left:22%}
+        .hero-dot-4{width:12px;height:12px;background:rgba(245,158,11,0.12);bottom:20%;right:12%}
+        .hero-dot-5{width:8px;height:8px;background:rgba(37,99,235,0.2);top:50%;left:5%}
+        .hero-dot-6{width:5px;height:5px;background:rgba(255,255,255,0.1);top:60%;right:8%}
+        /* 动态光晕 */
+        .hero-glow{position:absolute;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;
+            background:radial-gradient(circle,rgba(245,158,11,0.06),transparent 70%);
+            top:30%;left:50%;transform:translate(-50%,-50%)}
         .hero-inner{max-width:720px;position:relative;z-index:1}
         .hero .tag{display:inline-block;padding:6px 16px;border-radius:9999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);font-size:13px;font-weight:500;margin-bottom:24px;backdrop-filter:blur(8px)}
         .hero h2{font-size:52px;font-weight:700;line-height:1.1;color:#fff;margin-bottom:20px}
@@ -71,9 +83,10 @@
 
         /* CARDS */
         .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-        .card{background:#fff;border-radius:var(--radius);padding:0;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:all .3s}
-        .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .card{background:#fff;border-radius:var(--radius);padding:0;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:all .4s cubic-bezier(.22,1,.36,1)}
+        .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue)}
         .card.featured{border-color:var(--blue);box-shadow:var(--shadow-lg)}
+        .card.featured:hover{border-color:var(--amber);box-shadow:0 8px 48px rgba(245,158,11,0.15)}
         .card .ctop{height:5px}.card.featured .ctop{background:linear-gradient(90deg,var(--blue),var(--amber))}
         .card .cbody{padding:32px 28px}
         .card .badge{display:inline-block;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;margin-bottom:14px}
@@ -88,8 +101,8 @@
 
         /* ADVANTAGES */
         .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-        .adv-item{text-align:center;padding:40px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s}
-        .adv-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .adv-item{text-align:center;padding:40px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .4s cubic-bezier(.22,1,.36,1)}
+        .adv-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
         .adv-icon{width:56px;height:56px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(13,148,136,0.08))}
         .adv-item h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--text)}
         .adv-item p{font-size:14px;color:var(--body);line-height:1.6}
@@ -108,8 +121,8 @@
 
         /* INDUSTRIES */
         .ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-        .ind-item{text-align:center;padding:28px 14px;background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s}
-        .ind-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--blue)}
+        .ind-item{text-align:center;padding:28px 14px;background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .35s cubic-bezier(.22,1,.36,1)}
+        .ind-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue);background:var(--bg-sky)}
         .ind-item .ico{font-size:26px;margin-bottom:8px}.ind-item .nm{font-size:13px;font-weight:600;color:var(--text)}
 
         /* CTA */
@@ -142,6 +155,9 @@
             .sec-head h2{font-size:28px}
         }
     </style>
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -172,10 +188,17 @@
 </header>
 
 <section class="hero" id="home">
+    <div class="hero-dot hero-dot-1"></div>
+    <div class="hero-dot hero-dot-2"></div>
+    <div class="hero-dot hero-dot-3"></div>
+    <div class="hero-dot hero-dot-4"></div>
+    <div class="hero-dot hero-dot-5"></div>
+    <div class="hero-dot hero-dot-6"></div>
+    <div class="hero-glow"></div>
     <div class="hero-inner">
         <div class="tag">✦ 南珠高铁南玉段 · 南宁机场T2 独家运营</div>
         <h2>广西高端出行场景<br><span>广告独家运营商</span></h2>
-        <p class="hero-desc">覆盖年客流量超2600万人次，精准触达桂东南2000万+高端消费人群，商务人群占比超80%</p>
+        <p class="hero-desc">每年2600万人次路过我们的广告屏——南玉高铁三站加南宁机场，商务旅客占八成以上</p>
         <div class="hero-btns">
             <a href="#contact" class="btn btn-gold">获取专属投放方案</a>
             <a href="#resources" class="btn btn-ghost">查看媒体资源 →</a>
@@ -197,7 +220,7 @@
         <div class="sec-head">
             <div class="pill">Media Resources</div>
             <h2>核心媒体资源</h2>
-            <p>覆盖广西最核心的交通出行场景，精准触达高消费力人群</p>
+            <p>南玉高铁三站 + 南宁机场候机区，出行人群就是你的目标客群</p>
             <div class="line"></div>
         </div>
         <div class="card-grid">
@@ -258,14 +281,14 @@
         <div class="sec-head">
             <div class="pill">Why Choose Us</div>
             <h2>为什么选择联屏传媒</h2>
-            <p>独家运营资质 + 高端出行场景 + 精准人群覆盖</p>
+            <p>独家授权 · 高铁加机场 · 商务人群集中</p>
             <div class="line"></div>
         </div>
         <div class="adv-grid">
-            <div class="adv-item"><div class="adv-icon">🔒</div><h3>独家运营</h3><p>持有机场及高铁站广告媒体独家运营授权，排他性保障品质</p></div>
-            <div class="adv-item"><div class="adv-icon">🎯</div><h3>精准人群</h3><p>商务人群占比超80%，年均收入27万+，高净值精准触达</p></div>
-            <div class="adv-item"><div class="adv-icon">📈</div><h3>高频曝光</h3><p>高铁日均客流3万+，机场日播2160次，持续高频触达</p></div>
-            <div class="adv-item"><div class="adv-icon">🌐</div><h3>场景营销</h3><p>高铁+机场出行全场景覆盖，全链路沉浸式品牌曝光</p></div>
+            <div class="adv-item"><div class="adv-icon">🔒</div><h3>独家运营</h3><p>机场和高铁的广告位都是独家授权，想投的人只能找我们</p></div>
+            <div class="adv-item"><div class="adv-icon">🎯</div><h3>精准人群</h3><p>八成以上是商务出行旅客，年均收入27万往上走</p></div>
+            <div class="adv-item"><div class="adv-icon">📈</div><h3>高频曝光</h3><p>高铁站一天几万人进进出出，机场刷屏机一天播两千多次</p></div>
+            <div class="adv-item"><div class="adv-icon">🌐</div><h3>场景营销</h3><p>从高铁站出来进机场候机，旅客的出行路上全是你的广告</p></div>
         </div>
     </div>
 </section>
@@ -303,7 +326,7 @@
 
 <section class="sec sec-sand" id="industries">
     <div class="sec-inner">
-        <div class="sec-head"><div class="pill">Industries</div><h2>适用行业</h2><p>高铁+机场双场景，适配各类品牌广告投放需求</p><div class="line"></div></div>
+        <div class="sec-head"><div class="pill">Industries</div><h2>适用行业</h2><p>高铁出站、机场候机——这些场景下什么广告都有人看</p><div class="line"></div></div>
         <div class="ind-grid">
             <div class="ind-item"><div class="ico">🏠</div><div class="nm">房地产</div></div>
             <div class="ind-item"><div class="ico">🚗</div><div class="nm">汽车</div></div>
@@ -323,7 +346,7 @@
 
 <section class="cta" id="contact">
     <h2>立即咨询广告投放方案</h2>
-    <p>专业团队量身定制，为您提供最优出行场景广告投放策略</p>
+    <p>想了解你的品牌在这个场景里效果怎么样？打个电话或加个微信，直接聊</p>
     <div class="cta-btns">
         <a href="tel:18878774848" class="btn btn-gold">📞 电话咨询 188-7877-4848</a>
         <a href="https://weixin.qq.com" class="btn btn-ghost">💬 微信咨询（同号）</a>
@@ -339,6 +362,146 @@
     <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
     <p style="margin-top:4px">&copy; 2025 广西联屏传媒科技有限公司</p>
 </footer>
+
+<script>
+// 防止 ScrollTrigger 因布局变化报错
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
+
+// ===== 0. 浮动装饰粒子 =====
+gsap.to(".hero-dot-1", { y: -30, x: 10, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
+gsap.to(".hero-dot-2", { y: 20, x: -15, duration: 5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+gsap.to(".hero-dot-3", { y: -15, x: 8, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+gsap.to(".hero-dot-4", { y: 25, x: -10, duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 });
+gsap.to(".hero-dot-5", { y: -20, x: 12, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+gsap.to(".hero-dot-6", { y: 15, x: -8, duration: 3.8, ease: "sine.inOut", yoyo: true, repeat: -1 });
+// 光晕呼吸动画
+gsap.to(".hero-glow", { scale: 1.3, opacity: 0.6, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
+
+// ===== 1. Hero 入场动画 =====
+const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+heroTl
+  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6 }, 0)
+  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7 }, 0.15)
+  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6 }, 0.35)
+  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6 }, 0.35)
+  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, 0.55);
+
+// Hero 视差 — 滚动时背景微动
+gsap.to(".hero", {
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1
+  },
+  backgroundPosition: "50% 30%"
+});
+
+// ===== 2. 数据条数字动画 =====
+gsap.utils.toArray(".strip-num").forEach(el => {
+  const finalText = el.textContent;        // e.g. "3+" or "2,600万"
+  // 提取数字部分和单位
+  const match = finalText.match(/^([\d,]+)(.*)$/);
+  if (!match) return;
+  const rawNum = parseFloat(match[1].replace(/,/g, ""));
+  const unit = match[2];
+
+  // 设置起始值
+  el.textContent = "0" + unit;
+
+  ScrollTrigger.create({
+    trigger: el.closest(".strip-item"),
+    start: "top 85%",
+    once: true,
+    onEnter: () => {
+      gsap.to(el, {
+        duration: 1.8,
+        ease: "power2.out",
+        onUpdate: function() {
+          const val = Math.round(this.progress() * rawNum);
+          const formatted = val >= 1000 ? val.toLocaleString() : String(val);
+          el.textContent = formatted + unit;
+        }
+      });
+    }
+  });
+});
+
+// ===== 3. 媒体资源卡片入场 =====
+gsap.from(".card-grid .card", {
+  scrollTrigger: {
+    trigger: "#resources",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  y: 50,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.15,
+  ease: "power2.out"
+});
+
+// ===== 4. 优势项入场 =====
+gsap.from(".adv-item", {
+  scrollTrigger: {
+    trigger: "#advantages",
+    start: "top 80%",
+    once: true
+  },
+  y: 40,
+  opacity: 0,
+  duration: 0.6,
+  stagger: 0.12,
+  ease: "power2.out"
+});
+
+// ===== 5. 刊例价格块入场 =====
+gsap.from(".price-block", {
+  scrollTrigger: {
+    trigger: "#pricing",
+    start: "top 80%",
+    once: true
+  },
+  y: 50,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.2,
+  ease: "power2.out"
+});
+
+// ===== 6. 行业标签入场 =====
+gsap.from(".ind-item", {
+  scrollTrigger: {
+    trigger: "#industries",
+    start: "top 80%",
+    once: true
+  },
+  y: 30,
+  opacity: 0,
+  duration: 0.4,
+  stagger: { amount: 0.4, from: "random" },
+  ease: "power1.out"
+});
+
+// ===== 7. CTA 区域入场 =====
+gsap.from(".cta h2, .cta p, .cta .btn, .ccard", {
+  scrollTrigger: {
+    trigger: "#contact",
+    start: "top 80%",
+    once: true
+  },
+  y: 40,
+  opacity: 0,
+  duration: 0.6,
+  stagger: 0.1,
+  ease: "power2.out"
+});
+
+// 页面加载完成后刷新 ScrollTrigger 以处理布局变化
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
 
 </body>
 </html>
