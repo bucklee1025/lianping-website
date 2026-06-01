@@ -175,28 +175,32 @@
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// Banner 入场
-gsap.from(".page-banner .tag",   { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" });
-gsap.from(".page-banner h2",     { y: 40, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.15 });
-gsap.from(".page-banner p",      { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.3 });
+// Banner 入场（页面加载直接播放，带clearProps保底）
+gsap.from(".page-banner .tag",   { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", clearProps: "opacity" });
+gsap.from(".page-banner h2",     { y: 40, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.15, clearProps: "opacity" });
+gsap.from(".page-banner p",      { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.3, clearProps: "opacity" });
 
-// 证书卡片入场
-gsap.from(".cert-card", {
-    scrollTrigger: { trigger: ".cert-card", start: "top 85%", once: true },
-    y: 40, opacity: 0, duration: 0.6, stagger: 0.12, ease: "power2.out"
-});
+// 滚动入场：元素默认可见，滚动到时播放动画
+function fadeOnScroll(elSelector, opts) {
+  const els = document.querySelectorAll(elSelector);
+  if (!els.length) return;
+  els.forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: "top 85%", once: true,
+      onEnter: () => {
+        gsap.from(el, {
+          y: opts.y || 30, opacity: 0, duration: opts.d || 0.5,
+          ease: "power2.out", delay: (opts.stagger || 0) * i,
+          clearProps: "opacity"
+        });
+      }
+    });
+  });
+}
 
-// 内容文字入场
-gsap.from(".content-text h2, .content-text p", {
-    scrollTrigger: { trigger: ".content-text h2", start: "top 85%", once: true },
-    y: 30, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out"
-});
-
-// 高亮块入场
-gsap.from(".highlight-box", {
-    scrollTrigger: { trigger: ".highlight-box", start: "top 85%", once: true },
-    y: 40, opacity: 0, duration: 0.7, ease: "power2.out"
-});
+fadeOnScroll(".cert-card", { y: 40, d: 0.6, stagger: 0.12 });
+fadeOnScroll(".content-text h2, .content-text p", { y: 30, d: 0.5, stagger: 0.1 });
+fadeOnScroll(".highlight-box", { y: 40, d: 0.7 });
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
 </script>

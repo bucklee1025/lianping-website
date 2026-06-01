@@ -309,17 +309,24 @@
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// 文章页入场
-gsap.from(".article-box", {
-    scrollTrigger: { trigger: ".article-box", start: "top 90%", once: true },
-    y: 30, opacity: 0, duration: 0.7, ease: "power2.out"
-});
+// 文章页入场（内容默认可见，滚动到时播放）
+function fadeOnScroll(selector, opts) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: opts.start || "top 85%", once: true,
+      onEnter: () => {
+        gsap.from(el, {
+          y: opts.y || 30, opacity: 0, duration: opts.d || 0.5,
+          ease: "power2.out", delay: (opts.stagger || 0) * i,
+          clearProps: "opacity"
+        });
+      }
+    });
+  });
+}
 
-// CTA入场
-gsap.from(".article-cta", {
-    scrollTrigger: { trigger: ".article-cta", start: "top 85%", once: true },
-    y: 30, opacity: 0, duration: 0.6, ease: "power2.out"
-});
+fadeOnScroll(".article-box", { y: 30, d: 0.7, start: "top 90%" });
+fadeOnScroll(".article-cta", { y: 30, d: 0.6 });
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
 </script>

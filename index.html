@@ -364,60 +364,74 @@
 </footer>
 
 <script>
-// 防止 ScrollTrigger 因布局变化报错
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-// ===== 0. 浮动装饰粒子 =====
+// ===== 0. 浮动装饰粒子（持续运行，无依赖） =====
 gsap.to(".hero-dot-1", { y: -30, x: 10, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-2", { y: 20, x: -15, duration: 5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-3", { y: -15, x: 8, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-4", { y: 25, x: -10, duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-5", { y: -20, x: 12, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-6", { y: 15, x: -8, duration: 3.8, ease: "sine.inOut", yoyo: true, repeat: -1 });
-// 光晕呼吸动画
 gsap.to(".hero-glow", { scale: 1.3, opacity: 0.6, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
 
-// ===== 1. Hero 入场动画 =====
+// 辅助函数：滚动触发入场动画（元素默认可见，滚动到时再播动画）
+function fadeInOnScroll(elements, opts = {}) {
+  if (!elements || elements.length === 0) return;
+  const els = elements.length ? elements : [elements];
+  els.forEach((el, i) => {
+    const delay = opts.stagger ? (opts.stagger * i) : 0;
+    ScrollTrigger.create({
+      trigger: el,
+      start: opts.start || "top 85%",
+      once: true,
+      onEnter: () => {
+        gsap.from(el, {
+          y: opts.y || 30,
+          opacity: 0,
+          duration: opts.duration || 0.5,
+          ease: opts.ease || "power2.out",
+          delay: delay,
+          // 动画完成后清除内联样式，确保即使GSAP出问题也不影响
+          clearProps: "opacity"
+        });
+      }
+    });
+  });
+}
+
+// ===== 1. Hero 入场动画（不用ScrollTrigger，页面加载直接播） =====
 const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 heroTl
-  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6 }, 0)
-  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7 }, 0.15)
-  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6 }, 0.35)
-  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6 }, 0.35)
-  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, 0.55);
+  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0)
+  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7, clearProps: "opacity" }, 0.15)
+  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0.35)
+  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6, clearProps: "opacity" }, 0.35)
+  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, clearProps: "opacity" }, 0.55);
 
-// Hero 视差 — 滚动时背景微动
+// ===== 1b. Hero 视差 =====
 gsap.to(".hero", {
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: 1
-  },
+  scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1 },
   backgroundPosition: "50% 30%"
 });
 
 // ===== 2. 数据条数字动画 =====
 gsap.utils.toArray(".strip-num").forEach(el => {
-  const finalText = el.textContent;        // e.g. "3+" or "2,600万"
-  // 提取数字部分和单位
+  const finalText = el.textContent;
   const match = finalText.match(/^([\d,]+)(.*)$/);
   if (!match) return;
   const rawNum = parseFloat(match[1].replace(/,/g, ""));
   const unit = match[2];
-
-  // 设置起始值
-  el.textContent = "0" + unit;
-
+  
   ScrollTrigger.create({
     trigger: el.closest(".strip-item"),
     start: "top 85%",
     once: true,
     onEnter: () => {
+      el.textContent = "0" + unit;
       gsap.to(el, {
-        duration: 1.8,
-        ease: "power2.out",
+        duration: 1.8, ease: "power2.out",
         onUpdate: function() {
           const val = Math.round(this.progress() * rawNum);
           const formatted = val >= 1000 ? val.toLocaleString() : String(val);
@@ -428,78 +442,13 @@ gsap.utils.toArray(".strip-num").forEach(el => {
   });
 });
 
-// ===== 3. 媒体资源卡片入场 =====
-gsap.from(".card-grid .card", {
-  scrollTrigger: {
-    trigger: "#resources",
-    start: "top 80%",
-    toggleActions: "play none none none",
-    once: true
-  },
-  y: 50,
-  opacity: 0,
-  duration: 0.7,
-  stagger: 0.15,
-  ease: "power2.out"
-});
+// ===== 3~7. 滚动入场动画 =====
+fadeInOnScroll(document.querySelectorAll(".card-grid .card"), { y: 50, duration: 0.7, stagger: 0.15 });
+fadeInOnScroll(document.querySelectorAll(".adv-item"), { y: 40, duration: 0.6, stagger: 0.12 });
+fadeInOnScroll(document.querySelectorAll(".price-block"), { y: 50, duration: 0.7, stagger: 0.2 });
+fadeInOnScroll(document.querySelectorAll(".ind-item"), { y: 30, duration: 0.4, stagger: 0.08, start: "top 85%" });
+fadeInOnScroll(document.querySelectorAll(".cta h2, .cta p, .cta .btn, .ccard"), { y: 30, duration: 0.5, stagger: 0.1 });
 
-// ===== 4. 优势项入场 =====
-gsap.from(".adv-item", {
-  scrollTrigger: {
-    trigger: "#advantages",
-    start: "top 80%",
-    once: true
-  },
-  y: 40,
-  opacity: 0,
-  duration: 0.6,
-  stagger: 0.12,
-  ease: "power2.out"
-});
-
-// ===== 5. 刊例价格块入场 =====
-gsap.from(".price-block", {
-  scrollTrigger: {
-    trigger: "#pricing",
-    start: "top 80%",
-    once: true
-  },
-  y: 50,
-  opacity: 0,
-  duration: 0.7,
-  stagger: 0.2,
-  ease: "power2.out"
-});
-
-// ===== 6. 行业标签入场 =====
-gsap.from(".ind-item", {
-  scrollTrigger: {
-    trigger: "#industries",
-    start: "top 80%",
-    once: true
-  },
-  y: 30,
-  opacity: 0,
-  duration: 0.4,
-  stagger: { amount: 0.4, from: "random" },
-  ease: "power1.out"
-});
-
-// ===== 7. CTA 区域入场 =====
-gsap.from(".cta h2, .cta p, .cta .btn, .ccard", {
-  scrollTrigger: {
-    trigger: "#contact",
-    start: "top 80%",
-    once: true
-  },
-  y: 40,
-  opacity: 0,
-  duration: 0.6,
-  stagger: 0.1,
-  ease: "power2.out"
-});
-
-// 页面加载完成后刷新 ScrollTrigger 以处理布局变化
 window.addEventListener("load", () => ScrollTrigger.refresh());
 </script>
 

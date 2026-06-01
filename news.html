@@ -459,21 +459,28 @@
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// Banner 入场
-gsap.from(".page-header h2", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out" });
-gsap.from(".page-header p",  { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.2 });
+// Banner 入场（直接播放，带clearProps保底）
+gsap.from(".page-header h2", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out", clearProps: "opacity" });
+gsap.from(".page-header p",  { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.2, clearProps: "opacity" });
 
-// 新闻卡片入场
-gsap.from(".news-card", {
-    scrollTrigger: { trigger: ".news-grid", start: "top 85%", once: true },
-    y: 40, opacity: 0, duration: 0.5, stagger: 0.08, ease: "power2.out"
-});
+// 滚动入场：元素默认可见，滚动到时播放
+function fadeOnScroll(selector, opts) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    ScrollTrigger.create({
+      trigger: el, start: "top 85%", once: true,
+      onEnter: () => {
+        gsap.from(el, {
+          y: opts.y || 30, opacity: 0, duration: opts.d || 0.5,
+          ease: "power2.out", delay: (opts.stagger || 0) * i,
+          clearProps: "opacity"
+        });
+      }
+    });
+  });
+}
 
-// CTA 入场
-gsap.from(".cta h2, .cta p, .cta .cta-btn", {
-    scrollTrigger: { trigger: ".cta", start: "top 85%", once: true },
-    y: 30, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out"
-});
+fadeOnScroll(".news-card", { y: 40, d: 0.5, stagger: 0.08 });
+fadeOnScroll(".cta h2, .cta p, .cta .cta-btn", { y: 30, d: 0.5, stagger: 0.1 });
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
 </script>
