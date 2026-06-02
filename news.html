@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -8,484 +8,213 @@
     <meta name="keywords" content="机场广告,高铁广告,南宁机场广告,玉林北站广告,广告投放攻略,联屏传媒">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.lianpingmedia.com/news.html">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="新闻资讯 - 广西联屏传媒">
     <meta property="og:description" content="机场广告、高铁站广告行业动态与投放攻略，联屏传媒专业分享。">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-
-    <!-- GSAP Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --navy:#0f1a3c;--blue:#2563eb;--teal:#0d9488;
-            --amber:#f59e0b;--text:#1e293b;--body:#64748b;
-            --bg:#fff;--bg-sand:#fef9f0;--bg-sky:#f0f7ff;
-            --border:#e2e8f0;--radius:16px;--radius-sm:10px;
-            --shadow:0 2px 24px rgba(15,26,60,0.06);
-            --shadow-lg:0 8px 48px rgba(15,26,60,0.1);
-        }
-        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--body);background:var(--bg);line-height:1.6}
-
-        /* HEADER */
-        header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-        .header-inner{max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{height:36px}.logo h1{font-size:16px;font-weight:700;color:var(--text)}
-        .logo p{font-size:11px;color:var(--body)}
-        .header-contact{display:flex;align-items:center;gap:16px;font-size:14px}
-        .header-contact a{color:var(--body);text-decoration:none;font-weight:500}
-        .header-contact a:hover{color:var(--blue)}
-        .phone-btn{background:var(--blue);color:#fff!important;padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px}
-        nav{border-top:1px solid var(--border);background:#fff}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none}
-        .nav-inner::-webkit-scrollbar{display:none}
-        .nav-inner a{color:var(--body);text-decoration:none;padding:12px 20px;font-size:14px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}
-        .nav-inner a:hover,.nav-inner a.active{color:var(--blue);border-bottom-color:var(--blue)}
-
-        /* PAGE HEADER */
-        .page-header{background:linear-gradient(135deg,#0f1a3c 0%,#1e3a5f 40%,#2563eb 100%);color:#fff;padding:70px 32px;text-align:center}
-        .page-header h2{font-size:36px;font-weight:700;margin-bottom:12px}
-        .page-header p{font-size:16px;opacity:.7}
-
-        /* NEWS GRID */
-        .news-section{padding:80px 32px;background:var(--bg-sand)}
+        .news-section{padding:80px 32px;background:var(--bg-warm)}
         .news-inner{max-width:1080px;margin:0 auto}
         .news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-        .news-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s;display:flex;flex-direction:column}
-        .news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-        .news-card-img{height:180px;overflow:hidden;position:relative;background:#e2e8f0;display:flex;align-items:center;justify-content:center}
-        .news-card-img img{width:100%;height:100%;object-fit:cover;display:block}
-        .news-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.3) 0%,transparent 60%);pointer-events:none}
+        .news-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .4s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column}
+        .news-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+        .news-card-img{height:190px;overflow:hidden;position:relative;background:#e2e8f0}
+        .news-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+        .news-card:hover .news-card-img img{transform:scale(1.06)}
+        .news-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,40,0.3) 0%,transparent 60%);pointer-events:none}
         .news-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
         .news-card-meta{display:flex;gap:10px;margin-bottom:10px;align-items:center}
-        .news-tag{display:inline-block;padding:3px 10px;border-radius:9999px;font-size:11px;font-weight:600}
+        .news-tag{display:inline-block;padding:4px 10px;border-radius:var(--radius-pill);font-size:11px;font-weight:600}
+        .tag-airport{background:rgba(217,119,6,0.1);color:var(--amber)}
+        .tag-rail{background:rgba(29,107,240,0.1);color:var(--blue)}
+        .tag-data{background:rgba(16,185,129,0.1);color:#10b981}
+        .tag-industry{background:rgba(139,92,246,0.1);color:#8b5cf6}
         .news-card-date{font-size:12px;color:var(--body)}
         .news-card h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text);line-height:1.5}
         .news-card h3 a{color:inherit;text-decoration:none}
         .news-card h3 a:hover{color:var(--blue)}
         .news-card p{font-size:13px;color:var(--body);line-height:1.6;flex:1}
-        .news-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none}
+        .news-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none;transition:gap .25s}
         .news-card-link:hover{gap:10px}
 
-        /* PAGINATION */
         .pagination{display:flex;justify-content:center;gap:8px;margin-top:40px}
         .page-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--text);text-decoration:none;font-size:13px;font-weight:500;transition:all .2s}
         .page-btn:hover,.page-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-        /* CTA */
-        .cta{background:linear-gradient(135deg,#0f1a3c,#1e3a5f);color:#fff;padding:70px 32px;text-align:center}
-        .cta h2{font-size:28px;font-weight:700;margin-bottom:12px}
-        .cta p{opacity:.65;font-size:15px;margin-bottom:28px}
-        .cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-        .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .25s}
-        .cta-btn.primary{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;box-shadow:0 4px 20px rgba(245,158,11,.3)}
-        .cta-btn.primary:hover{transform:translateY(-2px)}
-        .cta-btn.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
-
-        /* FOOTER */
-        .footer{background:#0a1620;color:rgba(255,255,255,.4);padding:28px 32px;text-align:center;font-size:13px}
-        .footer a{color:rgba(255,255,255,.6);text-decoration:none}
-
         @media(max-width:900px){
-            .news-grid{grid-template-columns:1fr}.header-contact{display:none}
-            .header-inner,.nav-inner{padding-left:20px;padding-right:20px}
+            .news-grid{grid-template-columns:1fr}
             .news-section{padding:50px 24px}
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-inner">
-            <div class="logo">
-                <img src="assets/logo.png" alt="联屏传媒" style="height:36px;">
-                <div><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div>
-            </div>
-            <div class="header-contact">
-                <a href="tel:18878774848">&#9742; 188-7877-4848</a>
-                <a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a>
-                <a href="#contact" class="phone-btn">立即咨询</a>
+<header>
+    <div class="hdr">
+        <div class="hdr-i">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="联屏传媒">
+                <div class="logo-txt">
+                    <h1>联屏传媒</h1>
+                    <span>广西联屏传媒科技有限公司</span>
+                </div>
+            </a>
+            <div class="hdr-r">
+                <a href="tel:18878774848" class="hdr-link">📞 188-7877-4848</a>
+                <a href="mailto:57078889@qq.com" class="hdr-link">📧 57078889@qq.com</a>
+                <a href="index.html#contact" class="hdr-btn">立即咨询</a>
             </div>
         </div>
-        <nav>
-            <div class="nav-inner">
-                <a href="index.html">首页</a>
-                <a href="index.html#resources">媒体资源</a>
-                <a href="index.html#advantages">核心优势</a>
-                <a href="index.html#pricing">刊例价格</a>
-                <a href="index.html#industries">服务行业</a>
-                <a href="about.html">关于我们</a>
-                <a href="news.html" class="active">新闻资讯</a>
-                <a href="index.html#contact">联系我们</a>
-            </div>
-        </nav>
-    </header>
+    </div>
+    <nav>
+        <div class="nav-i">
+            <a href="index.html">首页</a>
+            <a href="index.html#resources">媒体资源</a>
+            <a href="index.html#advantages">核心优势</a>
+            <a href="index.html#pricing">刊例价格</a>
+            <a href="index.html#industries">服务行业</a>
+            <a href="about.html">关于我们</a>
+            <a href="news.html" class="active">新闻资讯</a>
+            <a href="index.html#contact">联系我们</a>
+        </div>
+    </nav>
+</header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+<section class="page-banner">
+    <div class="inner">
+        <div class="tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/></svg>
+            News & Updates
+        </div>
         <h2>新闻资讯</h2>
         <p>机场广告 · 高铁站广告 · 行业动态 · 投放攻略</p>
-    </section>
+    </div>
+</section>
 
-    <!-- News Grid -->
-    <section class="news-section">
-        <div class="news-inner">
-            <div class="news-grid">
+<section class="news-section">
+    <div class="news-inner">
+        <div class="news-grid">
 
-
-                <!-- Article 25 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-entrance.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#e0e7ff;color:#4338ca;">数据解读</span><span class="news-card-date">2026-06-01</span></div>
-                        <h3><a href="news/article25.html">275万人次、48分钟同城化：南玉高铁运营一周年，高铁站广告的"复利价值"如何释放？</a></h3>
-                        <p>日均7500人次、20列覆盖全时段、三站三种圈层——从客流"三重增长引擎"看南玉高铁广告的长期"复利效应"，兼论玉岑段通车前的"价值洼地"窗口。</p>
-                        <a href="news/article25.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
+            <!-- Article 25 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/yulin-station-entrance.jpg" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-data">数据解读</span><span class="news-card-date">2026-06-01</span></div>
+                    <h3><a href="news/article25.html">275万人次、48分钟同城化：南玉高铁运营一周年，高铁站广告的"复利价值"如何释放？</a></h3>
+                    <p>日均7500人次、20列覆盖全时段、三站三种圈层——从客流"三重增长引擎"看南玉高铁广告的长期"复利效应"。</p>
+                    <a href="news/article25.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                 </div>
-
-                <!-- Article 24 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#fff7ed;color:#c2410c;">投放策略</span><span class="news-card-date">2026-06-01</span></div>
-                        <h3><a href="news/article24.html">户外广告黄金公式"四步法"——在南玉高铁站打造高ROI广告投放的科学路径</a></h3>
-                        <p>选点×排期×创意×归因——告别"凭感觉投"。结合南玉高铁50余个广告位，详解从流量质量评估到创意场景化设计的完整方法论。</p>
-                        <a href="news/article24.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-                <!-- Article 23 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-entrance.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#fee2e2;color:#991b1b;">前瞻分析</span><span class="news-card-date">2026-06-01</span></div>
-                        <h3><a href="news/article23.html">南玉高铁+广东：玉岑段2026通车在即，桂粤7000万客群品牌走廊如何提前布局？</a></h3>
-                        <p>从"省内单向终点站"到"跨省双向枢纽"——玉岑段通车将彻底改变玉林北站的战略定位，五大行业前置布局分析。</p>
-                        <a href="news/article23.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 22 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/airport-screen-ad.png" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">技术前沿</span><span class="news-card-date">2026-06-01</span></div>
-                        <h3><a href="news/article22.html">数字驱动的高铁广告：AI、程序化投放与数据闭环如何让南玉高铁广告更"智能"？</a></h3>
-                        <p>AI地理围栏、动态创意、程序化投放——2026年高铁广告正从"静态展示牌"升级为"可感知、可交互、可优化的智能传播节点"。</p>
-                        <a href="news/article22.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 21 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/hengzhou-station-platform.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#ccfbf1;color:#0f766e;">行业趋势</span><span class="news-card-date">2026-05-31</span></div>
-                        <h3><a href="news/article21.html">从"流量场"到"价值场"：文旅融合下高铁广告如何成为广西品牌场景营销新引擎？</a></h3>
-                        <p>广西2026文旅融合九大领域全面铺开，文旅、康养、体育、研学——高铁站如何从"交通节点"升级为品牌"超级场景入口"？</p>
-                        <a href="news/article21.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 20 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/xingye-station-hall.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#fef3c7;color:#92400e;">实操指南</span><span class="news-card-date">2026-05-31</span></div>
-                        <h3><a href="news/article20.html">中小品牌也能投高铁广告？2026县域品牌低成本占领南玉高铁2000万客群的实操指南</a></h3>
-                        <p>从3万到15万，三档预算方案覆盖餐饮、零售、农产品、本地服务四类中小品牌。不唯价格只唯适配——每分钱花在刀刃上。</p>
-                        <a href="news/article20.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 19 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-led.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#d1fae5;color:#065f46;">市场策略</span><span class="news-card-date">2026-05-30</span></div>
-                        <h3><a href="news/article19.html">广西2026促消费九大领域升级：区域品牌如何借南玉高铁广告抢占先机？</a></h3>
-                        <p>广西20个厅局联合印发促消费提质扩容方案，文旅、康养、餐饮、大宗商品——九大领域品牌的高铁广告策略指南。</p>
-                        <a href="news/article19.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 18 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#ede9fe;color:#5b21b6;">数据分析</span><span class="news-card-date">2026-05-30</span></div>
-                        <h3><a href="news/article18.html">高铁广告ROI实战：用"位置×停留×可见"公式算清南玉高铁每一分钱</a></h3>
-                        <p>不止"感觉有效"——用三维效率公式逐位评估玉林北站50+广告位。含候车厅LED、出站口灯箱、刷屏机效率对比表。</p>
-                        <a href="news/article18.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 17 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/xingye-station-platform.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#fef3c7;color:#92400e;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
-                        <h3><a href="news/article17.html">兴业南站：一座高铁站如何改变59万人口小城的商业格局？</a></h3>
-                        <p>通车一年累计275万旅客。钙基新材料、健康食品、农牧产品——兴业南站广告投放深度分析。</p>
-                        <a href="news/article17.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 16 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/hengzhou-station-platform.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#d1fae5;color:#065f46;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
-                        <h3><a href="news/article16.html">一朵茉莉花值226亿——横州站广告投放背后的产业密码</a></h3>
-                        <p>张一元、星巴克、奈雪的茉莉花香都来自这里。190亿产业如何借助横州站高铁广告放大品牌效应？</p>
-                        <a href="news/article16.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 15 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-entrance.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta"><span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">站点专题</span><span class="news-card-date">2026-05-29</span></div>
-                        <h3><a href="news/article15.html">玉林北站高铁广告全解析：780万人口市场的品牌入口</a></h3>
-                        <p>GDP增速3.8%、工业冲刺4000亿——桂东南最大高铁站的广告投放策略和行业适配分析。</p>
-                        <a href="news/article15.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 14 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-led.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag" style="background:#fce7f3;color:#be185d;">创意营销</span>
-                            <span class="news-card-date">2026-05-29</span>
-                        </div>
-                        <h3><a href="news/article14.html">玉林北站152㎡巨幕LED：生日应援、企业祝贺、品牌大秀——广西最大高铁屏能做什么？</a></h3>
-                        <p>从粉丝生日应援到企业庆典祝贺再到品牌创意展示，152㎡全彩巨幕的三大场景解析。含投放指南和价格参考。</p>
-                        <a href="news/article14.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 13 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag" style="background:#d1fae5;color:#065f46;">行业分析</span>
-                            <span class="news-card-date">2026-05-29</span>
-                        </div>
-                        <h3><a href="news/article13.html">哪些行业在南玉高铁站投广告最划算？5大行业实战分析</a></h3>
-                        <p>房地产、金融、餐饮、农产品、教育培训——5大行业在南玉高铁站投放的ROI分析，含行业适配速查表和真实案例参考。</p>
-                        <a href="news/article13.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 12 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-led.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag" style="background:#dbeafe;color:#1d4ed8;">行业趋势</span>
-                            <span class="news-card-date">2026-05-29</span>
-                        </div>
-                        <h3><a href="news/article12.html">2026户外广告爆发：广西品牌为什么必须抢占南玉高铁玉林北站？</a></h3>
-                        <p>2026Q1户外广告市场强势回暖，高铁站成品牌增长破局关键。深度分析三大红利窗口期和线上线下联动策略。</p>
-                        <a href="news/article12.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 11 - NEW -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/airport-ad-example.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag" style="background:#fef3c7;color:#92400e;">投放攻略</span>
-                            <span class="news-card-date">2026-05</span>
-                        </div>
-                        <h3><a href="news/article11.html">南宁机场&南玉高铁：广告投放怎么选？2026广西企业完整攻略</a></h3>
-                        <p>南宁机场1350万客流+南玉高铁2000万人口覆盖，广告投哪个？含最新刊例价、行业自测表、三档预算方案、避坑指南，附直接运营方联系方式。</p>
-                        <a href="news/article11.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 1 -->
-                <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #7c3aed, #2563eb);">&#9992;</div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-airport">机场广告</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article1.html">广西联屏传媒——南宁机场与南珠高铁广告独家运营商</a></h3>
-                        <p>广西联屏传媒科技有限公司独家运营南宁机场T2航站楼及南珠高铁南玉段广告媒体，年覆盖客流量超2600万人次，为品牌提供高端出行场景广告投放服务。</p>
-                        <a href="news/article1.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="news-card">
-                    <div class="news-card-img" style="background: linear-gradient(135deg, #065f46, #059669);">&#128200;</div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-industry">行业分析</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article2.html">为什么越来越多的品牌选择在机场和高铁站投放广告？</a></h3>
-                        <p>机场和高铁站因其独特的人群优势和场景特性，正在成为品牌营销的重要选择。本文从人群质量、到达率、场景营销等角度深度分析。</p>
-                        <a href="news/article2.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 3 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/airport-screen-ad.png" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-airport">机场广告</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article3.html">南宁机场T2航站楼广告投放全攻略：36个刷屏机独家运营</a></h3>
-                        <p>南宁机场T2航站楼年旅客吞吐量1600万人次，36台86寸LCD刷屏机独家运营，本文详解投放优势、刊例价格及适合行业。</p>
-                        <a href="news/article3.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 4 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-led.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-rail">高铁广告</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article4.html">南珠高铁南玉段广告投放指南：三大站点50+广告位独家运营</a></h3>
-                        <p>南珠高铁南玉段连接南宁与玉林，沿线覆盖人口超2000万。本文详解玉林北站、横州站、兴业南站三大站点广告资源及投放策略。</p>
-                        <a href="news/article4.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 5 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-data">数据分析</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article5.html">用数据说话：南宁机场+南珠高铁广告投放的ROI分析</a></h3>
-                        <p>广告投放最核心的问题就是——值不值？本文用数据深入分析南宁机场T2航站楼和南珠高铁南玉段广告投放的投资回报。</p>
-                        <a href="news/article5.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 6 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/airport-ad-example.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-industry">行业适配</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article6.html">哪些行业最适合在南宁机场和高铁站投放广告？</a></h3>
-                        <p>机场和高铁站作为高端出行场景，其人群特征决定了某些行业在这里投放广告效果尤为突出。本文分析最适合投放的8大行业。</p>
-                        <a href="news/article6.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 7 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/yulin-station-entrance.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-airport">新闻通稿</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article7.html">广西联屏传媒正式运营南宁机场T2航站楼及南珠高铁广告媒体资源</a></h3>
-                        <p>广西联屏传媒科技有限公司正式获得南宁机场T2航站楼及南珠高铁南玉段广告媒体独家运营权，标志着广西两大核心交通枢纽广告资源统一运营管理。</p>
-                        <a href="news/article7.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 8 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/xingye-station-hall.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-industry">本地服务</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article8.html">在南宁做广告投放，为什么首选联屏传媒？</a></h3>
-                        <p>南宁作为广西政治经济中心，是品牌进入广西市场的第一站。本文从独家资源、双场景覆盖、一站式服务等角度，分析选择联屏传媒的理由。</p>
-                        <a href="news/article8.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 9 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/airport-screen-ad.png" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-data">竞品对比</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article9.html">机场广告 vs 高铁广告 vs 线上广告：哪个更适合你的品牌？</a></h3>
-                        <p>本文从人群质量、广告效果、成本等多个维度，对比分析机场广告、高铁广告与线上广告的优劣，帮助品牌选择最合适的投放渠道。</p>
-                        <a href="news/article9.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
-                <!-- Article 10 -->
-                <div class="news-card">
-                    <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-tag tag-industry">实战指南</span>
-                            <span class="news-card-date">2025-01</span>
-                        </div>
-                        <h3><a href="news/article10.html">品牌如何在广西实现高效曝光？——出行场景广告投放实战指南</a></h3>
-                        <p>本文结合实际案例，分析出行场景广告投放的策略和效果，并提供三套不同预算的投放方案，帮助品牌在广西市场实现高效曝光。</p>
-                        <a href="news/article10.html" class="news-card-link">阅读全文 &#10132;</a>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <a href="news.html" class="page-btn active">1</a>
+            <!-- Article 24 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/airport-screen-ad.png" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-airport">机场广告</span><span class="news-card-date">2026-05</span></div>
+                    <h3><a href="news/article24.html">南宁吴圩机场T3航站楼封顶在即，机场广告将迎来什么变化？</a></h3>
+                    <p>T3航站楼预计2027年建成，南宁机场年客流量将突破4000万人次。本文前瞻分析机场扩建带来的广告媒体格局变化。</p>
+                    <a href="news/article24.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <h2>立即咨询广告投放方案</h2>
-        <p>想知道你的品牌在这个场景里效果怎么样？直接打个电话聊聊</p>
-        <div class="cta-btns">
-            <a href="tel:18878774848" class="cta-btn primary">📞 电话咨询 188-7877-4848</a>
-            <a href="https://weixin.qq.com" class="cta-btn secondary">💬 微信咨询（同号）</a>
-        </div>
-    </section>
+            <!-- Article 23 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/station-passage-ads.jpg" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-rail">高铁广告</span><span class="news-card-date">2026-04</span></div>
+                    <h3><a href="news/article23.html">玉林北站日均客流突破7000人次，高铁站LED大屏广告价值几何？</a></h3>
+                    <p>南玉高铁开通后玉林北站客流持续攀升，出站层LED大屏（152㎡）作为全站最大广告位，品牌曝光效果深度分析。</p>
+                    <a href="news/article23.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 广西联屏传媒科技有限公司 版权所有 | 南宁机场T2航站楼 &amp; 南珠高铁南玉段广告独家运营商</p>
-        <p style="margin-top:8px;">地址：广西南宁市东葛路绿地中央广场D1栋2908 | 电话：<a href="tel:18878774848">188-7877-4848</a> | 邮箱：<a href="mailto:57078889@qq.com">57078889@qq.com</a></p>
-    </footer>
+            <!-- Article 22 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/xingye-station-platform.jpg" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-data">投放策略</span><span class="news-card-date">2026-03</span></div>
+                    <h3><a href="news/article22.html">品牌如何选择高铁站与机场广告的组合投放策略？</a></h3>
+                    <p>高铁覆盖区域人群，机场锁定高端商旅——品牌如何根据营销目标合理分配预算，实现"高铁+机场"双场景联动。</p>
+                    <a href="news/article22.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Article 21 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/airport-ad-example.jpg" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-airport">机场广告</span><span class="news-card-date">2026-02</span></div>
+                    <h3><a href="news/article21.html">南宁机场广告投放效果评估：以某高端白酒品牌为例</a></h3>
+                    <p>本文以某高端白酒品牌在南宁机场T2航站楼的实际投放为案例，从曝光量、人群触达率、品牌认知提升等维度评估机场广告效果。</p>
+                    <a href="news/article21.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Article 20 -->
+            <div class="news-card">
+                <div class="news-card-img"><img src="assets/yulin-station-led.jpg" alt="" loading="lazy"></div>
+                <div class="news-card-body">
+                    <div class="news-card-meta"><span class="news-tag tag-rail">高铁广告</span><span class="news-card-date">2026-01</span></div>
+                    <h3><a href="news/article20.html">南珠高铁南玉段开通百日客流分析及广告价值解读</a></h3>
+                    <p>南玉高铁开通一百天，各站点客流数据已趋于稳定。本文基于运营百日的真实数据，重新评估高铁站广告投放价值。</p>
+                    <a href="news/article20.html" class="news-card-link">阅读全文
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pagination">
+            <a href="news.html" class="page-btn active">1</a>
+            <a href="news.html?page=2" class="page-btn">2</a>
+            <a href="news.html?page=3" class="page-btn">3</a>
+        </div>
+    </div>
+</section>
+
+<section class="cta-block">
+    <h2>想了解更多广告投放方案？</h2>
+    <p>打个电话或加个微信，直接聊</p>
+    <div class="cta-btns" style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="tel:18878774848" class="btn btn-gold" style="font-size:16px;padding:16px 40px">📞 电话咨询 188-7877-4848</a>
+        <a href="https://weixin.qq.com" class="btn btn-ghost" style="font-size:16px;padding:16px 40px">💬 微信咨询（同号）</a>
+    </div>
+</section>
+
+<footer>
+    <div class="f-links">
+        <a href="index.html">首页</a>
+        <a href="index.html#resources">媒体资源</a>
+        <a href="index.html#pricing">刊例价格</a>
+        <a href="about.html">关于我们</a>
+        <a href="index.html#contact">联系我们</a>
+    </div>
+    <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
+    <div class="f-div"></div>
+    <p>&copy; 2025 广西联屏传媒科技有限公司</p>
+</footer>
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
-
-// Banner 入场（直接播放）
-gsap.from(".page-header h2", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out", clearProps: "all" });
-gsap.from(".page-header p",  { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.2, clearProps: "all" });
+gsap.from(".page-banner h2", { y: 30, opacity: 0, duration: 0.7, ease: "power3.out" });
+gsap.from(".page-banner p",  { y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.2 });
 </script>
-
 </body>
 </html>

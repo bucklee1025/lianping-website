@@ -5,172 +5,309 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="baidu-site-verification" content="codeva-bx59ACTXML" />
     <meta name="msvalidate.01" content="6FCB1BF8FC10D7CD5EA74E953951889B" />
-    <title>联屏传媒 | 高铁+机场广告独家运营商</title>
+    <title>联屏传媒 | 广西高端出行场景广告独家运营商</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
+        /* ============================================================
+           RESET + ROOT
+           ============================================================ */
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --navy:#0f1a3c;--blue:#2563eb;--teal:#0d9488;
-            --amber:#f59e0b;--text:#1e293b;--body:#64748b;
-            --bg:#fff;--bg-sand:#fef9f0;--bg-sky:#f0f7ff;
-            --border:#e2e8f0;--radius:16px;--radius-sm:10px;
-            --shadow:0 2px 24px rgba(15,26,60,0.06);
-            --shadow-lg:0 8px 48px rgba(15,26,60,0.1);
+            --navy:#0b1628;
+            --navy-l:#13223b;
+            --blue:#1d6bf0;
+            --blue-dim:rgba(29,107,240,0.08);
+            --amber:#d97706;
+            --amber-l:rgba(217,119,6,0.1);
+            --text:#0f172a;
+            --body:#475569;
+            --bg:#fff;
+            --bg-warm:#faf8f5;
+            --bg-sky:rgba(29,107,240,0.03);
+            --border:rgba(15,23,42,0.06);
+            --radius:20px;
+            --radius-sm:12px;
+            --radius-pill:9999px;
+            --shadow:0 2px 24px rgba(11,22,40,0.05);
+            --shadow-lg:0 12px 56px rgba(11,22,40,0.1);
+            --font:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
         }
-        body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--body);background:var(--bg);line-height:1.6}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
-        /* HEADER */
-        header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-        .hdr{max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{height:36px}.logo h1{font-size:16px;font-weight:700;color:var(--text)}
-        .logo p{font-size:11px;color:var(--body)}
-        .hdr-r{display:flex;align-items:center;gap:16px;font-size:14px}
-        .hdr-r a{color:var(--body);text-decoration:none;font-weight:500}
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        header{position:sticky;top:0;z-index:100}
+        .hdr{background:rgba(255,255,255,0.88);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--border)}
+        .hdr-i{max-width:1200px;margin:0 auto;padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+        .logo img{height:34px}
+        .logo-txt{display:flex;flex-direction:column}
+        .logo-txt h1{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.3px}
+        .logo-txt span{font-size:11px;color:var(--body);font-weight:500}
+        .hdr-r{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:500}
+        .hdr-r a{color:var(--body);text-decoration:none;transition:color .25s}
         .hdr-r a:hover{color:var(--blue)}
-        .hdr-btn{background:var(--blue);color:#fff!important;padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px}
-        nav{border-top:1px solid var(--border);background:#fff}
-        .nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none}
+        .hdr-btn{background:var(--blue);color:#fff!important;padding:9px 22px;border-radius:var(--radius-pill);font-weight:600;font-size:13px;transition:all .3s cubic-bezier(.22,1,.36,1)}
+        .hdr-btn:hover{background:#1552c4;transform:translateY(-1px);box-shadow:0 4px 20px rgba(29,107,240,0.25)}
+
+        /* NAV */
+        nav{background:rgba(255,255,255,0.93)}
+        .nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;gap:4px}
         .nav-i::-webkit-scrollbar{display:none}
-        .nav-i a{color:var(--body);text-decoration:none;padding:12px 20px;font-size:14px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}
-        .nav-i a:hover,.nav-i a.active{color:var(--blue);border-bottom-color:var(--blue)}
+        .nav-i a{color:var(--body);text-decoration:none;padding:10px 18px;font-size:13px;font-weight:500;white-space:nowrap;border-radius:8px 8px 0 0;transition:all .25s;position:relative}
+        .nav-i a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--blue);border-radius:2px 2px 0 0;transform:translateX(-50%);transition:width .3s cubic-bezier(.22,1,.36,1)}
+        .nav-i a:hover{color:var(--blue);background:var(--blue-dim)}
+        .nav-i a.active{color:var(--blue);font-weight:600}
+        .nav-i a.active::after{width:60%}
 
-        /* HERO - full bleed image */
-        .hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 32px;overflow:hidden;
-            background:linear-gradient(135deg,#0f1a3c 0%,#1e3a5f 40%,#2563eb 100%)}
-        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(245,158,11,0.08) 0%,transparent 60%)}
-        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,var(--bg),transparent)}
-        /* 浮动装饰粒子 */
-        .hero-dot{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
-        .hero-dot-1{width:6px;height:6px;background:rgba(245,158,11,0.25);top:15%;left:10%}
-        .hero-dot-2{width:10px;height:10px;background:rgba(255,255,255,0.08);top:25%;right:18%}
-        .hero-dot-3{width:4px;height:4px;background:rgba(255,255,255,0.15);bottom:30%;left:22%}
-        .hero-dot-4{width:12px;height:12px;background:rgba(245,158,11,0.12);bottom:20%;right:12%}
-        .hero-dot-5{width:8px;height:8px;background:rgba(37,99,235,0.2);top:50%;left:5%}
-        .hero-dot-6{width:5px;height:5px;background:rgba(255,255,255,0.1);top:60%;right:8%}
-        /* 动态光晕 */
-        .hero-glow{position:absolute;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;
-            background:radial-gradient(circle,rgba(245,158,11,0.06),transparent 70%);
-            top:30%;left:50%;transform:translate(-50%,-50%)}
-        .hero-inner{max-width:720px;position:relative;z-index:1}
-        .hero .tag{display:inline-block;padding:6px 16px;border-radius:9999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);font-size:13px;font-weight:500;margin-bottom:24px;backdrop-filter:blur(8px)}
-        .hero h2{font-size:52px;font-weight:700;line-height:1.1;color:#fff;margin-bottom:20px}
-        .hero h2 span{background:linear-gradient(135deg,#f59e0b,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .hero-desc{font-size:18px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+        /* ============================================================
+           HERO - 实景背景
+           ============================================================ */
+        .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 32px 140px;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;z-index:0}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.35) saturate(1.1)}
+        .hero-overlay{position:absolute;inset:0;z-index:1;
+            background:linear-gradient(165deg,rgba(11,22,40,0.92) 0%,rgba(11,22,40,0.7) 40%,rgba(11,22,40,0.5) 100%)}
+        .hero-overlay::after{content:'';position:absolute;inset:0;
+            background:radial-gradient(ellipse at 30% 50%,rgba(29,107,240,0.10) 0%,transparent 60%),
+                       radial-gradient(ellipse at 70% 30%,rgba(217,119,6,0.06) 0%,transparent 50%)}
+        /* 噪点纹理 */
+        .hero-noise{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.035;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat:repeat;background-size:256px 256px}
+        .hero-dot{position:absolute;border-radius:50%;pointer-events:none;z-index:2}
+        .hero-dot-1{width:6px;height:6px;background:rgba(255,255,255,0.2);top:15%;left:12%}
+        .hero-dot-2{width:10px;height:10px;background:rgba(255,255,255,0.06);top:25%;right:18%}
+        .hero-dot-3{width:4px;height:4px;background:rgba(255,255,255,0.12);bottom:30%;left:22%}
+        .hero-dot-4{width:14px;height:14px;background:rgba(217,119,6,0.10);bottom:20%;right:12%}
+        .hero-dot-5{width:8px;height:8px;background:rgba(29,107,240,0.15);top:50%;left:5%}
+        .hero-dot-6{width:5px;height:5px;background:rgba(255,255,255,0.08);top:60%;right:8%}
+        .hero-inner{max-width:720px;position:relative;z-index:3}
+        .hero .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:var(--radius-pill);
+            background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-size:12px;font-weight:500;margin-bottom:28px;backdrop-filter:blur(8px);letter-spacing:0.3px}
+        .hero h2{font-size:clamp(34px,5vw,56px);font-weight:800;line-height:1.12;color:#fff;margin-bottom:18px;letter-spacing:-1px}
+        .hero h2 .glow{background:linear-gradient(135deg,#fbbf24,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-desc{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
         .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-        .btn{display:inline-block;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .25s}
-        .btn-gold{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;box-shadow:0 4px 20px rgba(245,158,11,0.3)}
-        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,0.4)}
-        .btn-ghost{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px)}
-        .btn-ghost:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-pill);font-size:15px;font-weight:600;text-decoration:none;
+            transition:all .35s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+        .btn-gold{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;box-shadow:0 4px 24px rgba(217,119,6,0.30)}
+        .btn-gold::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.1));opacity:0;transition:opacity .4s}
+        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(217,119,6,0.40)}
+        .btn-gold:hover::after{opacity:1}
+        .btn-gold:active{transform:translateY(0) scale(0.98)}
+        .btn-ghost{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px)}
+        .btn-ghost:hover{background:rgba(255,255,255,0.16);transform:translateY(-2px)}
+        .btn-ghost:active{transform:translateY(0) scale(0.98)}
 
-        /* DATA STRIP */
-        .strip{position:relative;z-index:2;max-width:1080px;margin:-64px auto 0;padding:0 24px}
-        .strip-inner{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-        .strip-item{text-align:center;padding:36px 20px;position:relative}
-        .strip-item+div{border-left:1px solid var(--border)}
-        .strip-num{font-size:40px;font-weight:700;color:var(--text);line-height:1;margin-bottom:6px}
-        .strip-num small{font-size:22px;color:var(--blue)}
+        /* 底部渐变过渡 */
+        .hero-fade{position:absolute;bottom:0;left:0;right:0;height:160px;z-index:2;
+            background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
+
+        /* ============================================================
+           DATA STRIP
+           ============================================================ */
+        .strip{position:relative;z-index:3;max-width:1080px;margin:-80px auto 0;padding:0 24px}
+        .strip-inner{background:#fff;border-radius:var(--radius);box-shadow:0 12px 56px rgba(11,22,40,0.08);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:1px solid var(--border)}
+        .strip-item{text-align:center;padding:40px 20px;position:relative}
+        .strip-item+.strip-item{border-left:1px solid var(--border)}
+        .strip-num{font-size:42px;font-weight:800;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-1px}
+        .strip-num small{font-size:22px;color:var(--blue);font-weight:700}
         .strip-label{font-size:13px;color:var(--body);font-weight:500}
 
-        /* SECTIONS */
-        .sec{padding:100px 32px}.sec-sand{background:var(--bg-sand)}.sec-sky{background:var(--bg-sky)}
+        /* ============================================================
+           SECTIONS
+           ============================================================ */
+        .sec{padding:110px 32px}
+        .sec-warm{background:var(--bg-warm)}
+        .sec-sky{background:var(--bg-sky)}
         .sec-inner{max-width:1080px;margin:0 auto}
         .sec-head{text-align:center;margin-bottom:64px}
-        .sec-head .pill{display:inline-block;padding:5px 14px;border-radius:9999px;background:rgba(37,99,235,0.08);color:var(--blue);font-size:13px;font-weight:600;margin-bottom:16px}
-        .sec-head h2{font-size:36px;font-weight:700;color:var(--text);margin-bottom:12px}
+        .sec-head .pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:var(--radius-pill);
+            background:var(--blue-dim);color:var(--blue);font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:16px;text-transform:uppercase}
+        .sec-head h2{font-size:clamp(28px,3vw,38px);font-weight:800;color:var(--text);margin-bottom:12px;letter-spacing:-0.5px}
         .sec-head p{font-size:16px;color:var(--body);max-width:540px;margin:0 auto}
-        .sec-head .line{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));margin:16px auto 0;border-radius:2px}
+        .sec-head .line{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));margin:18px auto 0;border-radius:2px}
 
-        /* CARDS */
-        .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-        .card{background:#fff;border-radius:var(--radius);padding:0;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;transition:all .4s cubic-bezier(.22,1,.36,1)}
-        .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue)}
-        .card.featured{border-color:var(--blue);box-shadow:var(--shadow-lg)}
-        .card.featured:hover{border-color:var(--amber);box-shadow:0 8px 48px rgba(245,158,11,0.15)}
-        .card .ctop{height:5px}.card.featured .ctop{background:linear-gradient(90deg,var(--blue),var(--amber))}
-        .card .cbody{padding:32px 28px}
-        .card .badge{display:inline-block;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;margin-bottom:14px}
-        .b-rail{background:rgba(37,99,235,0.08);color:var(--blue)}
-        .b-air{background:rgba(245,158,11,0.1);color:var(--amber)}
-        .card h3{font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text)}
-        .card .loc{font-size:13px;color:var(--body);margin-bottom:18px}
-        .specs{display:flex;flex-direction:column;gap:7px}
-        .sr{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)}
+        /* ============================================================
+           MEDIA RESOURCE CARDS - 嵌套架构 + 实景图
+           ============================================================ */
+        .card-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+        .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column}
+        .card.featured{box-shadow:0 12px 56px rgba(11,22,40,0.08);border:1px solid var(--border)}
+        .card:not(.featured){box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border)}
+        .card:hover{transform:translateY(-8px);box-shadow:0 24px 80px rgba(11,22,40,0.12)}
+        .card.featured:hover{box-shadow:0 24px 80px rgba(11,22,40,0.15);border-color:rgba(29,107,240,0.2)}
+        /* 卡片顶部图片区 */
+        .card-img{width:100%;height:200px;overflow:hidden;position:relative}
+        .card.featured .card-img{height:240px}
+        .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+        .card:hover .card-img img{transform:scale(1.06)}
+        .card-img .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,40,0.4) 0%,transparent 60%)}
+        .card-img .badge{position:absolute;bottom:14px;left:16px;display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:var(--radius-pill);
+            font-size:11px;font-weight:600;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+        .badge-rail{background:rgba(29,107,240,0.85);color:#fff}
+        .badge-air{background:rgba(217,119,6,0.85);color:#fff}
+        /* 卡片内容 */
+        .card-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column}
+        .card-body h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px}
+        .card-body .loc{font-size:13px;color:var(--body);margin-bottom:20px}
+        .specs{display:flex;flex-direction:column;gap:6px;flex:1}
+        .sr{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--border)}
         .sr:last-child{border-bottom:none}
         .sl{color:var(--body)}.sv{font-weight:600;color:var(--text)}
+        .card-foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
+        .card-foot a{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:13px;font-weight:600;text-decoration:none;transition:gap .25s}
+        .card-foot a:hover{gap:10px}
 
-        /* ADVANTAGES */
-        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-        .adv-item{text-align:center;padding:40px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);transition:all .4s cubic-bezier(.22,1,.36,1)}
-        .adv-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-        .adv-icon{width:56px;height:56px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(13,148,136,0.08))}
+        /* ============================================================
+           ADVANTAGES - 交错布局 + SVG图标
+           ============================================================ */
+        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+        .adv-item{text-align:left;padding:36px 28px;background:#fff;border-radius:var(--radius);
+            box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border);
+            transition:all .4s cubic-bezier(.22,1,.36,1)}
+        .adv-item:hover{transform:translateY(-6px);box-shadow:0 12px 48px rgba(11,22,40,0.08);border-color:rgba(29,107,240,0.15)}
+        .adv-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:20px}
+        .adv-icon.ico-lock{background:linear-gradient(135deg,rgba(29,107,240,0.1),rgba(29,107,240,0.04));color:var(--blue)}
+        .adv-icon.ico-target{background:linear-gradient(135deg,rgba(217,119,6,0.1),rgba(217,119,6,0.04));color:var(--amber)}
+        .adv-icon.ico-chart{background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.04));color:#10b981}
+        .adv-icon.ico-globe{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(139,92,246,0.04));color:#8b5cf6}
         .adv-item h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--text)}
-        .adv-item p{font-size:14px;color:var(--body);line-height:1.6}
+        .adv-item p{font-size:14px;color:var(--body);line-height:1.7}
 
-        /* PRICING */
-        .price-block{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-        .price-head{background:var(--navy);color:#fff;padding:24px 28px}
-        .price-head h3{font-size:17px;font-weight:700}
-        .price-head p{opacity:.7;font-size:13px;margin-top:4px}
+        /* ============================================================
+           PRICING
+           ============================================================ */
+        .price-wrap{display:grid;gap:32px}
+        .price-block{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 24px rgba(11,22,40,0.04)}
+        .price-block:hover{box-shadow:0 12px 48px rgba(11,22,40,0.08)}
+        .price-head{background:var(--navy);color:#fff;padding:24px 32px}
+        .price-head h3{font-size:16px;font-weight:700;letter-spacing:-0.3px}
+        .price-head p{opacity:.6;font-size:12px;margin-top:5px}
         .price-grid{display:grid;grid-template-columns:repeat(5,1fr)}
-        .price-col{padding:24px 16px;text-align:center;border-right:1px solid var(--border)}
+        .price-col{padding:24px 16px;text-align:center;border-right:1px solid var(--border);transition:background .3s}
         .price-col:last-child{border-right:none}
-        .price-col .period{font-size:13px;font-weight:600;color:var(--body);margin-bottom:12px}
-        .price-item{padding:8px;border-radius:8px;background:var(--bg-sky)}
-        .price-item .dur{font-size:11px;color:var(--body)}.price-item .amt{font-size:17px;font-weight:700;color:var(--text)}
+        .price-col:hover{background:var(--bg-sky)}
+        .price-col .period{font-size:13px;font-weight:600;color:var(--body);margin-bottom:14px}
+        .price-item{padding:10px 8px;border-radius:var(--radius-sm);background:var(--bg-sky);transition:all .3s}
+        .price-item:hover{background:var(--blue-dim)}
+        .price-item .dur{font-size:11px;color:var(--body);font-weight:500}.price-item .amt{font-size:17px;font-weight:700;color:var(--text);margin-top:2px}
 
-        /* INDUSTRIES */
+        /* ============================================================
+           INDUSTRIES
+           ============================================================ */
         .ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-        .ind-item{text-align:center;padding:28px 14px;background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .35s cubic-bezier(.22,1,.36,1)}
-        .ind-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue);background:var(--bg-sky)}
-        .ind-item .ico{font-size:26px;margin-bottom:8px}.ind-item .nm{font-size:13px;font-weight:600;color:var(--text)}
+        .ind-item{text-align:center;padding:28px 14px;background:#fff;border-radius:var(--radius-sm);
+            border:1px solid var(--border);transition:all .35s cubic-bezier(.22,1,.36,1);cursor:default}
+        .ind-item:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(11,22,40,0.06);border-color:var(--blue);background:var(--bg-sky)}
+        .ind-item .ico{font-size:26px;margin-bottom:10px;display:block;line-height:1}
+        .ind-item .nm{font-size:13px;font-weight:600;color:var(--text)}
 
-        /* CTA */
-        .cta{background:linear-gradient(135deg,#0f1a3c,#1e3a5f);color:#fff;padding:90px 32px;text-align:center}
-        .cta h2{font-size:34px;font-weight:700;margin-bottom:14px}
-        .cta p{opacity:.65;font-size:16px;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto}
+        /* ============================================================
+           CTA
+           ============================================================ */
+        .cta{position:relative;padding:110px 32px;text-align:center;overflow:hidden;
+            background:linear-gradient(165deg,#0b1628 0%,#13223b 40%,#1a3a5c 100%)}
+        .cta-noise{position:absolute;inset:0;pointer-events:none;opacity:0.025;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat:repeat;background-size:256px 256px}
+        .cta-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+        .cta h2{font-size:clamp(28px,3vw,36px);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.5px}
+        .cta p{color:rgba(255,255,255,0.55);font-size:16px;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
         .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
         .cta .btn-gold{font-size:16px;padding:16px 40px}
         .cta .btn-ghost{font-size:16px;padding:16px 40px}
-        .ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:36px auto 0}
-        .ccard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:18px}
-        .ccard .lbl{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:4px;font-weight:500}
-        .ccard .val{font-size:15px;font-weight:600}.ccard a{color:#fff;text-decoration:none}
+        .ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:40px auto 0}
+        .ccard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);padding:20px;transition:background .3s}
+        .ccard:hover{background:rgba(255,255,255,.08)}
+        .ccard .lbl{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase}
+        .ccard .val{font-size:15px;font-weight:600;color:rgba(255,255,255,.85)}
+        .ccard a{color:rgba(255,255,255,.85);text-decoration:none;transition:color .25s}
+        .ccard a:hover{color:#fff}
 
-        /* FOOTER */
-        footer{background:#0a1620;color:rgba(255,255,255,.4);padding:32px;text-align:center;font-size:13px}
-        footer a{color:rgba(255,255,255,.6);text-decoration:none}
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        footer{background:#070e18;color:rgba(255,255,255,.3);padding:36px 32px;text-align:center;font-size:13px}
+        footer a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s}
+        footer a:hover{color:rgba(255,255,255,.8)}
+        footer .f-div{width:100px;height:1px;background:rgba(255,255,255,.08);margin:12px auto}
+        footer .f-links{display:flex;justify-content:center;gap:24px;margin-bottom:14px}
+        footer .f-links a{font-size:12px}
 
+        /* ============================================================
+           ANIMATION HELPERS (GSAP用)
+           ============================================================ */
+        .reveal{opacity:0;transform:translateY(40px)}
+        .reveal-up{opacity:0;transform:translateY(50px)}
+        .reveal-scale{opacity:0;transform:scale(0.92)}
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media(max-width:1024px){
+            .card-grid{grid-template-columns:1fr 1fr}
+            .card.featured{grid-column:1/-1}
+            .card.featured .card-img{height:260px}
+            .adv-grid{grid-template-columns:repeat(2,1fr)}
+            .ind-grid{grid-template-columns:repeat(4,1fr)}
+        }
         @media(max-width:900px){
-            .hero h2{font-size:34px}.hero{min-height:auto;padding:70px 24px 100px}
-            .hdr,.nav-i{padding-left:20px;padding-right:20px}
-            .strip-inner{grid-template-columns:repeat(2,1fr)}.strip{margin-top:-40px}
-            .card-grid{grid-template-columns:1fr}.adv-grid{grid-template-columns:repeat(2,1fr)}
-            .ind-grid{grid-template-columns:repeat(3,1fr)}.price-grid{grid-template-columns:repeat(3,1fr)}
-            .ccards{grid-template-columns:1fr}.hdr-r{display:none}.sec{padding:70px 24px}
+            .hero h2{font-size:clamp(28px,5vw,36px)}.hero{min-height:auto;padding:80px 24px 130px}
+            .hdr-i,.nav-i{padding-left:20px;padding-right:20px}
+            .strip-inner{grid-template-columns:repeat(2,1fr)}.strip{margin-top:-50px}
+            .price-grid{grid-template-columns:repeat(3,1fr)}.ccards{grid-template-columns:1fr}
+            .hdr-r{gap:10px}
+            .hdr-r .hdr-phone{margin-right:0}
+            .sec{padding:80px 24px}
+        }
+        @media(max-width:768px){
+            .card-grid{grid-template-columns:1fr}
+            .card.featured .card-img{height:200px}
+            .adv-grid{grid-template-columns:repeat(2,1fr)}
+            .ind-grid{grid-template-columns:repeat(3,1fr)}
+            .hero-desc{font-size:15px}
+            .hdr-r .hdr-link{display:none}
         }
         @media(max-width:600px){
-            .hero h2{font-size:28px}.adv-grid{grid-template-columns:1fr}
+            .hero h2{font-size:26px}.adv-grid{grid-template-columns:1fr}
             .ind-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:1fr 1fr}
-            .sec-head h2{font-size:28px}
+            .sec-head h2{font-size:26px}
+            .strip-num{font-size:32px}.strip-item{padding:28px 16px}
+            .hero-desc{font-size:14px}
+            .btn{padding:12px 24px;font-size:14px}
         }
     </style>
-    <!-- GSAP Animation -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
 <header>
     <div class="hdr">
-        <div class="logo">
-            <img src="assets/logo.png" alt="联屏传媒">
-            <div><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div>
-        </div>
-        <div class="hdr-r">
-            <a href="tel:18878774848">188-7877-4848</a>
-            <a href="mailto:57078889@qq.com">57078889@qq.com</a>
-            <a href="#contact" class="hdr-btn">立即咨询</a>
+        <div class="hdr-i">
+            <a href="#home" class="logo">
+                <img src="assets/logo.png" alt="联屏传媒">
+                <div class="logo-txt">
+                    <h1>联屏传媒</h1>
+                    <span>广西联屏传媒科技有限公司</span>
+                </div>
+            </a>
+            <div class="hdr-r">
+                <a href="tel:18878774848" class="hdr-link">📞 188-7877-4848</a>
+                <a href="mailto:57078889@qq.com" class="hdr-link">📧 57078889@qq.com</a>
+                <a href="#contact" class="hdr-btn">立即咨询</a>
+            </div>
         </div>
     </div>
     <nav>
@@ -187,25 +324,43 @@
     </nav>
 </header>
 
+<!-- ============================================================
+     HERO - 带实景照片背景
+     ============================================================ -->
 <section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="assets/yulin-station-led.jpg" alt="玉林北站LED大屏实景">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-noise"></div>
+
     <div class="hero-dot hero-dot-1"></div>
     <div class="hero-dot hero-dot-2"></div>
     <div class="hero-dot hero-dot-3"></div>
     <div class="hero-dot hero-dot-4"></div>
     <div class="hero-dot hero-dot-5"></div>
     <div class="hero-dot hero-dot-6"></div>
-    <div class="hero-glow"></div>
+
     <div class="hero-inner">
-        <div class="tag">✦ 南珠高铁南玉段 · 南宁机场T2 独家运营</div>
-        <h2>广西高端出行场景<br><span>广告独家运营商</span></h2>
+        <div class="tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            南珠高铁南玉段 · 南宁机场T2 独家运营
+        </div>
+        <h2>广西高端出行场景<br><span class="glow">广告独家运营商</span></h2>
         <p class="hero-desc">每年2600万人次路过我们的广告屏——南玉高铁三站加南宁机场，商务旅客占八成以上</p>
         <div class="hero-btns">
             <a href="#contact" class="btn btn-gold">获取专属投放方案</a>
-            <a href="#resources" class="btn btn-ghost">查看媒体资源 →</a>
+            <a href="#resources" class="btn btn-ghost">查看媒体资源
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
         </div>
     </div>
+    <div class="hero-fade"></div>
 </section>
 
+<!-- ============================================================
+     DATA STRIP
+     ============================================================ -->
 <div class="strip">
     <div class="strip-inner">
         <div class="strip-item"><div class="strip-num">3<small>+</small></div><div class="strip-label">高铁站独家运营</div></div>
@@ -215,19 +370,32 @@
     </div>
 </div>
 
+<!-- ============================================================
+     MEDIA RESOURCES - 图片卡片
+     ============================================================ -->
 <section class="sec" id="resources">
     <div class="sec-inner">
         <div class="sec-head">
-            <div class="pill">Media Resources</div>
+            <div class="pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Media Resources
+            </div>
             <h2>核心媒体资源</h2>
             <p>南玉高铁三站 + 南宁机场候机区，出行人群就是你的目标客群</p>
             <div class="line"></div>
         </div>
         <div class="card-grid">
+            <!-- 玉林北站 · 旗舰 -->
             <div class="card featured">
-                <div class="ctop"></div>
-                <div class="cbody">
-                    <span class="badge b-rail">高铁媒体 · 旗舰站</span>
+                <div class="card-img">
+                    <img src="assets/yulin-station-led.jpg" alt="玉林北站LED大屏">
+                    <div class="overlay"></div>
+                    <span class="badge badge-rail">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        高铁媒体 · 旗舰站
+                    </span>
+                </div>
+                <div class="card-body">
                     <h3>玉林北站</h3>
                     <p class="loc">候车厅 / 站台层 / 出站层</p>
                     <div class="specs">
@@ -238,12 +406,25 @@
                         <div class="sr"><span class="sl">出站层包柱</span><span class="sv">1组6个24面 / 15万/月</span></div>
                         <div class="sr"><span class="sl">其他灯箱</span><span class="sv">高架层+通道共22个</span></div>
                     </div>
+                    <div class="card-foot">
+                        <a href="#contact">了解详情
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- 横州站/兴业南站 -->
             <div class="card">
-                <div class="ctop"></div>
-                <div class="cbody">
-                    <span class="badge b-rail">高铁媒体</span>
+                <div class="card-img">
+                    <img src="assets/hengzhou-station-platform.jpg" alt="横州站站台">
+                    <div class="overlay"></div>
+                    <span class="badge badge-rail">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        高铁媒体
+                    </span>
+                </div>
+                <div class="card-body">
                     <h3>横州站 / 兴业南站</h3>
                     <p class="loc">候车厅 / 出站厅 / 连廊 / 地道</p>
                     <div class="specs">
@@ -254,12 +435,25 @@
                         <div class="sr"><span class="sl">区域人口</span><span class="sv">覆盖人口2000万</span></div>
                         <div class="sr"><span class="sl">日均客流</span><span class="sv">3万人次</span></div>
                     </div>
+                    <div class="card-foot">
+                        <a href="#contact">了解详情
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- 南宁机场T2 -->
             <div class="card">
-                <div class="ctop"></div>
-                <div class="cbody">
-                    <span class="badge b-air">机场媒体</span>
+                <div class="card-img">
+                    <img src="assets/airport-ad-example.jpg" alt="南宁机场T2候机区">
+                    <div class="overlay"></div>
+                    <span class="badge badge-air">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2  15 22 11 13 2 9z"/></svg>
+                        机场媒体
+                    </span>
+                </div>
+                <div class="card-body">
                     <h3>南宁机场T2航站楼</h3>
                     <p class="loc">登机口候机区 - 1/2/3楼</p>
                     <div class="specs">
@@ -270,129 +464,214 @@
                         <div class="sr"><span class="sl">日播放次数</span><span class="sv">2160次</span></div>
                         <div class="sr"><span class="sl">覆盖航线</span><span class="sv">153条国内外航线</span></div>
                     </div>
+                    <div class="card-foot">
+                        <a href="#contact">了解详情
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="sec sec-sky" id="advantages">
+<!-- ============================================================
+     ADVANTAGES - SVG图标
+     ============================================================ -->
+<section class="sec sec-warm" id="advantages">
     <div class="sec-inner">
         <div class="sec-head">
-            <div class="pill">Why Choose Us</div>
+            <div class="pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Why Choose Us
+            </div>
             <h2>为什么选择联屏传媒</h2>
             <p>独家授权 · 高铁加机场 · 商务人群集中</p>
             <div class="line"></div>
         </div>
         <div class="adv-grid">
-            <div class="adv-item"><div class="adv-icon">🔒</div><h3>独家运营</h3><p>机场和高铁的广告位都是独家授权，想投的人只能找我们</p></div>
-            <div class="adv-item"><div class="adv-icon">🎯</div><h3>精准人群</h3><p>八成以上是商务出行旅客，年均收入27万往上走</p></div>
-            <div class="adv-item"><div class="adv-icon">📈</div><h3>高频曝光</h3><p>高铁站一天几万人进进出出，机场刷屏机一天播两千多次</p></div>
-            <div class="adv-item"><div class="adv-icon">🌐</div><h3>场景营销</h3><p>从高铁站出来进机场候机，旅客的出行路上全是你的广告</p></div>
+            <div class="adv-item">
+                <div class="adv-icon ico-lock">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h3>独家运营</h3>
+                <p>机场和高铁的广告位都是独家授权，想投的人只能找我们</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon ico-target">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <h3>精准人群</h3>
+                <p>八成以上是商务出行旅客，年均收入27万往上走</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon ico-chart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <h3>高频曝光</h3>
+                <p>高铁站一天几万人进进出出，机场刷屏机一天播两千多次</p>
+            </div>
+            <div class="adv-item">
+                <div class="adv-icon ico-globe">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3>场景营销</h3>
+                <p>从高铁站出来进机场候机，旅客的出行路上全是你的广告</p>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- ============================================================
+     PRICING
+     ============================================================ -->
 <section class="sec" id="pricing">
     <div class="sec-inner">
         <div class="sec-head">
-            <div class="pill">Pricing</div>
+            <div class="pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Pricing
+            </div>
             <h2>高铁 + 机场广告刊例价</h2>
             <p>南珠高铁南玉段三大站点 · 南宁机场T2登机口刷屏机 · 独家运营</p>
             <div class="line"></div>
         </div>
-        <div class="price-block" style="margin-bottom:36px">
-            <div class="price-head"><h3>🚄 南珠高铁南玉段 — 玉林北站（旗舰站）</h3><p>覆盖人口2000万 | 日均客流3万+ | 商务人群占比超80%</p></div>
-            <div class="price-grid">
-                <div class="price-col"><div class="period">候车厅灯箱</div><div class="price-item"><div class="dur">12m×3.2m / 个</div><div class="amt">8万/月</div></div></div>
-                <div class="price-col"><div class="period">LED巨幕</div><div class="price-item"><div class="dur">152㎡ / 15s×150次</div><div class="amt">15万/月</div></div></div>
-                <div class="price-col"><div class="period">刷屏机组</div><div class="price-item"><div class="dur">14块28面</div><div class="amt">6万/组/月</div></div></div>
-                <div class="price-col"><div class="period">出站口灯箱</div><div class="price-item"><div class="dur">13.7m×4.4m 黄金位</div><div class="amt">12万/月</div></div></div>
-                <div class="price-col"><div class="period">出站层包柱</div><div class="price-item"><div class="dur">1组6个24面</div><div class="amt">15万/组/月</div></div></div>
+        <div class="price-wrap">
+            <div class="price-block">
+                <div class="price-head"><h3>🚄 南珠高铁南玉段 — 玉林北站（旗舰站）</h3><p>覆盖人口2000万 | 日均客流3万+ | 商务人群占比超80%</p></div>
+                <div class="price-grid">
+                    <div class="price-col"><div class="period">候车厅灯箱</div><div class="price-item"><div class="dur">12m×3.2m / 个</div><div class="amt">8万/月</div></div></div>
+                    <div class="price-col"><div class="period">LED巨幕</div><div class="price-item"><div class="dur">152㎡ / 15s×150次</div><div class="amt">15万/月</div></div></div>
+                    <div class="price-col"><div class="period">刷屏机组</div><div class="price-item"><div class="dur">14块28面</div><div class="amt">6万/组/月</div></div></div>
+                    <div class="price-col"><div class="period">出站口灯箱</div><div class="price-item"><div class="dur">13.7m×4.4m 黄金位</div><div class="amt">12万/月</div></div></div>
+                    <div class="price-col"><div class="period">出站层包柱</div><div class="price-item"><div class="dur">1组6个24面</div><div class="amt">15万/组/月</div></div></div>
+                </div>
             </div>
-        </div>
-        <div class="price-block">
-            <div class="price-head"><h3>✈️ 南宁机场T2 — 全屏联网广告（36屏同步）</h3><p>每天60次×36屏=2160次/天 | 播放时段：7:30-0:00</p></div>
-            <div class="price-grid">
-                <div class="price-col"><div class="period">一周</div><div class="price-item"><div class="dur">5秒</div><div class="amt">3.89万</div></div><div class="price-item" style="margin-top:6px"><div class="dur">15秒</div><div class="amt">4.89万</div></div></div>
-                <div class="price-col"><div class="period">一个月</div><div class="price-item"><div class="dur">5秒</div><div class="amt">23万</div></div><div class="price-item" style="margin-top:6px"><div class="dur">15秒</div><div class="amt">33万</div></div></div>
-                <div class="price-col"><div class="period">一个季度</div><div class="price-item"><div class="dur">5秒</div><div class="amt">66万</div></div><div class="price-item" style="margin-top:6px"><div class="dur">15秒</div><div class="amt">76万</div></div></div>
-                <div class="price-col"><div class="period">半年</div><div class="price-item"><div class="dur">5秒</div><div class="amt">138万</div></div><div class="price-item" style="margin-top:6px"><div class="dur">15秒</div><div class="amt">238万</div></div></div>
-                <div class="price-col"><div class="period">一年</div><div class="price-item"><div class="dur">5秒</div><div class="amt">198万</div></div><div class="price-item" style="margin-top:6px"><div class="dur">15秒</div><div class="amt">298万</div></div></div>
+            <div class="price-block">
+                <div class="price-head"><h3>✈️ 南宁机场T2 — 全屏联网广告（36屏同步）</h3><p>每天60次×36屏=2160次/天 | 播放时段：7:30-0:00</p></div>
+                <div class="price-grid">
+                    <div class="price-col"><div class="period">一周</div><div class="price-item"><div class="dur">5秒</div><div class="amt">3.89万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">4.89万</div></div></div>
+                    <div class="price-col"><div class="period">一个月</div><div class="price-item"><div class="dur">5秒</div><div class="amt">23万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">33万</div></div></div>
+                    <div class="price-col"><div class="period">一个季度</div><div class="price-item"><div class="dur">5秒</div><div class="amt">66万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">76万</div></div></div>
+                    <div class="price-col"><div class="period">半年</div><div class="price-item"><div class="dur">5秒</div><div class="amt">138万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">238万</div></div></div>
+                    <div class="price-col"><div class="period">一年</div><div class="price-item"><div class="dur">5秒</div><div class="amt">198万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">298万</div></div></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="sec sec-sand" id="industries">
+<!-- ============================================================
+     INDUSTRIES
+     ============================================================ -->
+<section class="sec sec-warm" id="industries">
     <div class="sec-inner">
-        <div class="sec-head"><div class="pill">Industries</div><h2>适用行业</h2><p>高铁出站、机场候机——这些场景下什么广告都有人看</p><div class="line"></div></div>
+        <div class="sec-head">
+            <div class="pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Industries
+            </div>
+            <h2>适用行业</h2>
+            <p>高铁出站、机场候机——这些场景下什么广告都有人看</p>
+            <div class="line"></div>
+        </div>
         <div class="ind-grid">
-            <div class="ind-item"><div class="ico">🏠</div><div class="nm">房地产</div></div>
-            <div class="ind-item"><div class="ico">🚗</div><div class="nm">汽车</div></div>
-            <div class="ind-item"><div class="ico">🏦</div><div class="nm">金融保险</div></div>
-            <div class="ind-item"><div class="ico">🍽️</div><div class="nm">餐饮食品</div></div>
-            <div class="ind-item"><div class="ico">🎭</div><div class="nm">文旅景区</div></div>
-            <div class="ind-item"><div class="ico">📱</div><div class="nm">科技数码</div></div>
-            <div class="ind-item"><div class="ico">💃</div><div class="nm">美容护肤</div></div>
-            <div class="ind-item"><div class="ico">🎓</div><div class="nm">教育培训</div></div>
-            <div class="ind-item"><div class="ico">🏢</div><div class="nm">酒水饮料</div></div>
-            <div class="ind-item"><div class="ico">💊</div><div class="nm">医疗健康</div></div>
-            <div class="ind-item"><div class="ico">💼</div><div class="nm">政务宣传</div></div>
-            <div class="ind-item"><div class="ico">✨</div><div class="nm">品牌形象</div></div>
+            <div class="ind-item"><span class="ico">🏠</span><span class="nm">房地产</span></div>
+            <div class="ind-item"><span class="ico">🚗</span><span class="nm">汽车</span></div>
+            <div class="ind-item"><span class="ico">🏦</span><span class="nm">金融保险</span></div>
+            <div class="ind-item"><span class="ico">🍽️</span><span class="nm">餐饮食品</span></div>
+            <div class="ind-item"><span class="ico">🎭</span><span class="nm">文旅景区</span></div>
+            <div class="ind-item"><span class="ico">📱</span><span class="nm">科技数码</span></div>
+            <div class="ind-item"><span class="ico">💃</span><span class="nm">美容护肤</span></div>
+            <div class="ind-item"><span class="ico">🎓</span><span class="nm">教育培训</span></div>
+            <div class="ind-item"><span class="ico">🏢</span><span class="nm">酒水饮料</span></div>
+            <div class="ind-item"><span class="ico">💊</span><span class="nm">医疗健康</span></div>
+            <div class="ind-item"><span class="ico">💼</span><span class="nm">政务宣传</span></div>
+            <div class="ind-item"><span class="ico">✨</span><span class="nm">品牌形象</span></div>
         </div>
     </div>
 </section>
 
+<!-- ============================================================
+     CTA
+     ============================================================ -->
 <section class="cta" id="contact">
-    <h2>立即咨询广告投放方案</h2>
-    <p>想了解你的品牌在这个场景里效果怎么样？打个电话或加个微信，直接聊</p>
-    <div class="cta-btns">
-        <a href="tel:18878774848" class="btn btn-gold">📞 电话咨询 188-7877-4848</a>
-        <a href="https://weixin.qq.com" class="btn btn-ghost">💬 微信咨询（同号）</a>
-    </div>
-    <div class="ccards">
-        <div class="ccard"><div class="lbl">电话</div><div class="val"><a href="tel:18878774848">188-7877-4848</a></div></div>
-        <div class="ccard"><div class="lbl">邮箱</div><div class="val"><a href="mailto:57078889@qq.com">57078889@qq.com</a></div></div>
-        <div class="ccard"><div class="lbl">地址</div><div class="val">南宁东葛路绿地中央广场D1-2908</div></div>
+    <div class="cta-noise"></div>
+    <div class="cta-inner">
+        <h2>立即咨询广告投放方案</h2>
+        <p>想了解你的品牌在这个场景里效果怎么样？打个电话或加个微信，直接聊</p>
+        <div class="cta-btns">
+            <a href="tel:18878774848" class="btn btn-gold">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                电话咨询 188-7877-4848
+            </a>
+            <a href="https://weixin.qq.com" class="btn btn-ghost">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                微信咨询（同号）
+            </a>
+        </div>
+        <div class="ccards">
+            <div class="ccard"><div class="lbl">📞 电话</div><div class="val"><a href="tel:18878774848">188-7877-4848</a></div></div>
+            <div class="ccard"><div class="lbl">✉️ 邮箱</div><div class="val"><a href="mailto:57078889@qq.com">57078889@qq.com</a></div></div>
+            <div class="ccard"><div class="lbl">📍 地址</div><div class="val">南宁东葛路绿地中央广场D1-2908</div></div>
+        </div>
     </div>
 </section>
 
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer>
+    <div class="f-links">
+        <a href="about.html">关于我们</a>
+        <a href="#resources">媒体资源</a>
+        <a href="#pricing">刊例价格</a>
+        <a href="news.html">新闻资讯</a>
+        <a href="#contact">联系我们</a>
+    </div>
     <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
-    <p style="margin-top:4px">&copy; 2025 广西联屏传媒科技有限公司</p>
+    <div class="f-div"></div>
+    <p>&copy; 2025 广西联屏传媒科技有限公司</p>
 </footer>
 
+<!-- ============================================================
+     GSAP 动效
+     ============================================================ -->
 <script>
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-// ===== 浮动装饰粒子（持续运行，不影响内容可见性） =====
+// ── 粒子浮动 ──
 gsap.to(".hero-dot-1", { y: -30, x: 10, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-2", { y: 20, x: -15, duration: 5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-3", { y: -15, x: 8, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-4", { y: 25, x: -10, duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-5", { y: -20, x: 12, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
 gsap.to(".hero-dot-6", { y: 15, x: -8, duration: 3.8, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-glow", { scale: 1.3, opacity: 0.6, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
 
-// ===== Hero 入场动画（直接播放，不用ScrollTrigger） =====
+// ── Hero 入场 ──
 const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 heroTl
-  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, 0)
-  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7, clearProps: "all" }, 0.15)
-  .from(".hero h2 span",   { scale: 0.85, opacity: 0, duration: 0.6, clearProps: "all" }, 0.35)
-  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, 0.35)
-  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, clearProps: "all" }, 0.55);
+  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6 }, 0)
+  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7 }, 0.15)
+  .from(".hero h2 .glow",  { scale: 0.85, opacity: 0, duration: 0.6 }, 0.35)
+  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6 }, 0.35)
+  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, 0.55)
+  .from(".hero-dot",       { opacity: 0, duration: 0.4, stagger: 0.08 }, 0.2);
 
-// ===== 数据条数字动画（滚动到时触发计数，不影响可见性） =====
+// ── Strip 入场 ──
+gsap.from(".strip", {
+  y: 80, opacity: 0, duration: 0.8, ease: "power3.out",
+  scrollTrigger: { trigger: ".strip", start: "top 90%", toggleActions: "play none none none" }
+});
+
+// ── 数字计数 ──
 gsap.utils.toArray(".strip-num").forEach(el => {
   const finalText = el.textContent;
   const match = finalText.match(/^([\d,]+)(.*)$/);
   if (!match) return;
   const rawNum = parseFloat(match[1].replace(/,/g, ""));
   const unit = match[2];
-  
   ScrollTrigger.create({
     trigger: el.closest(".strip-item"),
     start: "top 85%",
@@ -410,6 +689,28 @@ gsap.utils.toArray(".strip-num").forEach(el => {
     }
   });
 });
+
+// ── 滚动入场动画 ──
+function scrollReveal(selector, fromVars = {}) {
+  gsap.from(selector, {
+    y: 50, opacity: 0, duration: 0.8, ease: "power3.out",
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: selector,
+      start: "top 82%",
+      toggleActions: "play none none none"
+    },
+    ...fromVars
+  });
+}
+
+scrollReveal(".sec-head");
+scrollReveal(".card-grid .card", { y: 40, stagger: 0.12 });
+scrollReveal(".adv-grid .adv-item", { stagger: 0.08 });
+scrollReveal(".price-block", { y: 30, stagger: 0.15 });
+scrollReveal(".ind-grid .ind-item", { stagger: 0.04 });
+scrollReveal(".cta-inner", { y: 30 });
+scrollReveal(".ccards .ccard", { stagger: 0.08 });
 </script>
 
 </body>
