@@ -169,8 +169,8 @@
            ============================================================ */
         .card-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
         .station-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1200px;margin:0 auto}
-        .station-detail-card{transition:all .4s cubic-bezier(.22,1,.36,1);opacity:1}
-        .station-detail-card:hover{transform:translateY(-4px)}
+        .station-detail-card{transition:all .8s cubic-bezier(.22,1,.36,1);opacity:1}
+        .station-detail-card:hover{transform:translateY(-4px)!important}
         .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column;opacity:1}
         .card.featured{box-shadow:0 12px 56px rgba(11,22,40,0.08);border:1px solid var(--border)}
         .card:not(.featured){box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border)}
@@ -974,7 +974,16 @@ function scrollReveal(selector, fromVars = {}) {
 
 scrollReveal(".sec-head");
 scrollReveal(".card-grid .card", { y: 40, stagger: 0.12, immediateRender: false });
-scrollReveal(".station-detail-card", { y: 30, stagger: 0.1, immediateRender: false });
+// 三站详解使用IntersectionObserver动画（避免GSAP from()的opacity:0问题）
+(function(){
+    var cards = document.querySelectorAll('.station-detail-card');
+    var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.style.transform = 'translateY(0)'; e.target.style.opacity = '1'; observer.unobserve(e.target); }
+        });
+    },{threshold:0.15});
+    cards.forEach(function(c){ c.style.transform = 'translateY(30px)'; c.style.opacity = '1'; observer.observe(c); });
+})();
 scrollReveal(".adv-grid .adv-item", { stagger: 0.08 });
 scrollReveal(".price-block", { y: 30, stagger: 0.15 });
 scrollReveal(".ind-grid .ind-item", { stagger: 0.04 });
