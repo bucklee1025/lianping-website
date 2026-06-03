@@ -1,4 +1,11 @@
+# 联屏传媒 robots.txt
+# https://lpmedia.cn/
+
 User-agent: *
 Allow: /
 
+# 站点地图
 Sitemap: https://lpmedia.cn/sitemap.xml
+
+# 搜索引擎抓取延迟（秒）
+Crawl-delay: 1
