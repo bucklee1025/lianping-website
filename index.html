@@ -170,6 +170,7 @@
         .card-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
         .station-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1200px;margin:0 auto}
         .station-detail-card{transition:all .8s cubic-bezier(.22,1,.36,1);opacity:1}
+        .adv-item{transition:all .8s cubic-bezier(.22,1,.36,1);opacity:1}
         .station-detail-card:hover{transform:translateY(-4px)!important}
         .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column;opacity:1}
         .card.featured{box-shadow:0 12px 56px rgba(11,22,40,0.08);border:1px solid var(--border)}
@@ -816,6 +817,26 @@
                 </div>
             </div>
             <div class="price-block">
+                <div class="price-head"><h3>🚄 南珠高铁南玉段 — 兴业南站</h3><p>覆盖兴业县及周边 | 县域精准投放 | 高性价比</p></div>
+                <div class="price-grid">
+                    <div class="price-col"><div class="period">站台双面灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">3万/月</div></div></div>
+                    <div class="price-col"><div class="period">候车厅灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">2.5万/月</div></div></div>
+                    <div class="price-col"><div class="period">出站通道灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">2万/月</div></div></div>
+                    <div class="price-col"><div class="period">灯箱套餐A</div><div class="price-item"><div class="dur">任意5个灯箱</div><div class="amt">12万/月</div></div></div>
+                    <div class="price-col"><div class="period">灯箱套餐B</div><div class="price-item"><div class="dur">全部15个灯箱</div><div class="amt">30万/月</div></div></div>
+                </div>
+            </div>
+            <div class="price-block">
+                <div class="price-head"><h3>🚄 南珠高铁南玉段 — 横州站</h3><p>覆盖横州市及六景工业园 | 茉莉花产业走廊</p></div>
+                <div class="price-grid">
+                    <div class="price-col"><div class="period">站台双面灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">4万/月</div></div></div>
+                    <div class="price-col"><div class="period">候车厅灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">3.5万/月</div></div></div>
+                    <div class="price-col"><div class="period">通道灯箱</div><div class="price-item"><div class="dur">标准尺寸 / 个</div><div class="amt">2.5万/月</div></div></div>
+                    <div class="price-col"><div class="period">灯箱套餐A</div><div class="price-item"><div class="dur">任意6个灯箱</div><div class="amt">18万/月</div></div></div>
+                    <div class="price-col"><div class="period">灯箱套餐B</div><div class="price-item"><div class="dur">全部18个灯箱</div><div class="amt">36万/月</div></div></div>
+                </div>
+            </div>
+            <div class="price-block">
                 <div class="price-head"><h3>✈️ 南宁机场T2 — 全屏联网广告（36屏同步）</h3><p>每天60次×36屏=2160次/天 | 播放时段：7:30-0:00</p></div>
                 <div class="price-grid">
                     <div class="price-col"><div class="period">一周</div><div class="price-item"><div class="dur">5秒</div><div class="amt">3.89万</div></div><div class="price-item" style="margin-top:8px"><div class="dur">15秒</div><div class="amt">4.89万</div></div></div>
@@ -974,17 +995,15 @@ function scrollReveal(selector, fromVars = {}) {
 
 scrollReveal(".sec-head");
 scrollReveal(".card-grid .card", { y: 40, stagger: 0.12, immediateRender: false });
-// 三站详解使用IntersectionObserver动画（避免GSAP from()的opacity:0问题）
+// 三站详解 + 为什么选择联屏 使用IntersectionObserver动画
 (function(){
-    var cards = document.querySelectorAll('.station-detail-card');
-    var observer = new IntersectionObserver(function(entries){
+    var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
-            if(e.isIntersecting){ e.target.style.transform = 'translateY(0)'; e.target.style.opacity = '1'; observer.unobserve(e.target); }
+            if(e.isIntersecting){ e.target.style.transform = 'translateY(0)'; e.target.style.opacity = '1'; obs.unobserve(e.target); }
         });
     },{threshold:0.15});
-    cards.forEach(function(c){ c.style.transform = 'translateY(30px)'; c.style.opacity = '1'; observer.observe(c); });
+    document.querySelectorAll('.station-detail-card, .adv-item').forEach(function(c){ c.style.transform = 'translateY(30px)'; c.style.opacity = '1'; obs.observe(c); });
 })();
-scrollReveal(".adv-grid .adv-item", { stagger: 0.08 });
 scrollReveal(".price-block", { y: 30, stagger: 0.15 });
 scrollReveal(".ind-grid .ind-item", { stagger: 0.04 });
 scrollReveal(".cta-inner", { y: 30 });
