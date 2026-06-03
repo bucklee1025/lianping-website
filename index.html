@@ -963,11 +963,11 @@ function scrollReveal(selector, fromVars = {}) {
   gsap.from(selector, {
     y: 50, opacity: 0, duration: 0.8, ease: "power3.out",
     stagger: 0.1,
+    ...fromVars,
     scrollTrigger: {
       trigger: selector,
       start: "top 85%",
-      toggleActions: "play none none reverse",
-      ...fromVars
+      toggleActions: "play none none reverse"
     }
   });
 }
