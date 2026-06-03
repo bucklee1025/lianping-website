@@ -138,7 +138,7 @@
            MEDIA RESOURCE CARDS - 嵌套架构 + 实景图
            ============================================================ */
         .card-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
-        .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column}
+        .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column;opacity:1}
         .card.featured{box-shadow:0 12px 56px rgba(11,22,40,0.08);border:1px solid var(--border)}
         .card:not(.featured){box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border)}
         .card:hover{transform:translateY(-8px);box-shadow:0 24px 80px rgba(11,22,40,0.12)}
@@ -697,15 +697,15 @@ function scrollReveal(selector, fromVars = {}) {
     stagger: 0.1,
     scrollTrigger: {
       trigger: selector,
-      start: "top 82%",
-      toggleActions: "play none none none"
-    },
-    ...fromVars
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+      ...fromVars
+    }
   });
 }
 
 scrollReveal(".sec-head");
-scrollReveal(".card-grid .card", { y: 40, stagger: 0.12 });
+scrollReveal(".card-grid .card", { y: 40, stagger: 0.12, immediateRender: false });
 scrollReveal(".adv-grid .adv-item", { stagger: 0.08 });
 scrollReveal(".price-block", { y: 30, stagger: 0.15 });
 scrollReveal(".ind-grid .ind-item", { stagger: 0.04 });
