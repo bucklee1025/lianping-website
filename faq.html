@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>常见问题 | 联屏传媒</title>
+<meta name="description" content="关于南宁机场和南玉高铁广告投放，客户最常问的问题解答。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%238b5cf6'/><text x='18' y='26' text-anchor='middle' font-size='22' font-weight='bold' fill='white' font-family='Arial'>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--card:#12121a;--card-hover:#1a1a26;
+  --border:rgba(255,255,255,.06);--border-h:rgba(255,255,255,.10);
+  --accent:#8b5cf6;--accent2:#f97316;
+  --text:#fafafa;--text2:#a1a1aa;--text3:#52525b;
+  --rad:12px;--radl:20px;
+  --shadow:0 4px 32px rgba(0,0,0,.5);
+  --font:'Outfit','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.6;font-size:14px}
+a{color:inherit;text-decoration:none}
+
+/* Navigation */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .in{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{display:flex;align-items:center;gap:8px}
+nav .logo img{height:24px}
+nav .links{display:flex;gap:2px}
+nav .links a{padding:6px 14px;font-size:13px;font-weight:500;color:var(--text2);border-radius:6px;transition:all .2s}
+nav .links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav .r{display:flex;align-items:center;gap:12px}
+nav .r .tel{font-size:13px;font-weight:600;color:var(--text)}
+nav .btn{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;transition:all .2s}
+nav .btn:hover{opacity:.9}
+@media(max-width:900px){nav .links,nav .r .tel{display:none}}
+
+/* Page Banner */
+.page-banner{color:#fff;padding:100px 32px 60px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(10,10,15,.92) 0%,rgba(10,10,15,.7) 30%,rgba(10,10,15,.5) 100%),radial-gradient(ellipse 60% 50% at 30% 40%,rgba(124,58,237,.10) 0%,transparent 60%),url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80");background-size:cover;background-position:center}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(139,92,246,0.06) 0%,transparent 60%)}
+.page-banner .inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.page-banner .tag{display:inline-block;padding:5px 14px;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-size:13px;font-weight:500;margin-bottom:16px}
+.page-banner h2{font-size:36px;font-weight:700;margin-bottom:10px}
+.page-banner p{font-size:16px;opacity:.7;max-width:540px;margin:0 auto}
+
+/* Breadcrumb */
+.bread-wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
+.breadcrumb{font-size:13px;color:var(--text3);margin-bottom:20px}
+.breadcrumb a{color:var(--accent)}
+
+/* Page Content */
+.page-content{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+
+/* Section Head */
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .pill{display:inline-block;padding:5px 14px;border-radius:12px;background:rgba(139,92,246,0.08);color:var(--accent);font-size:13px;font-weight:600;margin-bottom:16px}
+.sec-head h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:8px}
+.sec-head .line{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin:16px auto 0;border-radius:2px}
+
+/* FAQ Accordion */
+.faq-list{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radl);padding:28px 32px;cursor:pointer;border-left:4px solid var(--accent);transition:all .3s}
+.faq-item:hover{border-color:var(--border-h);background:var(--card-hover);box-shadow:var(--shadow)}
+.faq-item .q{display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:700;color:var(--text);gap:16px}
+.faq-item .q .q-icon{flex-shrink:0;width:24px;height:24px;fill:var(--accent);transition:transform .3s}
+.faq-item.open .q .q-icon{transform:rotate(45deg)}
+.faq-item .a{font-size:15px;color:var(--text2);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease;padding-top:0}
+.faq-item.open .a{max-height:500px;padding-top:16px}
+.faq-item .a a{color:var(--accent);text-decoration:underline}
+
+/* Process Timeline */
+.process-list{display:flex;flex-direction:column;gap:24px;margin-bottom:48px;}
+.process-item{display:flex;gap:24px;align-items:flex-start;}
+.process-num{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;position:relative;}
+.process-num.purple{background:linear-gradient(135deg,#7c3aed,#a855f7);box-shadow:0 4px 16px rgba(139,92,246,.3);}
+.process-num.orange{background:linear-gradient(135deg,#ea580c,#f97316);box-shadow:0 4px 16px rgba(249,115,22,.3);}
+.process-num::after{content:'';position:absolute;top:56px;left:50%;transform:translateX(-50%);width:2px;height:calc(100% + 24px);background:linear-gradient(180deg,var(--accent),transparent);}
+.process-item:last-child .process-num::after{display:none;}
+.process-body{flex:1;background:var(--card);border:1px solid var(--border);border-radius:var(--radl);padding:24px 28px;transition:all .3s;}
+.process-body:hover{border-color:var(--border-h);box-shadow:var(--shadow);transform:translateY(-2px);}
+.process-body h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.process-body p{font-size:14px;color:var(--text2);line-height:1.7;}
+@media(max-width:768px){.process-item{gap:16px;}.process-num{width:44px;height:44px;font-size:16px;}.process-num::after{top:44px;}}
+
+/* Contact CTA */
+.hlb{background:linear-gradient(135deg,#0a0a0f,#12121a);border:1px solid var(--border);border-radius:var(--radl);padding:40px 36px;text-align:center;margin:48px 0}
+.hlb h2{font-size:20px;font-weight:700;color:var(--text);margin-bottom:16px}
+.hlb p{font-size:14px;color:var(--text2);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hlb p svg{flex-shrink:0;width:18px;height:18px;fill:var(--accent2)}
+.hlb .hl-btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 28px;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:600;font-size:15px;box-shadow:0 4px 20px rgba(249,115,22,.3);transition:all .25s}
+.hlb .hl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.4)}
+.hlb .hl-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* Footer */
+footer{background:#06060a;padding:28px 24px;text-align:center;font-size:12px;color:var(--text3)}
+footer a{color:var(--text3)}
+footer a:hover{color:var(--accent)}
+
+/* FAB */
+.fab-wrap{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:center}
+.fab-items{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(20px) scale(0.9);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.fab-items.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .25s;position:relative;font-size:0;border:none;cursor:pointer}
+.fab-item:hover{transform:scale(1.12)}
+.fab-item svg{width:22px;height:22px;fill:currentColor}
+.fab-item .f-label{position:absolute;right:58px;background:var(--card);color:var(--text);padding:6px 12px;border-radius:6px;font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.3);pointer-events:none;opacity:0;transition:opacity .2s;border:1px solid var(--border)}
+.fab-item:hover .f-label{opacity:1}
+.fab-phone{background:#22c55e}
+.fab-wechat{background:#07c160}
+.fab-mail{background:#3b82f6}
+.fab-main{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(139,92,246,.4);transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.fab-main:hover{transform:scale(1.08)}
+.fab-main svg{width:24px;height:24px;fill:currentColor;transition:transform .3s}
+.fab-main.open svg{transform:rotate(45deg)}
+.wechat-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
+.wechat-toast.show{opacity:1}
+@media(max-width:600px){.fab-wrap{bottom:20px;right:20px}.fab-main{width:48px;height:48px}.fab-item{width:44px;height:44px}}
+
+/* Responsive */
+@media(max-width:900px){
+  .page-banner h2{font-size:26px}.page-banner{padding:80px 24px 40px}
+  .faq-item{padding:20px 20px}
+  .process-body{padding:20px}
+  .hlb{padding:28px 20px}
+}
+/* Scene backgrounds */
+.sec{position:relative;overflow:hidden}
+.sec-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.sec-bg img{width:100%;height:100%;object-fit:cover;opacity:.06}
+.sec-bg .overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 20%,transparent 80%,var(--bg) 100%)}
+.sec-in{position:relative;z-index:1}
+.g-reveal{opacity:0;transform:translateY(30px)}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+<nav><div class="in">
+<a href="index.html" class="logo"><img src="assets/logo.png" alt="联屏传媒"></a>
+<div class="links">
+<a href="index.html">首页</a>
+<a href="index.html#media">媒体资源</a>
+<a href="index.html#adv">核心优势</a>
+<a href="index.html#price">刊例价格</a>
+<a href="about.html">关于我们</a>
+<a href="news.html">资讯</a>
+</div>
+<div class="r">
+<a href="tel:18878774848" class="tel">188-7877-4848</a>
+<a href="index.html#contact" class="btn">咨询方案</a>
+</div>
+</div></nav>
+
+<section class="page-banner">
+  <div class="inner">
+    <div class="tag">FAQ</div>
+    <h2>常见问题</h2>
+    <p>关于南宁机场和南玉高铁广告投放，客户最常问的10个问题</p>
+  </div>
+</section>
+<div class="bread-wrap">
+  <div class="breadcrumb"><a href="index.html">首页</a> &gt; 常见问题</div>
+</div>
+<section class="sec"><div class="sec-bg"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80" alt="" loading="lazy"><div class="overlay"></div></div><div class="sec-in"><div class="page-content">
+  <div class="sec-head">
+    <div class="pill">Q&amp;A</div>
+    <h2>您想知道的都在这里</h2>
+    <div class="line"></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="q">
+        <span>在南宁机场T2投放广告，最少需要投放多久？</span>
+        <svg class="q-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="a"><p>我们的南宁吴圩机场T2航站楼登机口刷屏机广告最短可按周投放，但建议至少投放<strong>1个月</strong>以获得最佳曝光效果。机场旅客流量稳定，登机口区域旅客平均等候时间超过30分钟，长时间投放能有效提升品牌记忆度。具体时长可根据您的预算和目标灵活调整，欢迎来电详询。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="q">
+        <span>南玉高铁站的广告形式有哪些？价格如何？</span>
+        <svg class="q-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="a"><p>我们在南珠高铁南玉段（玉林北站、横州站、兴业南站）提供多种广告形式：<strong>灯箱广告</strong>（墙面灯箱、灯柱灯箱）、<strong>LCD电子屏</strong>、<strong>墙体广告</strong>、<strong>护栏广告</strong>等。价格根据站点等级、位置优劣、广告形式和投放时长综合计算，50+个点位可供选择。直接运营方，没有中间加价，欢迎索取详细刊例。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="q">
+        <span>广告投放前需要提供什么素材？你们能帮忙设计吗？</span>
+        <svg class="q-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="a"><p>您需要提供高清素材——图片建议300dpi以上，视频建议1080p及以上。我们提供<strong>免费创意设计咨询</strong>和<strong>付费专业制作服务</strong>。从方案策划、创意设计到物料制作、投放执行，我们一条龙全包。如果您暂时没有设计团队，我们可以全程代劳，确保广告画面在机场和高铁场景中视觉突出。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="q">
+        <span>如何保证广告效果？有数据反馈吗？</span>
+        <svg class="q-icon" viewBox="0 0 24 24" width="24" height="24"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+      <div class="a"><p>当然可以。我们的机场刷屏机支持按天/按周出具<strong>播放数据报告</strong>（播放次数、时长、设备在线率等）。高铁站灯箱广告可提供<strong>客流统计参考数据</strong>，基于车站官方客流数据。投放期间，我们会定期提供画面巡检照片/视频，确保广告正常展示。您也可以预约实地查看。</p></div>
+    </div>
+
+  </div>
+      <div class="hlb">
+      <h2>还有疑问？我们随时为您解答</h2>
+      <p><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg> 电话/微信：188-7877-4848（李洪鑫）</p>
+      <p><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> 邮箱：57078889@qq.com</p>
+      <p><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 广西南宁市东葛路绿地中央广场D1栋2908</p>
+      <a href="tel:18878774848" class="hl-btn"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg> 打个电话聊聊</a>
+    </div>
+
+</div></div></section>
+<footer>
+  <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
+  <p style="margin-top:4px">&copy; 2025 广西联屏传媒科技有限公司</p>
+  <p style="margin-top:4px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">桂ICP备20250128311号</a></p>
+</footer>
+<div class="fab-wrap">
+  <div class="fab-items" id="fabItems">
+    <a href="tel:18878774848" class="fab-item fab-phone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      <span class="f-label">电话咨询</span>
+    </a>
+    <button class="fab-item fab-wechat" onclick="copyWx();return false">
+      <svg viewBox="0 0 24 24"><path d="M8.5 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm7 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 2C6.48 2 2 6.03 2 11c0 2.88 1.46 5.41 3.7 7.07l-.7 2.52 2.66-1.33c.74.2 1.48.32 2.24.34 1.22.04 2.38-.15 3.45-.45C16.16 19.7 20 15.53 20 11c0-4.97-4.48-9-8-9z"/></svg>
+      <span class="f-label">复制微信</span>
+    </button>
+    <a href="mailto:57078889@qq.com" class="fab-item fab-mail">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="f-label">邮件咨询</span>
+    </a>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+<div class="wechat-toast" id="wxToast">微信号 18878774848 已复制到剪贴板</div>
+<script>
+function toggleFab(){document.getElementById('fabItems').classList.toggle('open');document.getElementById('fabMain').classList.toggle('open')}
+function copyWx(){navigator.clipboard.writeText('18878774848').then(function(){var t=document.getElementById('wxToast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}).catch(function(){var t=document.getElementById('wxToast');t.textContent='微信号: 18878774848';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})}
+document.addEventListener('click',function(e){var f=document.getElementById('fabItems');var m=document.getElementById('fabMain');if(f&&f.classList.contains('open')&&!e.target.closest('.fab-wrap')){f.classList.remove('open');m.classList.remove('open')}});
+</script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+gsap.from(".page-banner .tag",   { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", clearProps: "all" });
+gsap.from(".page-banner h2",     { y: 40, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.15, clearProps: "all" });
+gsap.from(".page-banner p",      { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.3, clearProps: "all" });
+gsap.from(".faq-item",           { y: 40, opacity: 0, duration: 0.5, stagger: 0.12, ease: "power2.out", scrollTrigger: { trigger: ".faq-list", start: "top 85%" } });
+gsap.from(".hlb",                { y: 40, opacity: 0, duration: 0.6, ease: "power2.out", scrollTrigger: { trigger: ".hlb", start: "top 90%" } });
+ScrollTrigger.create({start:"top -1px",onEnter:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.10)"},onLeaveBack:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.06)"}});
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    this.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>

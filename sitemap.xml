@@ -1,302 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <!-- 首页 - 最高优先级 -->
-    <url>
-        <loc>https://lpmedia.cn/</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lpmedia.cn/" />
-    </url>
-
-    <!-- 关于我们 -->
-    <url>
-        <loc>https://lpmedia.cn/about.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- 新闻列表页 -->
-    <url>
-        <loc>https://lpmedia.cn/news.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- 案例展示 -->
-    <url>
-        <loc>https://lpmedia.cn/cases.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 投放流程 -->
-    <url>
-        <loc>https://lpmedia.cn/process.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 常见问题 -->
-    <url>
-        <loc>https://lpmedia.cn/faq.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- ========== SEO文章 ========== -->
-
-    <!-- 玉林北站广告投放指南 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article1.html</loc>
-        <lastmod>2026-05-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 兴业南站高铁灯箱投放价值分析 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article2.html</loc>
-        <lastmod>2026-05-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 横州站站台广告媒体资源介绍 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article3.html</loc>
-        <lastmod>2026-05-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 北流品牌如何通过南玉高铁触达玉林旅客 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article4.html</loc>
-        <lastmod>2026-05-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南宁机场T2航站楼登机口刷屏机广告投放 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article5.html</loc>
-        <lastmod>2026-05-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南玉高铁全线站点广告资源总览 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article6.html</loc>
-        <lastmod>2026-05-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 高铁站LED大屏vs机场刷屏机：哪种广告效果更好？ -->
-    <url>
-        <loc>https://lpmedia.cn/news/article7.html</loc>
-        <lastmod>2026-05-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 广西品牌出行场景营销策略：高铁+机场全覆盖 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article8.html</loc>
-        <lastmod>2026-05-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 玉林企业如何在南宁机场打广告？完整指南 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article9.html</loc>
-        <lastmod>2026-05-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南玉高铁开通对广西广告市场的影响 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article10.html</loc>
-        <lastmod>2026-05-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 高铁站广告投放ROI计算：数据说话 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article11.html</loc>
-        <lastmod>2026-05-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 机场广告 vs 城市户外大牌：出行人群价值对比 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article12.html</loc>
-        <lastmod>2026-05-31</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 灯箱、LED、刷屏机：高铁站三种媒体形式详解 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article13.html</loc>
-        <lastmod>2026-05-31</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 联屏传媒：为什么选择我们做你的出行场景广告伙伴？ -->
-    <url>
-        <loc>https://lpmedia.cn/news/article14.html</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 2025年广西高铁站广告投放趋势报告 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article15.html</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 从投放到监测：户外广告全流程数字化管理 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article16.html</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 中小品牌如何用小预算撬动高铁站广告？ -->
-    <url>
-        <loc>https://lpmedia.cn/news/article17.html</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 出行场景广告的黄金时段与人群画像 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article18.html</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 房地产/汽车/快消品：不同行业的高铁+机场广告策略 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article19.html</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南宁机场T2 vs T1：为什么T2是广告主的首选？ -->
-    <url>
-        <loc>https://lpmedia.cn/news/article20.html</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 玉林北站日均客流分析与广告曝光计算 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article21.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 广告素材设计规范：高铁站与机场媒体尺寸大全 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article22.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南玉高铁三站联投方案：覆盖玉林-南宁全线旅客 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article23.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 节假日高铁出行高峰期：广告投放的最佳时机 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article24.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 从传统户外到智能屏：高铁站广告的技术升级之路 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article25.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 南宁吴圩国际机场广告投放完全攻略 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article26.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 兴业南站：连接玉林与南宁的新兴广告枢纽 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article27.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 横州茉莉花之乡的高铁站媒体机会 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article28.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 联屏传媒客户案例：某知名品牌南玉高铁投放实录 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article29.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 2026年户外广告行业展望：AI+OOH新趋势 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article30.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- 广西区域品牌崛起：出行场景广告的战略价值 -->
-    <url>
-        <loc>https://lpmedia.cn/news/article31.html</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lpmedia.cn/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/about.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/cases.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/process.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/faq.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article1.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article2.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article3.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article4.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article5.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article6.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article7.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article8.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article9.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article10.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article11.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article12.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article13.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article14.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article15.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article16.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article17.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article18.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article19.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article20.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lpmedia.cn/news/article21.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

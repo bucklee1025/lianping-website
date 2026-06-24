@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>客户案例 | 联屏传媒广告投放实例</title>
+<meta name="description" content="联屏传媒服务过的代表性客户案例：房地产、餐饮、农产品等行业在南宁机场和南玉高铁投放的实际反馈。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%238b5cf6'/><text x='18' y='26' text-anchor='middle' font-size='22' font-weight='bold' fill='white' font-family='Arial'>L</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--card:#12121a;--card-hover:#1a1a26;
+  --border:rgba(255,255,255,.06);--border-h:rgba(255,255,255,.10);
+  --accent:#8b5cf6;--accent2:#f97316;
+  --text:#fafafa;--text2:#a1a1aa;--text3:#52525b;
+  --rad:12px;--radl:20px;
+  --shadow:0 4px 32px rgba(0,0,0,.5);
+  --font:'Outfit','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.6;font-size:14px}
+a{color:inherit;text-decoration:none}
+
+/* Navigation */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .in{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{display:flex;align-items:center;gap:8px}
+nav .logo img{height:24px}
+nav .links{display:flex;gap:2px}
+nav .links a{padding:6px 14px;font-size:13px;font-weight:500;color:var(--text2);border-radius:6px;transition:all .2s}
+nav .links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav .r{display:flex;align-items:center;gap:12px}
+nav .r .tel{font-size:13px;font-weight:600;color:var(--text)}
+nav .btn{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;transition:all .2s}
+nav .btn:hover{opacity:.9}
+@media(max-width:900px){nav .links,nav .r .tel{display:none}}
+
+/* Page Banner */
+.page-banner{color:#fff;padding:100px 32px 60px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(10,10,15,.92) 0%,rgba(10,10,15,.7) 30%,rgba(10,10,15,.5) 100%),radial-gradient(ellipse 60% 50% at 30% 40%,rgba(124,58,237,.10) 0%,transparent 60%),url("https://images.unsplash.com/photo-1564419320504-0e543c7db176?w=1600&q=60");background-size:cover;background-position:center}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(139,92,246,0.06) 0%,transparent 60%)}
+.page-banner .inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.page-banner .tag{display:inline-block;padding:5px 14px;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-size:13px;font-weight:500;margin-bottom:16px}
+.page-banner h2{font-size:36px;font-weight:700;margin-bottom:10px}
+.page-banner p{font-size:16px;opacity:.7;max-width:540px;margin:0 auto}
+
+/* Breadcrumb */
+.bread-wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
+.breadcrumb{font-size:13px;color:var(--text3);margin-bottom:20px}
+.breadcrumb a{color:var(--accent)}
+
+/* Page Content */
+.page-content{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+
+/* Section Head */
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .pill{display:inline-block;padding:5px 14px;border-radius:12px;background:rgba(139,92,246,0.08);color:var(--accent);font-size:13px;font-weight:600;margin-bottom:16px}
+.sec-head h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:8px}
+.sec-head .line{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin:16px auto 0;border-radius:2px}
+
+/* Case Study Cards */
+.case-list{display:flex;flex-direction:column;gap:20px;margin-bottom:48px}
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radl);padding:28px 32px;transition:all .3s;border-left:4px solid var(--accent)}
+.case-card:hover{border-color:var(--border-h);background:var(--card-hover);box-shadow:var(--shadow)}
+.case-card .ind{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(139,92,246,.1);color:var(--accent);margin-bottom:12px}
+.case-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px}
+.case-card .loc{font-size:13px;color:var(--text3);margin-bottom:14px}
+.case-card p{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:12px}
+.case-card .fb{background:rgba(139,92,246,.04);border:1px solid var(--border);border-radius:var(--rad);padding:14px 16px;font-size:13px;color:var(--text2);line-height:1.7}
+.case-card .fb strong{color:#a78bfa}
+.disc{background:rgba(139,92,246,.04);border:1px solid var(--border);border-radius:var(--rad);padding:16px 20px;margin-bottom:48px;font-size:13px;color:var(--text3);line-height:1.6}
+
+/* Contact CTA */
+.hlb{background:linear-gradient(135deg,#0a0a0f,#12121a);border:1px solid var(--border);border-radius:var(--radl);padding:40px 36px;text-align:center;margin:48px 0}
+.hlb h2{font-size:20px;font-weight:700;color:var(--text);margin-bottom:16px}
+.hlb p{font-size:14px;color:var(--text2);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hlb p svg{flex-shrink:0;width:18px;height:18px;fill:var(--accent2)}
+.hlb .hl-btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 28px;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-weight:600;font-size:15px;box-shadow:0 4px 20px rgba(249,115,22,.3);transition:all .25s}
+.hlb .hl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.4)}
+.hlb .hl-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* Footer */
+footer{background:#06060a;padding:28px 24px;text-align:center;font-size:12px;color:var(--text3)}
+footer a{color:var(--text3)}
+footer a:hover{color:var(--accent)}
+
+/* FAB */
+.fab-wrap{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:center}
+.fab-items{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(20px) scale(0.9);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.fab-items.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .25s;position:relative;font-size:0;border:none;cursor:pointer}
+.fab-item:hover{transform:scale(1.12)}
+.fab-item svg{width:22px;height:22px;fill:currentColor}
+.fab-item .f-label{position:absolute;right:58px;background:var(--card);color:var(--text);padding:6px 12px;border-radius:6px;font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.3);pointer-events:none;opacity:0;transition:opacity .2s;border:1px solid var(--border)}
+.fab-item:hover .f-label{opacity:1}
+.fab-phone{background:#22c55e}
+.fab-wechat{background:#07c160}
+.fab-mail{background:#3b82f6}
+.fab-main{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(139,92,246,.4);transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.fab-main:hover{transform:scale(1.08)}
+.fab-main svg{width:24px;height:24px;fill:currentColor;transition:transform .3s}
+.fab-main.open svg{transform:rotate(45deg)}
+.wechat-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
+.wechat-toast.show{opacity:1}
+@media(max-width:600px){.fab-wrap{bottom:20px;right:20px}.fab-main{width:48px;height:48px}.fab-item{width:44px;height:44px}}
+
+/* Responsive */
+@media(max-width:900px){
+  .page-banner h2{font-size:26px}.page-banner{padding:80px 24px 40px}
+  .case-card{padding:20px}
+  .hlb{padding:28px 20px}
+}
+/* Scene backgrounds */
+.sec{position:relative;overflow:hidden}
+.sec-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.sec-bg img{width:100%;height:100%;object-fit:cover;opacity:.06}
+.sec-bg .overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 20%,transparent 80%,var(--bg) 100%)}
+.sec-in{position:relative;z-index:1}
+.g-reveal{opacity:0;transform:translateY(30px)}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+<nav><div class="in">
+<a href="index.html" class="logo"><img src="assets/logo.png" alt="联屏传媒"></a>
+<div class="links">
+<a href="index.html">首页</a>
+<a href="index.html#media">媒体资源</a>
+<a href="index.html#adv">核心优势</a>
+<a href="index.html#price">刊例价格</a>
+<a href="about.html">关于我们</a>
+<a href="news.html">资讯</a>
+</div>
+<div class="r">
+<a href="tel:18878774848" class="tel">188-7877-4848</a>
+<a href="index.html#contact" class="btn">咨询方案</a>
+</div>
+</div></nav>
+
+<section class="page-banner">
+  <div class="inner">
+    <div class="tag">Case Studies</div>
+    <h2>客户案例</h2>
+    <p>以下为保护客户隐私已做脱敏处理，投放场景和数据反馈均真实可信</p>
+  </div>
+</section>
+<div class="bread-wrap">
+  <div class="breadcrumb"><a href="index.html">首页</a> &gt; 客户案例</div>
+</div>
+<section class="sec"><div class="sec-bg"><img src="https://images.unsplash.com/photo-1564419320504-0e543c7db176?w=1600&q=60" alt="" loading="lazy"><div class="overlay"></div></div><div class="sec-in"><div class="page-content">
+  <div class="sec-head">
+    <div class="pill">Real Cases</div>
+    <h2>真实投放，效果说话</h2>
+    <div class="line"></div>
+  </div>
+  <div class="case-list">
+    <div class="case-card">
+      <span class="ind">高端餐饮</span>
+      <h3>玉林某新开连锁餐饮品牌</h3>
+      <div class="loc">投放地点：玉林北站出站口正对面灯箱E20 | 投放周期：1个月</div>
+      <p>该品牌为玉林本地新开业的高端餐饮，预算有限但希望在开业期快速建立品牌认知。我们推荐了出站口黄金灯箱单一集中投放，配合试营业活动同步曝光。</p>
+      <div class="fb"><strong>投放反馈：</strong>投放首月门店电话咨询量显著增长，多数来电客户主动提到"在高铁站看到你们的广告"。老板反馈："以前觉得户外广告就是烧钱，现在才知道——没烧对地方。"</div>
+    </div>
+    <div class="case-card">
+      <span class="ind">房地产</span>
+      <h3>南宁某大型房地产开发项目</h3>
+      <div class="loc">投放地点：南宁机场T2登机口刷屏机 + 玉林北站LED大屏 | 投放周期：季度</div>
+      <p>该项目面向全区高端置业人群，采用机场+高铁双枢纽组合投放策略。机场管"面子"（品牌调性），高铁管"里子"（区域渗透），形成"出发-抵达"闭环。</p>
+      <div class="fb"><strong>投放反馈：</strong>投放期间项目到访量稳定增长，多组客户反馈在机场或高铁站多次看到广告后产生信任感，促成了最终看房决策。</div>
+    </div>
+    <div class="case-card">
+      <span class="ind">农产品加工</span>
+      <h3>广西某农产品深加工企业</h3>
+      <div class="loc">投放地点：南玉高铁三站点联投（候车厅+出站通道灯箱） | 投放周期：春运高峰期（2个月）</div>
+      <p>该企业希望从"原料供应商"向"消费者品牌"转型，借助春运客流高峰集中曝光。我们设计了三站联投方案，在返乡/旅游人群中建立品牌第一印象。</p>
+      <div class="fb"><strong>投放反馈：</strong>春节后经销商会议上，多组新客户反馈"机场高铁都看到了你们的广告"，品牌认知度明显提升，为后续渠道拓展打下基础。</div>
+    </div>
+    <div class="case-card">
+      <span class="ind">金融服务</span>
+      <h3>某全国性银行广西分行</h3>
+      <div class="loc">投放地点：玉林北站候车厅LED大屏 + 刷屏机矩阵 | 投放周期：半年框架合作</div>
+      <p>以品牌形象宣传为主，配合理财产品推广周期轮播不同版本。LED大屏的视觉冲击力匹配金融品牌的"大气、可靠"调性。</p>
+      <div class="fb"><strong>投放反馈：</strong>长期品牌曝光的累积效应显著——在玉林当地品牌认知度调研中排名明显上升，部分网点反馈客户提及"高铁站看到你们广告"的频率持续增加。</div>
+    </div>
+  </div>
+  <div class="disc">为保护客户商业隐私，以上案例均做脱敏处理（隐去具体品牌名称和精确数据），但投放场景、媒体选择、反馈逻辑均基于真实合作经历提炼。</div>
+  <div class="hlb">
+    <h2>你的行业也适合投吗？</h2>
+    <p><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg> 电话/微信：188-7877-4848（李洪鑫）</p>
+    <p><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> 邮箱：57078889@qq.com</p>
+    <a href="tel:18878774848" class="hl-btn"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg> 打个电话聊聊</a>
+  </div>
+</div></div></section>
+<footer>
+  <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
+  <p style="margin-top:4px">&copy; 2025 广西联屏传媒科技有限公司</p>
+  <p style="margin-top:4px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">桂ICP备20250128311号</a></p>
+</footer>
+<div class="fab-wrap">
+  <div class="fab-items" id="fabItems">
+    <a href="tel:18878774848" class="fab-item fab-phone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      <span class="f-label">电话咨询</span>
+    </a>
+    <button class="fab-item fab-wechat" onclick="copyWx();return false">
+      <svg viewBox="0 0 24 24"><path d="M8.5 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm7 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 2C6.48 2 2 6.03 2 11c0 2.88 1.46 5.41 3.7 7.07l-.7 2.52 2.66-1.33c.74.2 1.48.32 2.24.34 1.22.04 2.38-.15 3.45-.45C16.16 19.7 20 15.53 20 11c0-4.97-4.48-9-8-9z"/></svg>
+      <span class="f-label">复制微信</span>
+    </button>
+    <a href="mailto:57078889@qq.com" class="fab-item fab-mail">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="f-label">邮件咨询</span>
+    </a>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+<div class="wechat-toast" id="wxToast">微信号 18878774848 已复制到剪贴板</div>
+<script>
+function toggleFab(){document.getElementById('fabItems').classList.toggle('open');document.getElementById('fabMain').classList.toggle('open')}
+function copyWx(){navigator.clipboard.writeText('18878774848').then(function(){var t=document.getElementById('wxToast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}).catch(function(){var t=document.getElementById('wxToast');t.textContent='微信号: 18878774848';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})}
+document.addEventListener('click',function(e){var f=document.getElementById('fabItems');var m=document.getElementById('fabMain');if(f&&f.classList.contains('open')&&!e.target.closest('.fab-wrap')){f.classList.remove('open');m.classList.remove('open')}});
+</script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+gsap.from(".page-banner .tag",   { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", clearProps: "all" });
+gsap.from(".page-banner h2",     { y: 40, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.15, clearProps: "all" });
+gsap.from(".page-banner p",      { y: 30, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.3, clearProps: "all" });
+gsap.utils.toArray(".case-card").forEach(function(el,i){
+  ScrollTrigger.create({trigger:el,start:"top 88%",once:true,
+    onEnter:function(){gsap.from(el,{y:40,opacity:0,duration:0.5,ease:"power2.out",delay:i*0.1,clearProps:"all"})}});
+});
+gsap.from(".hlb",                { y: 40, opacity: 0, duration: 0.6, ease: "power2.out", scrollTrigger: { trigger: ".hlb", start: "top 90%" } });
+ScrollTrigger.create({start:"top -1px",onEnter:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.10)"},onLeaveBack:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.06)"}});
+window.addEventListener("load", () => ScrollTrigger.refresh());
+</script>
+
+</body>
+</html>

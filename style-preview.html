@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风格预览 - 联屏传媒</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#f3f4f6; color:#1f2937; }
+
+:root {
+  --header-bg: #7c3aed;
+  --accent: #c084fc;
+}
+body[data-style="1"] { --header-bg: #7c3aed; --accent: #c084fc; }
+body[data-style="2"] { --header-bg: #111827; --accent: #c084fc; }
+body[data-style="3"] { --header-bg: #1e40af; --accent: #22d3ee; }
+body[data-style="4"] { --header-bg: #0f766e; --accent: #34d399; }
+body[data-style="5"] { --header-bg: #ffffff; --accent: #2563eb; }
+body[data-style="6"] { --header-bg: #7c3aed; --accent: #c084fc; }
+
+body[data-style="5"] .header { border-bottom:1px solid #e5e7eb; }
+body[data-style="5"] .header, body[data-style="5"] .header-inner, body[data-style="5"] .nav, body[data-style="5"] .header-contact a { color:#111827 !important; }
+body[data-style="5"] .nav a { color:#4b5563 !important; }
+body[data-style="5"] .phone-btn { color:#fff !important; background:var(--accent) !important; }
+
+.style-switcher { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:8px; background:#fff; padding:12px 16px; border-radius:40px; box-shadow:0 4px 24px rgba(0,0,0,0.15); z-index:999; flex-wrap:wrap; justify-content:center; }
+.style-btn { width:36px; height:36px; border-radius:50%; border:3px solid transparent; cursor:pointer; transition:all .2s; }
+.style-btn:hover { transform:scale(1.15); }
+.style-btn.active { border-color:#111827; }
+.style-btn.s1 { background:#7c3aed; }
+.style-btn.s2 { background:#111827; }
+.style-btn.s3 { background:#1e40af; }
+.style-btn.s4 { background:#0f766e; }
+.style-btn.s5 { background:#fff; border:2px solid #d1d5db; }
+.style-btn.s6 { background:#7c3aed; }
+
+.header { background:var(--header-bg); color:#fff; }
+.header-inner { max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+.logo { display:flex; align-items:center; gap:12px; }
+.logo img { height:44px; }
+.logo-text h1 { font-size:18px; font-weight:700; }
+.logo-text p { font-size:11px; opacity:.7; }
+.header-contact { display:flex; gap:20px; font-size:14px; }
+.header-contact a { color:#fff; text-decoration:none; }
+.phone-btn { background:var(--accent); color:#111827 !important; padding:8px 20px; border-radius:8px; font-weight:600; }
+.nav { background:rgba(255,255,255,.05); border-top:1px solid rgba(255,255,255,.1); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; overflow-x:auto; }
+.nav a { color:rgba(255,255,255,.8); text-decoration:none; padding:10px 16px; font-size:13px; white-space:nowrap; border-bottom:2px solid transparent; }
+.nav a:hover { border-bottom-color:var(--accent); }
+
+.hero { background:linear-gradient(135deg,var(--header-bg) 0%,#0f172a 100%); color:#fff; text-align:center; padding:80px 24px; }
+.hero h2 { font-size:36px; font-weight:800; margin-bottom:16px; }
+.hero p { font-size:18px; opacity:.85; max-width:600px; margin:0 auto 32px; }
+.hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.hero-btn { padding:14px 32px; border-radius:12px; font-size:16px; font-weight:600; text-decoration:none; }
+.hero-btn.primary { background:var(--accent); color:#111827; }
+.hero-btn.secondary { background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.3); }
+
+.section { max-width:1200px; margin:0 auto; padding:80px 24px; }
+.section h2 { font-size:28px; font-weight:700; text-align:center; margin-bottom:48px; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.card { background:#fff; border-radius:16px; padding:28px; text-align:center; border:1px solid #e5e7eb; }
+.card .icon { font-size:36px; margin-bottom:12px; }
+.card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
+.card p { font-size:14px; color:#6b7280; line-height:1.6; }
+
+.cta { background:var(--header-bg); color:#fff; text-align:center; padding:64px 24px; }
+.cta h2 { font-size:28px; font-weight:700; margin-bottom:16px; }
+.cta p { opacity:.85; margin-bottom:24px; }
+.footer { background:#0a0f1a; color:rgba(255,255,255,.5); padding:24px; text-align:center; font-size:13px; }
+
+@media (max-width:768px) { .cards { grid-template-columns:repeat(2,1fr); } .hero h2 { font-size:24px; } .header-contact { display:none; } }
+
+/* 浮动咨询按钮 */
+.fab-wrap{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:center}
+.fab-items{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(20px) scale(0.9);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.fab-items.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .25s;position:relative;font-size:0;border:none;cursor:pointer}
+.fab-item:hover{transform:scale(1.12)}
+.fab-item svg{width:22px;height:22px;fill:currentColor}
+.fab-item .f-label{position:absolute;right:58px;background:#fff;color:#1e293b;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.1);pointer-events:none;opacity:0;transition:opacity .2s}
+.fab-item:hover .f-label{opacity:1}
+.fab-phone{background:#22c55e}
+.fab-wechat{background:#07c160}
+.fab-mail{background:#3b82f6}
+.fab-main{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(37,99,235,.4);transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.fab-main:hover{transform:scale(1.08)}
+.fab-main svg{width:24px;height:24px;fill:currentColor;transition:transform .3s}
+.fab-main.open svg{transform:rotate(45deg)}
+.wechat-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
+.wechat-toast.show{opacity:1}
+@media(max-width:600px){.fab-wrap{bottom:20px;right:20px}.fab-main{width:48px;height:48px}.fab-item{width:44px;height:44px}}
+
+</style>
+</head>
+<body data-style="1">
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo"><img src="assets/logo.png" alt="联屏传媒"><div class="logo-text"><h1>联屏传媒</h1><p>广西联屏传媒科技有限公司</p></div></div>
+    <div class="header-contact"><a href="tel:18878774848">&#9742; 188-7877-4848</a><a href="mailto:57078889@qq.com">&#9993; 57078889@qq.com</a><a href="index.html" class="phone-btn">立即咨询</a></div>
+  </div>
+  <div class="nav"><div class="nav-inner">
+    <a href="#">首页</a><a href="#">媒体资源</a><a href="#">核心优势</a><a href="#">刊例价格</a><a href="#">服务行业</a><a href="#">关于我们</a><a href="#">合作流程</a><a href="#">客户案例</a><a href="#">新闻资讯</a>
+  </div></div>
+</div>
+
+<div class="hero">
+  <h2>广西交通枢纽广告独家运营商</h2>
+  <p>南宁机场T2航站楼 & 南珠高铁南玉段，覆盖2600万+年度客流</p>
+  <div class="hero-btns">
+    <a href="#" class="hero-btn primary">获取投放方案</a>
+    <a href="#" class="hero-btn secondary">了解媒体资源</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>核心媒体资源</h2>
+  <div class="cards">
+    <div class="card"><div class="icon">&#9992;</div><h3>南宁机场T2</h3><p>36台86寸刷屏机<br>年1350万客流</p></div>
+    <div class="card"><div class="icon">&#128640;</div><h3>玉林北站</h3><p>LED大屏152㎡<br>50+个广告点位</p></div>
+    <div class="card"><div class="icon">&#127803;</div><h3>横州站</h3><p>茉莉花都门户<br>18个广告点位</p></div>
+    <div class="card"><div class="icon">&#128205;</div><h3>兴业南站</h3><p>南宁1小时圈<br>15个精准点位</p></div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>准备好让品牌被看见了吗？</h2>
+  <p>&#9742; 188-7877-4848（微信同号）| &#9993; 57078889@qq.com</p>
+</div>
+
+<div class="footer"><p>&copy; 2025 广西联屏传媒科技有限公司 | 南宁机场T2 & 南珠高铁南玉段 · 广告独家运营方</p></div>
+
+<div class="style-switcher">
+  <div class="style-btn s1 active" title="商务深蓝（当前）" onclick="switchStyle(1)"></div>
+  <div class="style-btn s2" title="高级黑金" onclick="switchStyle(2)"></div>
+  <div class="style-btn s3" title="科技活力蓝" onclick="switchStyle(3)"></div>
+  <div class="style-btn s4" title="沉稳墨绿" onclick="switchStyle(4)"></div>
+  <div class="style-btn s5" title="极简白" onclick="switchStyle(5)"></div>
+  <div class="style-btn s6" title="创意紫" onclick="switchStyle(6)"></div>
+</div>
+
+<script>
+function switchStyle(n) {
+  document.body.setAttribute('data-style', n);
+  document.querySelectorAll('.style-btn').forEach((b,i) => b.classList.toggle('active', i+1===n));
+}
+</script>
+
+<div class="fab-wrap">
+  <div class="fab-items" id="fabItems">
+    <a href="tel:18878774848" class="fab-item fab-phone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      <span class="f-label">📞 电话咨询</span>
+    </a>
+    <button class="fab-item fab-wechat" onclick="copyWx();return false">
+      <svg viewBox="0 0 24 24"><path d="M8.5 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm7 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 2C6.48 2 2 6.03 2 11c0 2.88 1.46 5.41 3.7 7.07l-.7 2.52 2.66-1.33c.74.2 1.48.32 2.24.34 1.22.04 2.38-.15 3.45-.45C16.16 19.7 20 15.53 20 11c0-4.97-4.48-9-8-9z"/></svg>
+      <span class="f-label">💬 复制微信</span>
+    </button>
+    <a href="mailto:57078889@qq.com" class="fab-item fab-mail">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="f-label">✉️ 邮件咨询</span>
+    </button>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+<div class="wechat-toast" id="wxToast">微信号 18878774848 已复制到剪贴板</div>
+<script>
+function toggleFab(){document.getElementById('fabItems').classList.toggle('open');document.getElementById('fabMain').classList.toggle('open')}
+function copyWx(){navigator.clipboard.writeText('18878774848').then(function(){var t=document.getElementById('wxToast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}).catch(function(){var t=document.getElementById('wxToast');t.textContent='微信号: 18878774848';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})}
+document.addEventListener('click',function(e){var f=document.getElementById('fabItems');var m=document.getElementById('fabMain');if(f&&f.classList.contains('open')&&!e.target.closest('.fab-wrap')){f.classList.remove('open');m.classList.remove('open')}});
+</script>
+
+</body>
+</html>

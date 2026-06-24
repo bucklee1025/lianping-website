@@ -1,928 +1,507 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="baidu-site-verification" content="codeva-bx59ACTXML" />
-    <meta name="msvalidate.01" content="6FCB1BF8FC10D7CD5EA74E953951889B" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联屏传媒 | 高铁+机场广告运营商 | 广西</title>
+<meta name="description" content="独家运营南珠高铁南玉段及南宁机场T2登机口广告屏，年覆盖2600万高端出行人群。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,::after,::before{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--card:#12121a;--card-hover:#1a1a26;
+  --border:rgba(255,255,255,.06);--border-h:rgba(255,255,255,.10);
+  --accent:#8b5cf6;--accent-2:#f97316;
+  --text:#fafafa;--text-2:#a1a1aa;--text-3:#52525b;
+  --rad:12px;--rad-l:20px;
+  --shadow:0 4px 32px rgba(0,0,0,.5);
+  --font:'Outfit','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text-2);line-height:1.6;font-size:14px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+input,select,textarea,button{font-family:var(--font)}
 
-    <!-- SEO Meta -->
-    <meta name="description" content="联屏观察 - 关注广西出行场景营销，分享高铁媒体投放、机场媒体运营等行业观察与实用攻略。个人博客。" />
-    <meta name="keywords" content="联屏观察,出行场景营销,高铁媒体,广西出行,行业观察" />
-    <meta name="author" content="李洪鑫" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://lpmedia.cn/" />
+/* ---- NAV ---- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .in{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{display:flex;align-items:center;gap:8px}
+nav .logo img{height:24px;width:auto}
+nav .links{display:flex;gap:2px}
+nav .links a{padding:6px 14px;font-size:13px;font-weight:500;color:var(--text-2);border-radius:6px;transition:all .2s}
+nav .links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav .r{display:flex;align-items:center;gap:12px}
+nav .r .tel{font-size:13px;font-weight:600;color:var(--text);letter-spacing:.3px}
+nav .r .tel:hover{color:var(--accent-2)}
+nav .btn{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600}
+nav .btn:hover{opacity:.9}
+@media(max-width:900px){nav .links,nav .r .tel{display:none}}
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="联屏观察 | 广西出行场景营销观察" />
-    <meta property="og:description" content="关注广西出行场景营销，分享高铁与机场媒体行业观察。个人博客。" />
-    <meta property="og:url" content="https://lpmedia.cn/" />
-    <meta property="og:site_name" content="联屏观察" />
-    <meta property="og:locale" content="zh_CN" />
-    <meta property="og:image" content="https://lpmedia.cn/assets/yulin-station-led.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+/* ---- HERO ---- */
+.hero{min-height:100dvh;display:flex;align-items:center;padding:80px 32px 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(135deg,rgba(10,10,15,.92) 0%,rgba(10,10,15,.7) 40%,rgba(10,10,15,.5) 100%),
+  radial-gradient(ellipse 70% 55% at 30% 40%,rgba(124,58,237,.12) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 40% at 75% 60%,rgba(249,115,22,.08) 0%,transparent 50%);
+  background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80');
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  pointer-events:none}
+.hero .in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero-left{max-width:540px}
+.hero .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:6px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.12);color:var(--accent);font-size:12px;font-weight:500;margin-bottom:24px}
+.hero .tag svg{width:12px;height:12px}
+.hero h1{font-size:clamp(2rem,4vw,3.6rem);font-weight:800;line-height:1.1;color:var(--text);margin-bottom:16px;letter-spacing:-.5px}
+.hero h1 span{background:linear-gradient(135deg,#a78bfa,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{font-size:16px;color:var(--text-2);line-height:1.6;margin-bottom:32px;max-width:420px}
+.hero .btns{display:flex;gap:12px}
+.hero .btns .btn-p{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:14px;font-weight:600;transition:all .3s}
+.hero .btns .btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.25)}
+.hero .btns .btn-s{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;border:1px solid var(--border);color:var(--text);font-size:14px;font-weight:500;transition:all .3s}
+.hero .btns .btn-s:hover{background:rgba(255,255,255,.04);transform:translateY(-2px)}
+.hero .btns .btn-p svg,.hero .btns .btn-s svg{width:16px;height:16px}
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="联屏观察 | 广西出行场景营销观察" />
-    <meta name="twitter:description" content="关注广西出行场景营销，分享行业观察。联屏观察。" />
-    <meta name="twitter:image" content="https://lpmedia.cn/assets/yulin-station-led.jpg" />
+/* Right visual */
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;height:500px}
+.hero-visual .orb{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.12),transparent 65%);animation:pulse 6s ease-in-out infinite}
+.hero-visual .orb2{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.08),transparent 60%);top:55%;right:10%;animation:pulse 8s ease-in-out infinite;animation-delay:-3s}
+.hero-visual .grid-wrap{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:40px}
+.hero-visual .g-cell{background:var(--card);border:1px solid var(--border);border-radius:var(--rad);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center}
+.hero-visual .g-cell .n{font-size:28px;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+.hero-visual .g-cell .n s{font-size:14px;background:linear-gradient(135deg,#a78bfa,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-visual .g-cell .l{font-size:11px;color:var(--text-3);margin-top:4px}
+.hero-visual .g-cell:first-child{grid-row:span 2;height:100%}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.08);opacity:1}}
+@media(max-width:900px){
+  .hero .in{grid-template-columns:1fr;gap:0}.hero-left{max-width:100%}.hero-visual{display:none}.hero{min-height:auto;padding:100px 24px 80px}
+}
 
-    <!-- Geo Tags for Local Search -->
-    <meta name="geo.region" content="CN-Guangxi" />
-    <meta name="geo.placename" content="Nanning" />
-    <meta name="geo.position" content="22.8170;108.3665" />
-    <meta name="ICBM" content="22.8170, 108.3665" />
-    <title>联屏观察 | 广西出行场景营销观察</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+/* ---- SEC ---- */
+.sec{padding:120px 32px;position:relative}
+.sec-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.sec-bg img{width:100%;height:100%;object-fit:cover;opacity:.06}
+.sec-bg .overlay{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 20%,transparent 80%,var(--bg) 100%)}
+.sec-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.sec-hd{margin-bottom:64px}
+.sec-hd .t{display:inline-block;padding:3px 8px;border-radius:4px;background:rgba(139,92,246,.08);color:var(--accent);font-size:11px;font-weight:600;margin-bottom:12px;letter-spacing:.8px}
+.sec-hd h2{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-.3px}
+.sec-hd p{font-size:14px;color:var(--text-2);max-width:440px}
+@media(max-width:900px){.sec{padding:80px 20px}}
 
-    <!-- ===== Schema.org JSON-LD 结构化数据 ===== -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://lpmedia.cn/#website",
-      "name": "联屏观察",
-      "url": "https://lpmedia.cn/",
-      "description": "关注广西出行场景营销，分享高铁与机场媒体行业观察的个人博客。",
-      "inLanguage": "zh-CN",
-      "author": {
-        "@type": "Person",
-        "name": "李洪鑫",
-        "url": "https://lpmedia.cn/about.html"
-      }
-    }
-    </script>
+/* ---- MEDIA BENTO ---- */
+.bento{display:grid;grid-template-columns:2fr 1fr;gap:20px;min-height:520px}
+.bento-main{background:var(--card);border:1px solid var(--border);border-radius:var(--rad-l);overflow:hidden;transition:all .35s;display:flex;flex-direction:column}
+.bento-main:hover{border-color:var(--border-h);box-shadow:var(--shadow);background:var(--card-hover)}
+.bento-main .t{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.bento-main .b{padding:36px;flex:1;display:flex;flex-direction:column}
+.bento-main .badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(139,92,246,.1);color:var(--accent);margin-bottom:16px;align-self:flex-start}
+.bento-main h3{font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
+.bento-main .loc{font-size:13px;color:var(--text-3);margin-bottom:20px}
+.bento-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.bento-specs .sp{display:flex;justify-content:space-between;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:6px;font-size:12px}
+.bento-specs .sp .l{color:var(--text-2)}.bento-specs .sp .v{font-weight:600;color:var(--text)}
+.bento-side{display:flex;flex-direction:column;gap:20px}
+.bento-sm{background:var(--card);border:1px solid var(--border);border-radius:var(--rad-l);padding:28px;transition:all .35s;flex:1;display:flex;flex-direction:column}
+.bento-sm:hover{border-color:var(--border-h);box-shadow:var(--shadow);background:var(--card-hover)}
+.bento-sm .badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-bottom:12px;align-self:flex-start}
+.bento-sm .badge.r{background:rgba(139,92,246,.1);color:var(--accent)}
+.bento-sm .badge.a{background:rgba(249,115,22,.1);color:#fb923c}
+.bento-sm h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px}
+.bento-sm .loc{font-size:12px;color:var(--text-3);margin-bottom:12px}
+.bento-sm .sp{display:flex;justify-content:space-between;padding:4px 0;font-size:12px;border-bottom:1px solid var(--border)}
+.bento-sm .sp:last-child{border:none}
+.bento-sm .sp .l{color:var(--text-2)}.bento-sm .sp .v{font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+@media(max-width:900px){.bento{grid-template-columns:1fr}}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://lpmedia.cn/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "玉林北站的广告是谁在运营？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "玉林北站的广告媒体（LED大屏、刷屏机、灯箱等50余个广告位）由联屏观察关注，联系人：李洪鑫，电话：188-7877-4848。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "兴业南站的广告媒体是哪家公司运营？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "兴业南站的15个站台及候车厅灯箱广告位由联屏观察关注，联系人：李洪鑫，电话：188-7877-4848。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "横州站的高铁广告找谁投放？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "横州站18个站台及通道灯箱广告位由联屏观察关注，联系人：李洪鑫，电话：188-7877-4848。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "南宁吴圩机场T2航站楼的刷屏机广告怎么投放？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "南宁机场T2航站楼登机口候机区36台86寸LCD刷屏机由联屏观察关注。播放时段7:30-0:00，每天2160次曝光。联系人：李洪鑫，电话：188-7877-4848。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "联屏观察的联系方式是什么？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "联屏观察，联系人：李洪鑫，电话/微信：188-7877-4848，邮箱：57078889@qq.com。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "南玉高铁沿线站点广告投放怎么联系？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "南玉高铁（玉林北站、兴业南站、横州站）沿线广告投放请联系李洪鑫，电话：188-7877-4848。"
-          }
-        }
-      ]
-    }
-    </script>
+/* ---- ADVANTAGES ---- */
+.adv{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.adv-it{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--rad);transition:all .3s;align-items:start}
+.adv-it:hover{background:var(--card-hover);border-color:var(--border-h);transform:translateY(-3px)}
+.adv-it .ic{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(249,115,22,.05))}
+.adv-it .ic svg{width:20px;height:20px;color:var(--accent)}
+.adv-it .tx h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.adv-it .tx p{font-size:13px;color:var(--text-2);line-height:1.5}
+@media(max-width:900px){.adv{grid-template-columns:1fr}}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "@id": "https://lpmedia.cn/#breadcrumb",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"首页","item":"https://lpmedia.cn/"},
-        {"@type":"ListItem","position":2,"name":"媒体资源","item":"https://lpmedia.cn/#resources"},
-        {"@type":"ListItem","position":3,"name":"新闻资讯","item":"https://lpmedia.cn/news.html"},
-        {"@type":"ListItem","position":4,"name":"关于我们","item":"https://lpmedia.cn/about.html"}
-      ]
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
-    <style>
-        /* ============================================================
-           RESET + ROOT
-           ============================================================ */
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --navy:#0b1628;
-            --navy-l:#13223b;
-            --blue:#1d6bf0;
-            --blue-dim:rgba(29,107,240,0.08);
-            --amber:#d97706;
-            --amber-l:rgba(217,119,6,0.1);
-            --text:#0f172a;
-            --body:#475569;
-            --bg:#fff;
-            --bg-warm:#faf8f5;
-            --bg-sky:rgba(29,107,240,0.03);
-            --border:rgba(15,23,42,0.06);
-            --radius:20px;
-            --radius-sm:12px;
-            --radius-pill:9999px;
-            --shadow:0 2px 24px rgba(11,22,40,0.05);
-            --shadow-lg:0 12px 56px rgba(11,22,40,0.1);
-            --font:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-        }
-        html{scroll-behavior:smooth}
-        body{font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+/* ---- PRICES ---- */
+.pr{background:var(--card);border:1px solid var(--border);border-radius:var(--rad-l);overflow:hidden;margin-bottom:24px}
+.pr:last-child{margin-bottom:0}
+.pr-hd{padding:20px 28px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(139,92,246,.04),transparent)}
+.pr-hd h3{font-size:15px;font-weight:700;color:var(--text)}
+.pr-hd p{font-size:12px;color:var(--text-3);margin-top:2px}
+.pr-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+.pr-cl{padding:20px 12px;text-align:center;border-right:1px solid var(--border)}
+.pr-cl:last-child{border:none}
+.pr-cl .prd{font-size:11px;font-weight:600;color:var(--text-2);margin-bottom:10px;letter-spacing:.3px}
+.pr-cl .it{padding:6px 8px;border-radius:6px;background:rgba(139,92,246,.04)}
+.pr-cl .it+.it{margin-top:6px}
+.pr-cl .it .d{font-size:11px;color:var(--text-3)}
+.pr-cl .it .a{font-size:15px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+@media(max-width:900px){.pr-grid{grid-template-columns:repeat(3,1fr)}}
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
-        header{position:sticky;top:0;z-index:100}
-        .hdr{background:rgba(255,255,255,0.88);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--border)}
-        .hdr-i{max-width:1200px;margin:0 auto;padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
-        .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-        .logo img{height:34px}
-        .logo-txt{display:flex;flex-direction:column}
-        .logo-txt h1{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.3px}
-        .logo-txt span{font-size:11px;color:var(--body);font-weight:500}
-        .hdr-r{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:500}
-        .hdr-r a{color:var(--body);text-decoration:none;transition:color .25s}
-        .hdr-r a:hover{color:var(--blue)}
-        .hdr-btn{background:var(--blue);color:#fff!important;padding:9px 22px;border-radius:var(--radius-pill);font-weight:600;font-size:13px;transition:all .3s cubic-bezier(.22,1,.36,1)}
-        .hdr-btn:hover{background:#1552c4;transform:translateY(-1px);box-shadow:0 4px 20px rgba(29,107,240,0.25)}
+/* ---- INDUSTRIES ---- */
+.ind{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ind-it{text-align:center;padding:20px 8px;background:var(--card);border:1px solid var(--border);border-radius:8px;transition:all .3s}
+.ind-it:hover{background:var(--card-hover);border-color:var(--border-h);transform:translateY(-2px)}
+.ind-it svg{width:22px;height:22px;color:var(--text-3);margin-bottom:6px}
+.ind-it:hover svg{color:var(--accent)}
+.ind-it .nm{font-size:12px;font-weight:600;color:var(--text-2);display:block}
+@media(max-width:900px){.ind{grid-template-columns:repeat(3,1fr)}}
 
-        /* NAV */
-        nav{background:rgba(255,255,255,0.93)}
-        .nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;gap:4px}
-        .nav-i::-webkit-scrollbar{display:none}
-        .nav-i a{color:var(--body);text-decoration:none;padding:10px 18px;font-size:13px;font-weight:500;white-space:nowrap;border-radius:8px 8px 0 0;transition:all .25s;position:relative}
-        .nav-i a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--blue);border-radius:2px 2px 0 0;transform:translateX(-50%);transition:width .3s cubic-bezier(.22,1,.36,1)}
-        .nav-i a:hover{color:var(--blue);background:var(--blue-dim)}
-        .nav-i a.active{color:var(--blue);font-weight:600}
-        .nav-i a.active::after{width:60%}
+/* ---- FORM ---- */
+.fm-sec{padding:120px 32px;background:linear-gradient(180deg,#0a0a0f,#0c0c14);position:relative;overflow:hidden;text-align:center}
+.fm-sec .glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.04),transparent 70%);top:15%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.fm-wrap{max-width:500px;margin:0 auto;position:relative;z-index:1}
+.fm-wrap h2{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:700;color:var(--text);margin-bottom:6px}
+.fm-wrap .sub{color:var(--text-2);font-size:14px;margin-bottom:32px}
+.fm-cd{background:var(--card);border:1px solid var(--border);border-radius:var(--rad-l);padding:32px;text-align:left}
+.fm-cd .rw{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.fm-cd input,.fm-cd select,.fm-cd textarea{width:100%;padding:10px 12px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,.02);color:var(--text);font-size:13px;outline:none;transition:border-color .2s}
+.fm-cd input:focus,.fm-cd select:focus,.fm-cd textarea:focus{border-color:var(--accent)}
+.fm-cd input::placeholder,.fm-cd textarea::placeholder{color:var(--text-3)}
+.fm-cd select{color:var(--text-3);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}
+.fm-cd select:valid{color:var(--text)}.fm-cd select option{background:var(--card);color:var(--text)}
+.fm-cd textarea{resize:vertical;min-height:70px;margin-bottom:10px}
+.fm-cd .sbm{width:100%;padding:12px;border:none;border-radius:6px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:all .25s}
+.fm-cd .sbm:hover{opacity:.9;box-shadow:0 4px 20px rgba(124,58,237,.2)}
+.fm-cd .ft{text-align:center;font-size:11px;color:var(--text-3);margin-top:10px}
+.fm-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:520px;margin:20px auto 0}
+.fm-contact .cc{padding:12px;background:var(--card);border-radius:8px;border:1px solid var(--border)}
+.fm-contact .cc .lb{font-size:10px;color:var(--text-3);margin-bottom:2px;font-weight:500}
+.fm-contact .cc .vl{font-size:13px;font-weight:600;color:var(--text)}
+.fm-contact .cc .vl .hl{background:linear-gradient(135deg,#a78bfa,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(max-width:900px){.fm-contact,.fm-cd .rw{grid-template-columns:1fr}}
 
-        /* ============================================================
-           HERO - 实景背景
-           ============================================================ */
-        .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 32px 140px;overflow:hidden}
-        .hero-bg{position:absolute;inset:0;z-index:0}
-        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.35) saturate(1.1)}
-        .hero-overlay{position:absolute;inset:0;z-index:1;
-            background:linear-gradient(165deg,rgba(11,22,40,0.92) 0%,rgba(11,22,40,0.7) 40%,rgba(11,22,40,0.5) 100%)}
-        .hero-overlay::after{content:'';position:absolute;inset:0;
-            background:radial-gradient(ellipse at 30% 50%,rgba(29,107,240,0.10) 0%,transparent 60%),
-                       radial-gradient(ellipse at 70% 30%,rgba(217,119,6,0.06) 0%,transparent 50%)}
-        /* 噪点纹理 */
-        .hero-noise{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.035;
-            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat:repeat;background-size:256px 256px}
-        .hero-dot{position:absolute;border-radius:50%;pointer-events:none;z-index:2}
-        .hero-dot-1{width:6px;height:6px;background:rgba(255,255,255,0.2);top:15%;left:12%}
-        .hero-dot-2{width:10px;height:10px;background:rgba(255,255,255,0.06);top:25%;right:18%}
-        .hero-dot-3{width:4px;height:4px;background:rgba(255,255,255,0.12);bottom:30%;left:22%}
-        .hero-dot-4{width:14px;height:14px;background:rgba(217,119,6,0.10);bottom:20%;right:12%}
-        .hero-dot-5{width:8px;height:8px;background:rgba(29,107,240,0.15);top:50%;left:5%}
-        .hero-dot-6{width:5px;height:5px;background:rgba(255,255,255,0.08);top:60%;right:8%}
-        .hero-inner{max-width:720px;position:relative;z-index:3}
-        .hero .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:var(--radius-pill);
-            background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-size:12px;font-weight:500;margin-bottom:28px;backdrop-filter:blur(8px);letter-spacing:0.3px}
-        .hero h2{font-size:clamp(34px,5vw,56px);font-weight:800;line-height:1.12;color:#fff;margin-bottom:18px;letter-spacing:-1px}
-        .hero h2 .glow{background:linear-gradient(135deg,#fbbf24,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .hero-desc{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
-        .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-pill);font-size:15px;font-weight:600;text-decoration:none;
-            transition:all .35s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
-        .btn-gold{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;box-shadow:0 4px 24px rgba(217,119,6,0.30)}
-        .btn-gold::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.1));opacity:0;transition:opacity .4s}
-        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(217,119,6,0.40)}
-        .btn-gold:hover::after{opacity:1}
-        .btn-gold:active{transform:translateY(0) scale(0.98)}
-        .btn-ghost{background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px)}
-        .btn-ghost:hover{background:rgba(255,255,255,0.16);transform:translateY(-2px)}
-        .btn-ghost:active{transform:translateY(0) scale(0.98)}
+/* ---- FOOTER ---- */
+footer{background:#06060a;padding:28px 24px;text-align:center;font-size:12px;color:var(--text-3)}
+footer a{color:var(--text-3)}footer a:hover{color:var(--text-2)}
 
-        /* 底部渐变过渡 */
-        .hero-fade{position:absolute;bottom:0;left:0;right:0;height:160px;z-index:2;
-            background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
+/* ---- FAB ---- */
+.fab-w{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:center}
+.fab-i{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(16px) scale(.9);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.fab-i.o{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.fab-it{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:transform .25s;border:none;cursor:pointer;position:relative}
+.fab-it:hover{transform:scale(1.12)}
+.fab-it svg{width:18px;height:18px}
+.fab-it .fl{position:absolute;right:50px;background:var(--card);color:var(--text);padding:5px 10px;border-radius:4px;font-size:11px;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.3);opacity:0;transition:opacity .2s;border:1px solid var(--border);pointer-events:none}
+.fab-it:hover .fl{opacity:1}
+.fab-p{background:#22c55e}.fab-wx{background:#07c160}.fab-em{background:#7c3aed}
+.fab-m{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(124,58,237,.35);transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.fab-m:hover{transform:scale(1.06)}
+.fab-m svg{width:20px;height:20px;transition:transform .3s}.fab-m.o svg{transform:rotate(45deg)}
+.wx-t{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--card);color:var(--text);padding:8px 16px;border-radius:6px;font-size:12px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none;border:1px solid var(--border)}
+.wx-t.s{opacity:1}
+@media(max-width:600px){.fab-w{bottom:18px;right:18px}.fab-m{width:44px;height:44px}}
 
-        /* ============================================================
-           DATA STRIP
-           ============================================================ */
-        .strip{position:relative;z-index:3;max-width:1080px;margin:-80px auto 0;padding:0 24px}
-        .strip-inner{background:#fff;border-radius:var(--radius);box-shadow:0 12px 56px rgba(11,22,40,0.08);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;border:1px solid var(--border)}
-        .strip-item{text-align:center;padding:40px 20px;position:relative}
-        .strip-item+.strip-item{border-left:1px solid var(--border)}
-        .strip-num{font-size:42px;font-weight:800;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-1px}
-        .strip-num small{font-size:22px;color:var(--blue);font-weight:700}
-        .strip-label{font-size:13px;color:var(--body);font-weight:500}
-
-        /* ============================================================
-           SECTIONS
-           ============================================================ */
-        .sec{padding:110px 32px}
-        .sec-warm{background:var(--bg-warm)}
-        .sec-sky{background:var(--bg-sky)}
-        .sec-inner{max-width:1080px;margin:0 auto}
-        .sec-head{text-align:center;margin-bottom:64px}
-        .sec-head .pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:var(--radius-pill);
-            background:var(--blue-dim);color:var(--blue);font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:16px;text-transform:uppercase}
-        .sec-head h2{font-size:clamp(28px,3vw,38px);font-weight:800;color:var(--text);margin-bottom:12px;letter-spacing:-0.5px}
-        .sec-head p{font-size:16px;color:var(--body);max-width:540px;margin:0 auto}
-        .sec-head .line{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--amber));margin:18px auto 0;border-radius:2px}
-
-        /* ============================================================
-           MEDIA RESOURCE CARDS - 嵌套架构 + 实景图
-           ============================================================ */
-        .card-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
-        .station-detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1200px;margin:0 auto}
-        .station-detail-card{transition:all .8s cubic-bezier(.22,1,.36,1);opacity:1}
-        .adv-item{transition:all .8s cubic-bezier(.22,1,.36,1);opacity:1}
-        .station-detail-card:hover{transform:translateY(-4px)!important}
-        .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);position:relative;display:flex;flex-direction:column;opacity:1}
-        .card.featured{box-shadow:0 12px 56px rgba(11,22,40,0.08);border:1px solid var(--border)}
-        .card:not(.featured){box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border)}
-        .card:hover{transform:translateY(-8px);box-shadow:0 24px 80px rgba(11,22,40,0.12)}
-        .card.featured:hover{box-shadow:0 24px 80px rgba(11,22,40,0.15);border-color:rgba(29,107,240,0.2)}
-        /* 卡片顶部图片区 */
-        .card-img{width:100%;height:200px;overflow:hidden;position:relative}
-        .card.featured .card-img{height:240px}
-        .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-        .card:hover .card-img img{transform:scale(1.06)}
-        .card-img .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,40,0.4) 0%,transparent 60%)}
-        .card-img .badge{position:absolute;bottom:14px;left:16px;display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:var(--radius-pill);
-            font-size:11px;font-weight:600;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-        .badge-rail{background:rgba(29,107,240,0.85);color:#fff}
-        .badge-air{background:rgba(217,119,6,0.85);color:#fff}
-        /* 卡片内容 */
-        .card-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column}
-        .card-body h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px}
-        .card-body .loc{font-size:13px;color:var(--body);margin-bottom:20px}
-        .specs{display:flex;flex-direction:column;gap:6px;flex:1}
-        .sr{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--border)}
-        .sr:last-child{border-bottom:none}
-        .sl{color:var(--body)}.sv{font-weight:600;color:var(--text)}
-        .card-foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
-        .card-foot a{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-size:13px;font-weight:600;text-decoration:none;transition:gap .25s}
-        .card-foot a:hover{gap:10px}
-
-        /* ============================================================
-           ADVANTAGES - 交错布局 + SVG图标
-           ============================================================ */
-        .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-        .adv-item{text-align:left;padding:36px 28px;background:#fff;border-radius:var(--radius);
-            box-shadow:0 2px 24px rgba(11,22,40,0.04);border:1px solid var(--border);
-            transition:all .4s cubic-bezier(.22,1,.36,1)}
-        .adv-item:hover{transform:translateY(-6px);box-shadow:0 12px 48px rgba(11,22,40,0.08);border-color:rgba(29,107,240,0.15)}
-        .adv-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:20px}
-        .adv-icon.ico-lock{background:linear-gradient(135deg,rgba(29,107,240,0.1),rgba(29,107,240,0.04));color:var(--blue)}
-        .adv-icon.ico-target{background:linear-gradient(135deg,rgba(217,119,6,0.1),rgba(217,119,6,0.04));color:var(--amber)}
-        .adv-icon.ico-chart{background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.04));color:#10b981}
-        .adv-icon.ico-globe{background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(139,92,246,0.04));color:#8b5cf6}
-        .adv-item h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--text)}
-        .adv-item p{font-size:14px;color:var(--body);line-height:1.7}
-
-        /* ============================================================
-           PRICING
-           ============================================================ */
-        .price-wrap{display:grid;gap:32px}
-        .price-block{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 24px rgba(11,22,40,0.04)}
-        .price-block:hover{box-shadow:0 12px 48px rgba(11,22,40,0.08)}
-        .price-head{background:var(--navy);color:#fff;padding:24px 32px}
-        .price-head h3{font-size:16px;font-weight:700;letter-spacing:-0.3px}
-        .price-head p{opacity:.6;font-size:12px;margin-top:5px}
-        .price-grid{display:grid;grid-template-columns:repeat(5,1fr)}
-        .price-col{padding:24px 16px;text-align:center;border-right:1px solid var(--border);transition:background .3s}
-        .price-col:last-child{border-right:none}
-        .price-col:hover{background:var(--bg-sky)}
-        .price-col .period{font-size:13px;font-weight:600;color:var(--body);margin-bottom:14px}
-        .price-item{padding:10px 8px;border-radius:var(--radius-sm);background:var(--bg-sky);transition:all .3s}
-        .price-item:hover{background:var(--blue-dim)}
-        .price-item .dur{font-size:11px;color:var(--body);font-weight:500}.price-item .amt{font-size:17px;font-weight:700;color:var(--text);margin-top:2px}
-
-        /* ============================================================
-           INDUSTRIES
-           ============================================================ */
-        .ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-        .ind-item{text-align:center;padding:28px 14px;background:#fff;border-radius:var(--radius-sm);
-            border:1px solid var(--border);transition:all .35s cubic-bezier(.22,1,.36,1);cursor:default}
-        .ind-item:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(11,22,40,0.06);border-color:var(--blue);background:var(--bg-sky)}
-        .ind-item .ico{font-size:26px;margin-bottom:10px;display:block;line-height:1}
-        .ind-item .nm{font-size:13px;font-weight:600;color:var(--text)}
-
-        /* ============================================================
-           CTA
-           ============================================================ */
-        .cta{position:relative;padding:110px 32px;text-align:center;overflow:hidden;
-            background:linear-gradient(165deg,#0b1628 0%,#13223b 40%,#1a3a5c 100%)}
-        .cta-noise{position:absolute;inset:0;pointer-events:none;opacity:0.025;
-            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat:repeat;background-size:256px 256px}
-        .cta-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
-        .cta h2{font-size:clamp(28px,3vw,36px);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.5px}
-        .cta p{color:rgba(255,255,255,0.55);font-size:16px;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
-        .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-        .cta .btn-gold{font-size:16px;padding:16px 40px}
-        .cta .btn-ghost{font-size:16px;padding:16px 40px}
-        .ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:40px auto 0}
-        .ccard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);padding:20px;transition:background .3s}
-        .ccard:hover{background:rgba(255,255,255,.08)}
-        .ccard .lbl{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase}
-        .ccard .val{font-size:15px;font-weight:600;color:rgba(255,255,255,.85)}
-        .ccard a{color:rgba(255,255,255,.85);text-decoration:none;transition:color .25s}
-        .ccard a:hover{color:#fff}
-
-        /* ============================================================
-           FOOTER
-           ============================================================ */
-        footer{background:#070e18;color:rgba(255,255,255,.3);padding:36px 32px;text-align:center;font-size:13px}
-        footer a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s}
-        footer a:hover{color:rgba(255,255,255,.8)}
-        footer .f-div{width:100px;height:1px;background:rgba(255,255,255,.08);margin:12px auto}
-        footer .f-links{display:flex;justify-content:center;gap:24px;margin-bottom:14px}
-        footer .f-links a{font-size:12px}
-
-        /* ============================================================
-           ANIMATION HELPERS (GSAP用)
-           ============================================================ */
-        .reveal{opacity:0;transform:translateY(40px)}
-        .reveal-up{opacity:0;transform:translateY(50px)}
-        .reveal-scale{opacity:0;transform:scale(0.92)}
-
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        @media(max-width:1024px){
-            .card-grid{grid-template-columns:1fr 1fr}
-            .station-detail-grid{grid-template-columns:1fr 1fr}
-            .card.featured{grid-column:1/-1}
-            .card.featured .card-img{height:260px}
-            .adv-grid{grid-template-columns:repeat(2,1fr)}
-            .ind-grid{grid-template-columns:repeat(4,1fr)}
-        }
-        @media(max-width:900px){
-            .hero h2{font-size:clamp(28px,5vw,36px)}.hero{min-height:auto;padding:80px 24px 130px}
-            .hdr-i,.nav-i{padding-left:20px;padding-right:20px}
-            .strip-inner{grid-template-columns:repeat(2,1fr)}.strip{margin-top:-50px}
-            .price-grid{grid-template-columns:repeat(3,1fr)}.ccards{grid-template-columns:1fr}
-            .hdr-r{gap:10px}
-            .hdr-r .hdr-phone{margin-right:0}
-            .sec{padding:80px 24px}
-        }
-        @media(max-width:768px){
-            .card-grid{grid-template-columns:1fr}
-            .station-detail-grid{grid-template-columns:1fr}
-            .card.featured .card-img{height:200px}
-            .adv-grid{grid-template-columns:repeat(2,1fr)}
-            .ind-grid{grid-template-columns:repeat(3,1fr)}
-            .hero-desc{font-size:15px}
-            .hdr-r .hdr-link{display:none}
-        }
-        @media(max-width:600px){
-            .hero h2{font-size:26px}.adv-grid{grid-template-columns:1fr}
-            .ind-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:1fr 1fr}
-            .sec-head h2{font-size:26px}
-            .strip-num{font-size:32px}.strip-item{padding:28px 16px}
-            .hero-desc{font-size:14px}
-            .btn{padding:12px 24px;font-size:14px}
-        }
-    </style>
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- AI Search Optimization: JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Person",
-                "@id": "https://lpmedia.cn/#person",
-                "name": "李洪鑫",
-                "url": "https://lpmedia.cn/about.html",
-                "jobTitle": "行业观察者",
-                "knowsAbout": [
-                    "玉林北站媒体投放",
-                    "兴业南站媒体投放",
-                    "横州站媒体投放",
-                    "南宁机场T2航站楼媒体",
-                    "高铁站LED大屏媒体",
-                    "机场刷屏机媒体",
-                    "南玉高铁沿线媒体资源",
-                    "广西出行场景营销"
-                ]
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://lpmedia.cn/#website",
-                "url": "https://lpmedia.cn/",
-                "name": "联屏观察",
-                "description": "关注广西出行场景营销，分享高铁与机场媒体行业观察的个人博客。",
-                "publisher": {"@id": "https://lpmedia.cn/#person"},
-                "inLanguage": "zh-CN"
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://lpmedia.cn/#breadcrumb",
-                "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://lpmedia.cn/"}
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://lpmedia.cn/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "南玉高铁三站有哪些媒体资源？",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "南玉高铁南玉段的三个车站都有媒体资源：玉林北站（LED大屏、刷屏机、候车厅灯箱）、兴业南站（站台灯箱）、横州站（站台及通道灯箱），以及南宁吴圩国际机场T2航站楼的36台登机口刷屏机媒体。"
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "玉林北站的媒体资源有哪些？",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "玉林北站是南玉高铁的重要枢纽站，拥有LED大屏（152㎡/19.86m×7.68m）、14块28面刷屏机覆盖候车区域、以及候车厅和出站口灯箱矩阵等媒体资源。日均客流大，覆盖玉林及周边地区的高铁旅客。关注本站获取更多信息。"
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "如何联系联屏观察？",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "联屏观察 - 关注广西出行场景营销观察与行业信息分享。可发送邮件至 57078889@qq.com 进行交流。"
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "南宁机场T2航站楼的媒体位有什么优势？",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "南宁机场T2航站楼36个登机口配置有86寸LCD刷屏机媒体资源，100%覆盖出发层旅客。机场人群具有高消费力、商务出行比例高的特点，是品牌形象展示的重要场景。行业观察信息分享。"
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-    </script>
+/* ---- GSAP temp ---- */
+.g-reveal{opacity:0;transform:translateY(30px)}
+</style>
 </head>
 <body>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
-<header>
-    <div class="hdr">
-        <div class="hdr-i">
-            <a href="#home" class="logo">
-                <!-- <img src="assets/logo.png" alt="联屏观察"> -->
-                <div class="logo-txt">
-                    <h1>联屏观察</h1>
-                    <span>广西出行场景·个人行业观察</span>
-                </div>
-            </a>
-            <div class="hdr-r">
-                <!-- 联系信息已隐藏 -->
-                <!--  -->
-            </div>
-        </div>
-    </div>
-    <nav>
-        <div class="nav-i">
-            <a href="#home" class="active">首页</a>
-            <a href="news.html">行业资讯</a>
-            <a href="about.html">关于</a>
-            <a href="#contact">联系</a>
-        </div>
-    </nav>
-</header>
-
-<!-- ============================================================
-     HERO - 带实景照片背景
-     ============================================================ -->
-<section class="hero" id="home">
-    <div class="hero-bg">
-        <img src="assets/hero-bg.png" alt="联屏观察首页底图">
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-noise"></div>
-
-    <div class="hero-dot hero-dot-1"></div>
-    <div class="hero-dot hero-dot-2"></div>
-    <div class="hero-dot hero-dot-3"></div>
-    <div class="hero-dot hero-dot-4"></div>
-    <div class="hero-dot hero-dot-5"></div>
-    <div class="hero-dot hero-dot-6"></div>
-
-    <div class="hero-inner">
-        <div class="tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            广西出行场景观察 · 行业信息分享
-        </div>
-        <h2>广西出行场景<br><span class="glow">营销观察与分享</span></h2>
-        <p class="hero-desc">关注广西高铁站与机场媒体资源信息，分享出行场景营销观察与行业动态。</p>
-        <div class="hero-btns">
-            <a href="news.html" class="btn btn-gold">浏览最新资讯</a>
-            <a href="#resources" class="btn btn-ghost">查看媒体资源
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-    </div>
-    <div class="hero-fade"></div>
-</section>
-
-<!-- ============================================================
-     DATA STRIP
-     ============================================================ -->
-<div class="strip">
-    <div class="strip-inner">
-        <div class="strip-item"><div class="strip-num">3<small>+</small></div><div class="strip-label">高铁站行业观察</div></div>
-        <div class="strip-item"><div class="strip-num">2,600<small>万</small></div><div class="strip-label">年覆盖客流量</div></div>
-        <div class="strip-item"><div class="strip-num">2,000<small>万</small></div><div class="strip-label">区域覆盖人口</div></div>
-        <div class="strip-item"><div class="strip-num">80<small>%</small></div><div class="strip-label">商务人群占比</div></div>
-    </div>
+<nav>
+<div class="in">
+  <a href="#" class="logo"><img src="assets/logo.png" alt="联屏传媒"></a>
+  <div class="links">
+    <a href="#media">媒体资源</a>
+    <a href="#adv">核心优势</a>
+    <a href="#price">刊例价格</a>
+    <a href="about.html">关于我们</a>
+    <a href="news.html">资讯</a>
+  </div>
+  <div class="r">
+    <a href="tel:18878774848" class="tel">188-7877-4848</a>
+    <a href="#contact" class="btn">咨询方案</a>
+  </div>
 </div>
+</nav>
 
-<!-- ============================================================
-     MEDIA RESOURCES - 图片卡片
-     ============================================================ -->
-<section class="sec" id="resources">
-    <div class="sec-inner">
-        <div class="sec-head">
-            <div class="pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                Media Resources
-            </div>
-            <h2>核心媒体资源</h2>
-            <p>南玉高铁三站 + 南宁机场候机区，出行人群就是你的目标客群</p>
-            <div class="line"></div>
-        </div>
-        <div class="card-grid">
-            <!-- 玉林北站 · 旗舰 -->
-            <div class="card featured">
-                <div class="card-img">
-                    <img src="assets/yulin-station-led.jpg" alt="玉林北站LED大屏">
-                    <div class="overlay"></div>
-                    <span class="badge badge-rail">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                        高铁媒体 · 旗舰站
-                    </span>
-                </div>
-                <div class="card-body">
-                    <h3>玉林北站</h3>
-                    <p class="loc">候车厅 / 站台层 / 出站层</p>
-                    <div class="specs">
-                        <div class="sr"><span class="sl">媒体类型</span><span class="sv">LED大屏 + 刷屏机 + 灯箱矩阵</span></div>
-                        <div class="sr"><span class="sl">LED大屏</span><span class="sv">19.86m×7.68m</span></div>
-                        <div class="sr"><span class="sl">刷屏机</span><span class="sv">14块28面全覆盖</span></div>
-                        <div class="sr"><span class="sl">候车厅灯箱</span><span class="sv">8个</span></div>
-                        <div class="sr"><span class="sl">出站口灯箱</span><span class="sv">13个</span></div>
-                        <div class="sr"><span class="sl">出站层包柱</span><span class="sv">1组6个24面</span></div>
-                        <div class="sr"><span class="sl">其他灯箱</span><span class="sv">高架层+通道共22个</span></div>
-                    </div>
-                    <div class="card-foot">
-                        <span style="font-size:13px;color:#94a3b8">行业信息分享</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 横州站/兴业南站 -->
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/hengzhou-station-platform.jpg" alt="横州站站台">
-                    <div class="overlay"></div>
-                    <span class="badge badge-rail">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                        高铁媒体
-                    </span>
-                </div>
-                <div class="card-body">
-                    <h3>横州站 / 兴业南站</h3>
-                    <p class="loc">候车厅 / 出站厅 / 连廊 / 地道</p>
-                    <div class="specs">
-                        <div class="sr"><span class="sl">横州站媒体</span><span class="sv">18个站台/通道灯箱</span></div>
-                        <div class="sr"><span class="sl">兴业南站媒体</span><span class="sv">15个站台/候车厅灯箱</span></div>
-                        <div class="sr"><span class="sl">覆盖区域</span><span class="sv">横州市 / 兴业县</span></div>
-                        <div class="sr"><span class="sl">线路覆盖</span><span class="sv">南珠高铁南玉段全线</span></div>
-                        <div class="sr"><span class="sl">区域人口</span><span class="sv">覆盖人口面议</span></div>
-                        <div class="sr"><span class="sl">日均客流</span><span class="sv">3万人次</span></div>
-                    </div>
-                    <div class="card-foot">
-                        <span style="font-size:13px;color:#94a3b8">行业信息分享</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 南宁机场T2 -->
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/airport-ad-example.jpg" alt="南宁机场T2候机区">
-                    <div class="overlay"></div>
-                    <span class="badge badge-air">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2  15 22 11 13 2 9z"/></svg>
-                        机场媒体
-                    </span>
-                </div>
-                <div class="card-body">
-                    <h3>南宁机场T2航站楼</h3>
-                    <p class="loc">登机口候机区 - 1/2/3楼</p>
-                    <div class="specs">
-                        <div class="sr"><span class="sl">媒体类型</span><span class="sv">86寸LCD刷屏机</span></div>
-                        <div class="sr"><span class="sl">屏幕数量</span><span class="sv">36个</span></div>
-                        <div class="sr"><span class="sl">年客流量</span><span class="sv">1600万人次</span></div>
-                        <div class="sr"><span class="sl">播放时段</span><span class="sv">7:30-0:00</span></div>
-                        <div class="sr"><span class="sl">日播放次数</span><span class="sv">2160次</span></div>
-                        <div class="sr"><span class="sl">覆盖航线</span><span class="sv">153条国内外航线</span></div>
-                    </div>
-                    <div class="card-foot">
-                        <span style="font-size:13px;color:#94a3b8">行业信息分享</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="hero" id="home">
+<div class="hero-bg"></div>
+<div class="in">
+  <div class="hero-left">
+    <div class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      南珠高铁南玉段 / 南宁机场T2
     </div>
-
-    <!-- ====== 三站详解 ====== -->
-    <div class="sec-inner" style="padding-top:0;margin-top:-20px">
-        <div class="sec-head">
-            <div class="pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                三站详情
-            </div>
-            <h2 style="font-size:22px">南玉高铁三站详解</h2>
-            <p>一站一策，精准触达南玉高铁沿线目标人群</p>
-            <div class="line"></div>
-        </div>
-        <div class="station-detail-grid">
-
-            <!-- 玉林北站 -->
-            <div class="station-detail-card">
-                <div class="station-detail-header" style="background:linear-gradient(135deg,#1a3a5c,#0b1628);color:#fff;padding:20px 24px;border-radius:12px 12px 0 0">
-                    <span style="background:#d97706;color:#fff;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;margin-bottom:6px">旗舰枢纽站</span>
-                    <h3 style="font-size:20px;font-weight:800;margin:0;letter-spacing:-0.3px">🏛️ 玉林北站</h3>
-                    <p style="font-size:13px;opacity:.7;margin:4px 0 0">候车厅LED大屏 + 刷屏机 + 灯箱矩阵 · 全线核心</p>
-                </div>
-                <div class="station-detail-body" style="padding:20px 24px;background:#fff;border-radius:0 0 12px 12px;border:1px solid #eef2f6;border-top:none">
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">定位：</strong>南玉高铁玉林段核心枢纽站，覆盖玉林城区、北流市、博白县等约2000万人口区域。日均客流3万+，商务出行占比超80%，是品牌在玉林区域建立影响力的旗舰级媒体阵地。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">媒体矩阵：</strong>152㎡巨幕LED大屏（19.86m×7.68m）· 14块28面刷屏机覆盖候车全区域 · 8个候车厅灯箱锁定停留视线 · 13个出站口灯箱拦截到达客流 · 1组包柱6个24面全方位展示 · 高架层及通道区域22个灯箱补充覆盖。总计超30处媒体点位，形成候车→登车→出站全动线覆盖。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0"><strong style="color:#0b1628">适合品牌方：</strong>品牌形象大片、节日营销活动、房地产开盘造势、汽车新品发布、家居建材品牌、大型企业周年庆推广。玉林北站LED巨幕视觉冲击力强，是打响品牌知名度的首选阵地。</p>
-                </div>
-            </div>
-
-            <!-- 兴业南站 -->
-            <div class="station-detail-card">
-                <div class="station-detail-header" style="background:linear-gradient(135deg,#2d6a4f,#1b4332);color:#fff;padding:20px 24px;border-radius:12px 12px 0 0">
-                    <span style="background:#40916c;color:#fff;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;margin-bottom:6px">县域精准站</span>
-                    <h3 style="font-size:20px;font-weight:800;margin:0;letter-spacing:-0.3px">🚉 兴业南站</h3>
-                    <p style="font-size:13px;opacity:.7;margin:4px 0 0">站台灯箱 + 候车厅灯箱 · 精准触达县域客流</p>
-                </div>
-                <div class="station-detail-body" style="padding:20px 24px;background:#fff;border-radius:0 0 12px 12px;border:1px solid #eef2f6;border-top:none">
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">定位：</strong>兴业县首座高铁站，南玉高铁的重要县域节点，连接玉林与南宁。精准覆盖兴业县城区、各乡镇及往返南宁的商务、务工、旅游客流。作为县域高铁站，兴业南站以低单价、高性价比为特点，是区域品牌低成本高效触达目标人群的理想通道。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">媒体规格：</strong>15个站台及候车厅灯箱，分布于候车区、站台层、出站通道三大核心区域。灯箱尺寸规范统一（标准灯箱规格），展示画面色彩鲜明、持久醒目，实现24小时不间断曝光，覆盖全天候经过旅客。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0"><strong style="color:#0b1628">适合品牌方：</strong>县域品牌宣传、本地商家推广、旅游景区招徕、农产品及特产品牌建设、中小企业品牌升级。兴业南站投放起点低、投放灵活，是中小企业以最小预算试水高铁媒体市场的首选入口。</p>
-                </div>
-            </div>
-
-            <!-- 横州站 -->
-            <div class="station-detail-card">
-                <div class="station-detail-header" style="background:linear-gradient(135deg,#a67c52,#7a5c3a);color:#fff;padding:20px 24px;border-radius:12px 12px 0 0">
-                    <span style="background:#c9975d;color:#fff;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;display:inline-block;margin-bottom:6px">茉莉之乡站</span>
-                    <h3 style="font-size:20px;font-weight:800;margin:0;letter-spacing:-0.3px">🌸 横州站</h3>
-                    <p style="font-size:13px;opacity:.7;margin:4px 0 0">站台灯箱 + 通道灯箱 · 世界茉莉花都门户</p>
-                </div>
-                <div class="station-detail-body" style="padding:20px 24px;background:#fff;border-radius:0 0 12px 12px;border:1px solid #eef2f6;border-top:none">
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">定位：</strong>横州市（原横县）首座高铁站，"世界茉莉花都"的现代化交通门户。覆盖横州市区、六景工业园区及南宁东部区域，日均服务大量商旅及产业客流。横州市以茉莉花产业闻名全球，年产值超百亿元，高铁开通后商务往来更加频繁。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0 0 14px"><strong style="color:#0b1628">媒体规格：</strong>18个站台及通道灯箱，分布于候车厅、站台层、进出站通道，形成完整视觉动线。灯箱采用高精度画面输出，色彩还原度优异，配合横州"茉莉花都"的城市形象，视觉品质属全线一流。媒体位覆盖从进站到登车的全程旅客视线，曝光频次高。</p>
-                    <p style="font-size:14px;line-height:1.8;color:#334155;margin:0"><strong style="color:#0b1628">适合品牌方：</strong>茉莉花茶及深加工品牌、文旅景区和乡村旅游推广、农产品/食品加工企业、区域消费品品牌、六景工业园区B2B工业企业。横州站以产业型客流为特色，是产业品牌直达目标市场的高效通道。</p>
-                </div>
-            </div>
-
-        </div>
+    <h1>广西高端出行场景<br><span>广告独家运营商</span></h1>
+    <p class="sub">每年2600万人次途经我们的广告屏，商务旅客占比超八成</p>
+    <div class="btns">
+      <a href="#contact" class="btn-p">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        获取投放方案
+      </a>
+      <a href="#media" class="btn-s">
+        查看媒体资源
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-</section>
-<section class="sec sec-warm" id="advantages">
-    <div class="sec-inner">
-        <div class="sec-head">
-            <div class="pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                Why Choose Us
-            </div>
-            <h2>为什么选择出行场景营销</h2>
-            <p>授权 · 高铁加机场 · 商务人群集中</p>
-            <div class="line"></div>
-        </div>
-        <div class="adv-grid">
-            <div class="adv-item">
-                <div class="adv-icon ico-lock">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                </div>
-                <h3>行业观察</h3>
-                <p>机场和高铁的媒体位都是授权，想投的人只能找我们</p>
-            </div>
-            <div class="adv-item">
-                <div class="adv-icon ico-target">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                </div>
-                <h3>精准人群</h3>
-                <p>八成以上是商务出行旅客，年均收入27万往上走</p>
-            </div>
-            <div class="adv-item">
-                <div class="adv-icon ico-chart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                </div>
-                <h3>高频曝光</h3>
-                <p>高铁站一天几万人进进出出，机场刷屏机一天播两千多次</p>
-            </div>
-            <div class="adv-item">
-                <div class="adv-icon ico-globe">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <h3>场景营销</h3>
-                <p>从高铁站出来进机场候机，旅客的出行路上全是你的品牌信息</p>
-            </div>
-        </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orb"></div>
+    <div class="orb2"></div>
+    <div class="grid-wrap">
+      <div class="g-cell"><div class="n">3<s>+</s></div><div class="l">高铁站独家运营</div></div>
+      <div class="g-cell"><div class="n"><span class="cnt" data-t="2600">0</span><s>万</s></div><div class="l">年覆盖客流量</div></div>
+      <div class="g-cell"><div class="n"><span class="cnt" data-t="2000">0</span><s>万</s></div><div class="l">覆盖人口</div></div>
+      <div class="g-cell"><div class="n"><span class="cnt" data-t="80">0</span><s>%</s></div><div class="l">商务人群占比</div></div>
     </div>
+  </div>
+</div>
 </section>
 
-<!-- 定价详情请咨询（个人博客，不展示具体价格） -->
-
-<!-- ============================================================
-     INDUSTRIES
-     ============================================================ -->
-<section class="sec sec-warm" id="industries">
-    <div class="sec-inner">
-        <div class="sec-head">
-            <div class="pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                Industries
-            </div>
-            <h2>适用行业</h2>
-            <p>高铁出站、机场候机——这些场景下什么品牌信息都有人看</p>
-            <div class="line"></div>
+<section class="sec" id="media">
+<div class="sec-bg">
+  <img src="https://images.unsplash.com/photo-1564419320504-0e543c7db176?w=1600&q=60" alt="">
+  <div class="overlay"></div>
+</div>
+<div class="sec-in">
+  <div class="sec-hd">
+    <div class="t">Media Resources</div>
+    <h2>核心媒体资源</h2>
+    <p>南玉高铁三站 + 南宁机场候机区，高净值出行场景全覆盖</p>
+  </div>
+  <div class="bento">
+    <div class="bento-main">
+      <div class="t"></div>
+      <div class="b">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+          高铁媒体
+        </span>
+        <h3>玉林北站</h3>
+        <p class="loc">候车厅 / 站台层 / 出站层</p>
+        <div class="bento-specs">
+          <div class="sp"><span class="l">LED巨幕</span><span class="v">152m&sup2; / 15万/月</span></div>
+          <div class="sp"><span class="l">刷屏机</span><span class="v">14块28面 / 6万/组</span></div>
+          <div class="sp"><span class="l">候车厅灯箱</span><span class="v">8个 / 8万/月</span></div>
+          <div class="sp"><span class="l">出站口灯箱</span><span class="v">13个 / 2.5-12万</span></div>
+          <div class="sp"><span class="l">出站层包柱</span><span class="v">1组6个24面 / 15万</span></div>
+          <div class="sp"><span class="l">其他灯箱</span><span class="v">高架层+通道 22个</span></div>
         </div>
-        <div class="ind-grid">
-            <div class="ind-item"><span class="ico">🏠</span><span class="nm">房地产</span></div>
-            <div class="ind-item"><span class="ico">🚗</span><span class="nm">汽车</span></div>
-            <div class="ind-item"><span class="ico">🏦</span><span class="nm">金融保险</span></div>
-            <div class="ind-item"><span class="ico">🍽️</span><span class="nm">餐饮食品</span></div>
-            <div class="ind-item"><span class="ico">🎭</span><span class="nm">文旅景区</span></div>
-            <div class="ind-item"><span class="ico">📱</span><span class="nm">科技数码</span></div>
-            <div class="ind-item"><span class="ico">💃</span><span class="nm">美容护肤</span></div>
-            <div class="ind-item"><span class="ico">🎓</span><span class="nm">教育培训</span></div>
-            <div class="ind-item"><span class="ico">🏢</span><span class="nm">酒水饮料</span></div>
-            <div class="ind-item"><span class="ico">💊</span><span class="nm">医疗健康</span></div>
-            <div class="ind-item"><span class="ico">💼</span><span class="nm">政务宣传</span></div>
-            <div class="ind-item"><span class="ico">✨</span><span class="nm">品牌形象</span></div>
-        </div>
+      </div>
     </div>
+    <div class="bento-side">
+      <div class="bento-sm">
+        <span class="badge r">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+          高铁媒体
+        </span>
+        <h3>横州站 / 兴业南站</h3>
+        <p class="loc">候车厅 / 出站厅 / 连廊</p>
+        <div class="sp"><span class="l">横州站灯箱</span><span class="v">18个 / 2-6万</span></div>
+        <div class="sp"><span class="l">兴业南站灯箱</span><span class="v">15个 / 2-4万</span></div>
+        <div class="sp"><span class="l">线路覆盖</span><span class="v">南玉段全线</span></div>
+        <div class="sp"><span class="l">日均客流</span><span class="v">3万人次</span></div>
+      </div>
+      <div class="bento-sm">
+        <span class="badge a">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          机场媒体
+        </span>
+        <h3>南宁机场T2</h3>
+        <p class="loc">登机口候机区 1-3楼</p>
+        <div class="sp"><span class="l">刷屏机</span><span class="v">36台 / 全屏同步</span></div>
+        <div class="sp"><span class="l">年客流量</span><span class="v">1600万人次</span></div>
+        <div class="sp"><span class="l">日播次数</span><span class="v">2160次</span></div>
+        <div class="sp"><span class="l">覆盖航线</span><span class="v">153条</span></div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
-<!-- ============================================================
-     CTA
-     ============================================================ -->
-<section class="cta" id="contact">
-    <div class="cta-noise"></div>
-    <div class="cta-inner">
-        <h2>联系与交流</h2>
-        <p>欢迎交流出行场景营销话题，一起探讨</p>
-        <div class="cta-btns">
-            
-            
-        </div>
-        <div class="ccards">
-            <div class="ccard"><div class="lbl">✉️ 邮箱</div><div class="val"><a href="mailto:57078889@qq.com">57078889@qq.com</a></div></div>
-            <div class="ccard"><div class="lbl">📍 地址</div><div class="val">南宁东葛路绿地中央广场D1-2908</div></div>
-        </div>
+<section class="sec" id="adv" style="background:var(--card)">
+<div class="sec-in">
+  <div class="sec-hd">
+    <div class="t">Advantages</div>
+    <h2>为什么选择联屏传媒</h2>
+    <p>独家授权 / 双枢纽覆盖 / 商务人群精准触达</p>
+  </div>
+  <div class="adv">
+    <div class="adv-it">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div class="tx"><h4>独家运营</h4><p>机场与高铁媒体独家授权，资源稀缺无中间环节</p></div>
     </div>
+    <div class="adv-it">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="tx"><h4>精准人群</h4><p>商务旅客占八成，年均收入27万以上，消费决策力强</p></div>
+    </div>
+    <div class="adv-it">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="tx"><h4>高频曝光</h4><p>高铁站日均数万客流，机场刷屏机每日循环2160次</p></div>
+    </div>
+    <div class="adv-it">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+      <div class="tx"><h4>场景营销</h4><p>从出发到抵达，旅客出行路径全覆盖，品牌全程伴随</p></div>
+    </div>
+  </div>
+</div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<section class="sec" id="price">
+<div class="sec-bg">
+  <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=60" alt="">
+  <div class="overlay"></div>
+</div>
+<div class="sec-in">
+  <div class="sec-hd">
+    <div class="t">Pricing</div>
+    <h2>刊例价格</h2>
+    <p>南珠高铁南玉段 / 南宁机场T2登机口刷屏机</p>
+  </div>
+  <div class="pr">
+    <div class="pr-hd"><h3>南珠高铁南玉段 &#8212; 玉林北站</h3><p>覆盖人口2000万 | 日均客流3万+ | 商务占比超80%</p></div>
+    <div class="pr-grid">
+      <div class="pr-cl"><div class="prd">候车厅灯箱</div><div class="it"><div class="d">12m x 3.2m</div><div class="a">8万/月</div></div></div>
+      <div class="pr-cl"><div class="prd">LED巨幕</div><div class="it"><div class="d">152m&sup2; / 15s x 150次</div><div class="a">15万/月</div></div></div>
+      <div class="pr-cl"><div class="prd">刷屏机组</div><div class="it"><div class="d">14块28面</div><div class="a">6万/组</div></div></div>
+      <div class="pr-cl"><div class="prd">出站口灯箱</div><div class="it"><div class="d">黄金位</div><div class="a">12万/月</div></div></div>
+      <div class="pr-cl"><div class="prd">出站层包柱</div><div class="it"><div class="d">1组6个24面</div><div class="a">15万/组</div></div></div>
+    </div>
+  </div>
+  <div class="pr">
+    <div class="pr-hd"><h3>南宁机场T2 &#8212; 全屏联网广告（36屏同步）</h3><p>每天60次 x 36屏 = 2160次/天 | 7:30-0:00</p></div>
+    <div class="pr-grid">
+      <div class="pr-cl"><div class="prd">一周</div><div class="it"><div class="d">5秒</div><div class="a">3.89万</div></div><div class="it"><div class="d">15秒</div><div class="a">4.89万</div></div></div>
+      <div class="pr-cl"><div class="prd">一个月</div><div class="it"><div class="d">5秒</div><div class="a">23万</div></div><div class="it"><div class="d">15秒</div><div class="a">33万</div></div></div>
+      <div class="pr-cl"><div class="prd">一个季度</div><div class="it"><div class="d">5秒</div><div class="a">66万</div></div><div class="it"><div class="d">15秒</div><div class="a">76万</div></div></div>
+      <div class="pr-cl"><div class="prd">半年</div><div class="it"><div class="d">5秒</div><div class="a">138万</div></div><div class="it"><div class="d">15秒</div><div class="a">238万</div></div></div>
+      <div class="pr-cl"><div class="prd">一年</div><div class="it"><div class="d">5秒</div><div class="a">198万</div></div><div class="it"><div class="d">15秒</div><div class="a">298万</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="ind" style="background:var(--card)">
+<div class="sec-in">
+  <div class="sec-hd">
+    <div class="t">Industries</div>
+    <h2>适用行业</h2>
+    <p>高铁出站 / 机场候机 &#8212; 品牌曝光首选场景</p>
+  </div>
+  <div class="ind">
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/></svg><span class="nm">房地产</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6M5 7h14l-1.5 7.5H6.5L5 7z"/><path d="M9 3l-4 4"/></svg><span class="nm">汽车</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M14 12h4"/></svg><span class="nm">金融保险</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M6 8H5a4 4 0 000 8h1M2 12h20M12 2v20"/></svg><span class="nm">餐饮食品</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="nm">文旅景区</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M15 9l3-3M15 15l3 3M9 15l-3 3M9 9L6 6"/></svg><span class="nm">科技数码</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="nm">美容护肤</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M12 6v7M9 9h6"/></svg><span class="nm">教育培训</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10 4 4 0 01-4-4 4 4 0 00-4-4h-2M8 12h.01M16 12h.01"/></svg><span class="nm">酒水饮料</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="nm">医疗健康</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="nm">政务宣传</span></div>
+    <div class="ind-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6 4.6 2.4 7.4L12 17.4l-6.4 4L8 14 2 9.4h7.6L12 2z"/></svg><span class="nm">品牌形象</span></div>
+  </div>
+</div>
+</section>
+
+<section class="fm-sec" id="contact">
+<div class="glow"></div>
+<div class="fm-wrap">
+  <h2>获取投放方案</h2>
+  <p class="sub">2小时内联系您，免费出方案</p>
+  <form class="fm-cd" action="https://formsubmit.co/57078889@qq.com" method="POST">
+    <input type="hidden" name="_next" value="https://lpmedia.cn/#contact">
+    <input type="hidden" name="_subject" value="【联屏传媒】新咨询">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+    <div class="rw">
+      <input type="text" name="姓名" placeholder="您的姓名 *" required>
+      <input type="tel" name="电话" placeholder="联系电话 *" required>
+    </div>
+    <select name="感兴趣" required>
+      <option value="" disabled selected>选择感兴趣的媒体</option>
+      <option value="玉林北站">玉林北站</option>
+      <option value="兴业南站">兴业南站</option>
+      <option value="横州站">横州站</option>
+      <option value="南宁机场T2">南宁机场T2</option>
+      <option value="组合套餐">组合套餐</option>
+    </select>
+    <textarea name="需求说明" placeholder="预算或需求描述（选填）"></textarea>
+    <button type="submit" class="sbm">提交咨询</button>
+    <div class="ft">方案免费，提交后2小时内联系您</div>
+  </form>
+  <div class="fm-contact">
+    <div class="cc"><div class="lb">电话</div><div class="vl"><span class="hl">188-7877-4848</span></div></div>
+    <div class="cc"><div class="lb">微信</div><div class="vl">18878774848</div></div>
+    <div class="cc"><div class="lb">地址</div><div class="vl">南宁东葛路D1-2908</div></div>
+  </div>
+</div>
+</section>
+
 <footer>
-    <div class="f-links">
-        <a href="about.html">关于</a>
-        <a href="news.html">行业资讯</a>
-        <a href="#contact">联系</a>
-    </div>
-    <p>南珠高铁南玉段 &amp; 南宁机场T2 · 出行场景观察</p>
-    <div class="f-div"></div>
-    <p>&copy; 2025 联屏观察</p>
+  <p style="margin-bottom:2px">南珠高铁南玉段 / 南宁机场T2 广告独家运营方</p>
+  <p style="margin-bottom:2px">&copy; 2025 广西联屏传媒科技有限公司</p>
+  <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">桂ICP备20250128311号</a></p>
 </footer>
 
-<!-- ============================================================
-     GSAP 动效
-     ============================================================ -->
+<div class="fab-w">
+  <div class="fab-i" id="fi">
+    <a href="tel:18878774848" class="fab-it fab-p">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      <span class="fl">电话咨询</span>
+    </a>
+    <button class="fab-it fab-wx" onclick="cwx();return false">
+      <svg viewBox="0 0 24 24"><path d="M8.5 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm7 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 2C6.48 2 2 6.03 2 11c0 2.88 1.46 5.41 3.7 7.07l-.7 2.52 2.66-1.33c.74.2 1.48.32 2.24.34 1.22.04 2.38-.15 3.45-.45C16.16 19.7 20 15.53 20 11c0-4.97-4.48-9-8-9z"/></svg>
+      <span class="fl">复制微信</span>
+    </button>
+    <a href="mailto:57078889@qq.com" class="fab-it fab-em">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="fl">邮件咨询</span>
+    </button>
+  </div>
+  <button class="fab-m" id="fm" onclick="tf()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+<div class="wx-t" id="wt">微信号 18878774848 已复制</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({ ignoreMobileResize: true });
+ScrollTrigger.config({ignoreMobileResize:true});
 
-// ── 粒子浮动 ──
-gsap.to(".hero-dot-1", { y: -30, x: 10, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-dot-2", { y: 20, x: -15, duration: 5, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-dot-3", { y: -15, x: 8, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-dot-4", { y: 25, x: -10, duration: 6, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-dot-5", { y: -20, x: 12, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
-gsap.to(".hero-dot-6", { y: 15, x: -8, duration: 3.8, ease: "sine.inOut", yoyo: true, repeat: -1 });
+// Fab
+function tf(){document.getElementById('fi').classList.toggle('o');document.getElementById('fm').classList.toggle('o')}
+function cwx(){navigator.clipboard.writeText('18878774848').then(function(){var t=document.getElementById('wt');t.classList.add('s');setTimeout(function(){t.classList.remove('s')},2000)}).catch(function(){var t=document.getElementById('wt');t.textContent='微信号: 18878774848';t.classList.add('s');setTimeout(function(){t.classList.remove('s')},2000)})}
+document.addEventListener('click',function(e){var f=document.getElementById('fi'),m=document.getElementById('fm');if(f&&f.classList.contains('o')&&!e.target.closest('.fab-w')){f.classList.remove('o');m.classList.remove('o')}});
 
-// ── Hero 入场 ──
-const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
-heroTl
-  .from(".hero .tag",      { y: 30, opacity: 0, duration: 0.6 }, 0)
-  .from(".hero h2",        { y: 40, opacity: 0, duration: 0.7 }, 0.15)
-  .from(".hero h2 .glow",  { scale: 0.85, opacity: 0, duration: 0.6 }, 0.35)
-  .from(".hero-desc",      { y: 30, opacity: 0, duration: 0.6 }, 0.35)
-  .from(".hero .btn",      { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, 0.55)
-  .from(".hero-dot",       { opacity: 0, duration: 0.4, stagger: 0.08 }, 0.2);
+// Hero entrance
+gsap.from(".hero .tag",{y:20,opacity:0,duration:.6,ease:"power3.out"});
+gsap.from(".hero h1",{y:30,opacity:0,duration:.7,ease:"power3.out",delay:.15});
+gsap.from(".hero h1 span",{scale:.85,opacity:0,duration:.6,ease:"power3.out",delay:.35});
+gsap.from(".hero .sub",{y:20,opacity:0,duration:.6,ease:"power3.out",delay:.35});
+gsap.from(".hero .btn-p,.hero .btn-s",{y:15,opacity:0,duration:.5,ease:"power3.out",stagger:.12,delay:.5});
+gsap.from(".hero-visual .g-cell",{y:30,opacity:0,duration:.6,ease:"power3.out",stagger:.1,delay:.6});
 
-// ── Strip 入场 ──
-gsap.from(".strip", {
-  y: 80, opacity: 0, duration: 0.8, ease: "power3.out",
-  scrollTrigger: { trigger: ".strip", start: "top 90%", toggleActions: "play none none none" }
+// Count-up
+gsap.utils.toArray(".cnt").forEach(function(el){
+  var t=parseFloat(el.getAttribute("data-t"));if(!t)return;
+  ScrollTrigger.create({trigger:el.closest(".g-cell"),start:"top 85%",once:true,
+    onEnter:function(){gsap.to(el,{duration:1.8,ease:"power2.out",
+      onUpdate:function(){var v=Math.round(this.progress()*t);el.textContent=v>=1000?v.toLocaleString():String(v)}})}});
 });
 
-// ── 数字计数 ──
-gsap.utils.toArray(".strip-num").forEach(el => {
-  const finalText = el.textContent;
-  const match = finalText.match(/^([\d,]+)(.*)$/);
-  if (!match) return;
-  const rawNum = parseFloat(match[1].replace(/,/g, ""));
-  const unit = match[2];
-  ScrollTrigger.create({
-    trigger: el.closest(".strip-item"),
-    start: "top 85%",
-    once: true,
-    onEnter: () => {
-      el.textContent = "0" + unit;
-      gsap.to(el, {
-        duration: 1.8, ease: "power2.out",
-        onUpdate: function() {
-          const val = Math.round(this.progress() * rawNum);
-          const formatted = val >= 1000 ? val.toLocaleString() : String(val);
-          el.textContent = formatted + unit;
-        }
-      });
-    }
-  });
+// Section fade-ins
+gsap.utils.toArray(".sec").forEach(function(el){
+  ScrollTrigger.create({trigger:el,start:"top 85%",once:true,
+    onEnter:function(){gsap.from(el,{y:40,opacity:0,duration:.8,ease:"power3.out"})}});
 });
 
-// ── 滚动入场动画 ──
-function scrollReveal(selector, fromVars = {}) {
-  gsap.from(selector, {
-    y: 50, opacity: 0, duration: 0.8, ease: "power3.out",
-    stagger: 0.1,
-    ...fromVars,
-    scrollTrigger: {
-      trigger: selector,
-      start: "top 85%",
-      toggleActions: "play none none reverse"
-    }
-  });
-}
+// Card staggered reveals
+gsap.utils.toArray(".bento-main, .bento-sm, .adv-it, .pr, .ind-it").forEach(function(el,i){
+  ScrollTrigger.create({trigger:el,start:"top 92%",once:true,
+    onEnter:function(){gsap.from(el,{y:30,opacity:0,duration:.6,ease:"power3.out",delay:i*.06,clearProps:"opacity"})}});
+});
 
-scrollReveal(".sec-head");
-scrollReveal(".card-grid .card", { y: 40, stagger: 0.12, immediateRender: false });
-// 三站详解 + 为什么选择联屏 使用IntersectionObserver动画
-(function(){
-    var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-            if(e.isIntersecting){ e.target.style.transform = 'translateY(0)'; e.target.style.opacity = '1'; obs.unobserve(e.target); }
-        });
-    },{threshold:0.15});
-    document.querySelectorAll('.station-detail-card, .adv-item').forEach(function(c){ c.style.transform = 'translateY(30px)'; c.style.opacity = '1'; obs.observe(c); });
-})();
-scrollReveal(".price-block", { y: 30, stagger: 0.15 });
-scrollReveal(".ind-grid .ind-item", { stagger: 0.04 });
-scrollReveal(".cta-inner", { y: 30 });
-scrollReveal(".ccards .ccard", { stagger: 0.08 });
+// Nav shadow
+ScrollTrigger.create({start:"top -1px",
+  onEnter:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.10)"},
+  onLeaveBack:function(){document.querySelector("nav").style.borderBottomColor="rgba(255,255,255,.06)"}});
 </script>
-
 </body>
 </html>
