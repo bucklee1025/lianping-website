@@ -43,6 +43,17 @@ for f in $FILES; do
 done
 echo "  成功下载 $COUNT 个文件"
 
+# 确保新文章和图片被下载（兼容旧版脚本的列表限制）
+echo '  [补丁] 检查缺失的新文件...'
+for missing in "news/article34.html" "assets/yulin-beizhan-a3-dengxiang-case.jpg"; do
+  if [ ! -f "$WEBROOT/$missing" ]; then
+    HTTP_CODE=$(curl -s -o "$WEBROOT/$missing" -w "%{http_code}" "$RAW/$missing" 2>/dev/null)
+    if [ "$HTTP_CODE" = "200" ]; then
+      echo "  补丁下载成功: $missing"
+    fi
+  fi
+done
+
 # 3. 检查 Nginx 配置
 echo '[3/4] 检查 Nginx 配置...'
 if command -v nginx &> /dev/null; then
