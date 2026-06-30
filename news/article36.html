@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌怎么在高铁站做广告才不白投？——南玉高铁三站广告创意避坑指南 | 联屏传媒</title>
+    <meta name="description" content="花了几万块买下高铁站黄金点位，广告画面一挂上去却没人看、没人记住？本文从南玉高铁三站50+点位的实际环境出发，拆解LED大屏、灯箱、刷屏机三类媒体的创意雷区，给出可直接用的投放画面规范。">
+    <meta name="keywords" content="高铁广告创意,广告设计避坑,灯箱广告设计,LED大屏广告,高铁站广告效果,玉林北站广告,联屏传媒">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lianpingmedia.com/news/article36.html">
+    <meta property="og:title" content="品牌怎么在高铁站做广告才不白投？——南玉高铁三站广告创意避坑指南">
+    <meta property="og:description" content="点位买对了，画面做错了——这是高铁站广告最常见的浪费。LED、灯箱、刷屏机三类媒体各有各的视觉规则，不懂就投=白投。">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+:root{
+  --bg:#0a0a0f;--card:#12121a;--card-hover:#1a1a26;
+  --border:rgba(255,255,255,.06);--border-h:rgba(255,255,255,.10);
+  --accent:#8b5cf6;--accent2:#f97316;
+  --text:#fafafa;--text2:#a1a1aa;--text3:#52525b;
+  --rad:12px;--radl:20px;
+  --shadow:0 4px 32px rgba(0,0,0,.5);
+  --font:'Outfit','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+        body{font-family:var(--font);color:var(--text2);background:#0a0a0f;line-height:1.6}
+
+        header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        .hdr{max-width:1200px;margin:0 auto;padding:12px 32px;display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo img{height:36px}.logo h1{font-size:16px;font-weight:700;color:var(--text)}
+        .logo p{font-size:11px;color:var(--text2)}
+        .hdr-r{display:flex;align-items:center;gap:16px;font-size:15px}
+        .hdr-r a{color:var(--text2);text-decoration:none;font-weight:500}
+        .hdr-r a:hover{color:var(--accent)}
+        .hdr-btn{background:var(--accent);color:#fff!important;padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px}
+        
+        .nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none}
+        .nav-i::-webkit-scrollbar{display:none}
+        .nav-i a{color:var(--text2);text-decoration:none;padding:12px 20px;font-size:15px;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}
+        .nav-i a:hover,.nav-i a.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+        .article-cover{width:100%;height:320px;border-radius:var(--radius);background-size:cover;background-position:center;margin-bottom:28px;position:relative;overflow:hidden}
+        .article-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.12),transparent 50%)}
+
+        .article-wrap{background:var(--card-hover);padding:40px 24px 80px}
+        .article-box{max-width:900px;margin:0 auto;background:var(--card);border-radius:var(--radius);padding:48px;box-shadow:var(--shadow)}
+        .breadcrumb{font-size:13px;color:#94a3b8;margin-bottom:20px}
+        .breadcrumb a{color:var(--accent);text-decoration:none}
+        .breadcrumb a:hover{text-decoration:underline}
+        .article-meta{display:flex;gap:12px;align-items:center;margin-bottom:20px}
+        .article-tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+        .article-date{font-size:13px;color:var(--text2)}
+        .article-title{font-size:28px;font-weight:800;color:var(--text);line-height:1.4;margin-bottom:20px}
+        .author-info{margin-bottom:32px}
+        .author-info .name{font-size:15px;font-weight:600;color:var(--text)}
+        .author-info .role{font-size:12px;color:var(--text2)}
+        .article-body{font-size:16px;line-height:2;color:var(--text2)}
+        .article-body h2{font-size:22px;font-weight:700;color:var(--text);margin:36px 0 14px;padding-left:14px;border-left:4px solid var(--accent)}
+        .article-body h3{font-size:18px;font-weight:700;color:var(--text);margin:28px 0 10px}
+        .article-body p{margin-bottom:14px}
+        .article-body strong{color:var(--text)}
+        .article-body table{width:100%;border-collapse:collapse;margin:20px 0;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+        .article-body th{background:var(--bg);color:#fff;padding:10px 16px;font-size:13px;text-align:left}
+        .article-body td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:14px}
+        .article-body tr:last-child td{border-bottom:none}
+        .article-body ul,.article-body ol{margin:12px 0 20px 20px}
+        .article-body li{margin-bottom:6px}
+        .img-wrap{margin:28px 0;text-align:center}
+        .img-wrap img{max-width:100%;height:auto;border-radius:var(--rad);box-shadow:var(--shadow)}
+        .img-caption{display:block;margin-top:8px;font-size:13px;color:var(--text3);font-style:italic}
+        .article-cta{background:linear-gradient(135deg,#0a0a0f,#12121a);color:#fff;padding:36px 32px;border-radius:var(--radius);margin:48px 0;text-align:center}
+        .article-cta h3{font-size:20px;font-weight:700;margin-bottom:10px}
+        .article-cta p{font-size:15px;opacity:.75;margin-bottom:20px}
+        .cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+        .cta-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .25s}
+        .cta-btn.primary{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;box-shadow:0 4px 20px rgba(249,115,22,.3)}
+        .cta-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.4)}
+        .cta-btn.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+        .back-link{text-align:center;margin-top:24px}
+        .back-link a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:500}
+
+        footer{background:#06060a;color:rgba(255,255,255,.4);padding:32px 24px;text-align:center;font-size:13px}
+        footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+        @media(max-width:900px){
+            .article-title{font-size:22px}.article-cover{height:200px}.article-box{padding:28px 20px}
+        }
+    
+/* 浮动咨询按钮 */
+.fab-wrap{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:center}
+.fab-items{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;opacity:0;pointer-events:none;transform:translateY(20px) scale(0.9);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.fab-items.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .25s;position:relative;font-size:0;border:none;cursor:pointer}
+.fab-item:hover{transform:scale(1.12)}
+.fab-item svg{width:22px;height:22px;fill:currentColor}
+.fab-item .f-label{position:absolute;right:58px;background:var(--card);color:#1e293b;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 2px 12px rgba(0,0,0,.1);pointer-events:none;opacity:0;transition:opacity .2s}
+.fab-item:hover .f-label{opacity:1}
+.fab-phone{background:#22c55e}
+.fab-wechat{background:#07c160}
+.fab-mail{background:#3b82f6}
+.fab-main{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(139,92,246,.4);transition:transform .3s;display:flex;align-items:center;justify-content:center}
+.fab-main:hover{transform:scale(1.08)}
+.fab-main svg{width:24px;height:24px;fill:currentColor;transition:transform .3s}
+.fab-main.open svg{transform:rotate(45deg)}
+.wechat-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:99999;opacity:0;transition:opacity .3s;pointer-events:none}
+.wechat-toast.show{opacity:1}
+@media(max-width:600px){.fab-wrap{bottom:20px;right:20px}.fab-main{width:48px;height:48px}.fab-item{width:44px;height:44px}}
+
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <nav>
+<div class="in">
+  <a href="../index.html" class="logo"><img src="../assets/logo.png" alt="联屏传媒"></a>
+  <div class="links">
+    <a href="../index.html">首页</a>
+    <a href="../index.html#media">媒体资源</a>
+    <a href="../index.html#adv">核心优势</a>
+    <a href="../index.html#price">刊例价格</a>
+    <a href="../about.html">关于我们</a>
+    <a href="news.html">资讯</a>
+  </div>
+  <div class="r">
+    <a href="tel:18878774848" class="tel">188-7877-4848</a>
+    <a href="../index.html#contact" class="btn">咨询方案</a>
+  </div>
+</div>
+</nav>
+
+    <div class="article-wrap">
+    <div class="article-box">
+        <div class="breadcrumb">
+            <a href="../index.html">首页</a> &gt; <a href="news.html">新闻资讯</a> &gt; 正文
+        </div>
+
+        <div class="article-meta">
+            <span class="article-tag" style="background:#fce7f3;color:#be185d;">创意实战</span>
+            <span class="article-date">2026年6月26日 | 联屏传媒</span>
+        </div>
+
+        <h1 class="article-title">品牌怎么在高铁站做广告才不白投？——南玉高铁三站广告创意避坑指南</h1>
+
+        <div class="author-info">
+            <div class="name">联屏传媒编辑部</div>
+            <div class="role">广西联屏传媒科技有限公司</div>
+        </div>
+
+        <div class="article-cover" style="background-image: url('../assets/yulin-lightbox-1.jpg');"></div>
+
+        <div class="article-body">
+            <p>先讲一个真事。</p>
+
+            <p>去年有位客户，投了玉林北站候车厅一块灯箱，12米宽3米高，位置在安检口正对面——人流量最大的地方之一。画面设计花了三千块找设计师做的，整体是深蓝色底加金色字，排版很精致，字体也考究。</p>
+
+            <p>上刊一个月后，客户打电话问我们："效果怎么样？"</p>
+
+            <p>我说实话：不太行。</p>
+
+            <p>问题出在哪？他那个深蓝底色在站内暖色灯光下基本糊成一片黑，金色小字从5米外就看不到了。一块每月花8万块买下来的黄金点位，设计费三千，视觉效果还不如旁边那家茶饮品牌白底红字的海报。</p>
+
+            <p>这就是高铁站广告最冤的浪费——<strong>点位买对了，画面做错了。</strong></p>
+
+            <p>我在玉林北站、横州站、兴业南站看过几百块广告牌，这种案例不是个例。今天这篇文章，就是把站内广告最常见的设计坑和避坑方法说清楚。不是教科书那一套——是实打实在站里站着看出来的。</p>
+
+            <div class="img-wrap"><img src="../assets/yulin-station-led.jpg" alt="玉林北站候车厅LED大屏实景"><span class="img-caption">▲ 玉林北站候车厅152㎡LED巨幕——动态大屏的设计规则和静态灯箱完全不同，很多品牌把灯箱画面直接搬上LED，效果打了对折</span></div>
+
+            <h2>一、LED大屏：别把电视广告搬上高铁屏</h2>
+
+            <p>玉林北站候车厅有块152㎡的LED大屏，19.86米宽7.68米高，在整个广西高铁站里排前列。每天15秒一条轮播150次，曝光量很高。</p>
+
+            <p>但我在现场观察过几十条广告，发现一条规律：在LED大屏上效果好的广告，和电视/手机上效果好的广告，根本是两回事。</p>
+
+            <h3>坑一：画面太"满"</h3>
+
+            <p>品牌方总觉得15秒很珍贵，恨不得把产品图、Logo、slogan、二维码、地址全部塞进去。结果旅客抬头那一两秒，什么都没看清。</p>
+
+            <p>LED屏的正确用法是：<strong>一条广告只讲一件事。</strong>高铁旅客不是坐在沙发上慢慢看广告的——他们在走路、在找检票口、在拖行李。你只有2到3秒的注意力窗口。这2到3秒，能让人记住品牌名和品类就够了。</p>
+
+            <p>举个例子：某汽车品牌在LED上投广告，15秒里前5秒是宏大的航拍镜头，中间5秒是车在各种场景里跑，最后3秒出现Logo。看着是挺大气——但旅客就抬头1秒钟，刚好看到航拍镜头，完全不知道这是谁家的广告。</p>
+
+            <p>正确做法：开头1秒直接把品牌Logo和核心卖点放出来，后面才是氛围铺垫。广告人管这叫"信息前置"——其实就是别让旅客猜你是谁。</p>
+
+            <h3>坑二：文字太小、太多了</h3>
+
+            <p>LED屏观看距离通常在5到30米。你在电脑屏幕上看设计稿觉得字够大了——挂上去旅客根本看不见。</p>
+
+            <p>大屏画面上的文字，一条信息为宜，两行封顶。字号按"30米外能辨认"来定。不要写"年度钜惠全场低至5折起"这种废话——就写"5折"两个大字，加品牌名。</p>
+
+            <p>我见过做得好的案例：某白酒品牌，15秒整条画面就三个元素——瓶身、品牌名、一句五字广告语。背景纯白。就这样，简单到粗暴。但它在那152㎡巨幕上一亮，整个候车厅东侧的人都能认出来。</p>
+
+            <h3>坑三：动态特效喧宾夺主</h3>
+
+            <p>LED屏的优势是能动，但很多品牌把它当成了劣势。各种翻转、爆炸、粒子特效往上堆，画面眼花缭乱——看完了只记得"刚才有东西在闪"。</p>
+
+            <p>高铁站LED环境光很强、顶部有大量照明灯。动态效果在强环境下，对比度和辨识度会大幅下降。真正有效的做法是：背景尽量简单干净，核心信息用静态或微动效果呈现。品牌Logo全程保持可见，别玩"最后3秒才露脸"那一套。</p>
+
+            <div class="img-wrap"><img src="../assets/yulin-lightbox-2.jpg" alt="玉林北站灯箱广告实景"><span class="img-caption">▲ 玉林北站候车厅灯箱12m×3.2m——这种尺寸的灯箱，人体走过去只能看清2米以内的大字。你的品牌名占画面多大比例，决定了多远的旅客能认出你</span></div>
+
+            <h2>二、灯箱：关掉PS再看一遍</h2>
+
+            <p>南玉高铁三站共有50多个灯箱点位，分布在候车厅、进出站通道、出站口等位置。灯箱是三类媒体中"停留时间最长"的一种——旅客在经过时会完整看到画面。</p>
+
+            <p>但灯箱也有自己的一套规则。</p>
+
+            <h3>坑四：深色背景在站内灯光下会"糊"</h3>
+
+            <p>开头那个例子就是这个坑。</p>
+
+            <p>高铁站室内照明以暖白和冷白混合为主，灯箱本身也有背光。在这种光照条件下，深蓝、深灰、深紫等暗色系背景的对比度会明显下降。你在设计师的Mac屏幕上看着"高级感满满"的暗色调，在站里看起来就像一块发光但看不清的板子。</p>
+
+            <p>不是说不能用深色——但如果你用深色，核心信息（品牌名、产品图）的亮度和对比度要拉到电脑屏幕上看都觉得"有点刺眼"的程度，在站内才刚好。</p>
+
+            <h3>坑五：品牌名和Logo太小——"留白美学"不适用于灯箱</h3>
+
+            <p>设计师喜欢留白，这个可以理解。但灯箱画面不是杂志内页——旅客不会凑近了仔细看。</p>
+
+            <p>以玉林北站出站口正对面E20灯箱为例：13.7米宽4.4米高，旅客出站时从30米外开始看到这块屏，走到正面大约3到5秒。这3到5秒里，如果你的Logo只占画面10%的面积，那就是一场"猜猜我是谁"的游戏。</p>
+
+            <p>灯箱广告的铁律：<strong>品牌名或Logo占画面15%以上面积，从20米外能清晰辨认。</strong>这个标准在电脑上看会觉得很"粗暴"，但在站内刚刚好。</p>
+
+            <h3>坑六：出站通道灯箱——不是给你"品宣"用的</h3>
+
+            <p>出站通道的灯箱（如E1-E10）和候车厅灯箱是两种完全不同的阅读场景。</p>
+
+            <p>候车厅：旅客坐着等，无聊，可以慢慢看——适合放品牌故事、产品细节、服务介绍。</p>
+
+            <p>出站通道：旅客在走路，手里可能拖着行李、拿着手机，注意力高度分散。这时候的灯箱只有一个任务——<strong>让人记住品牌名和品类。</strong>画面越简单越好。品牌名加一句定位语，顶多加一个产品图。二维码可以放，但要大（至少占画面10%面积），否则没人扫。</p>
+
+            <p>见过一个反面教材：某教育机构在出站通道灯箱上放了一整段课程介绍，大概80个字。旅客平均经过时间不到2秒——连标题都读不完。</p>
+
+            <div class="img-wrap"><img src="../assets/yulin-screen-1.jpg" alt="玉林北站98寸刷屏机实拍"><span class="img-caption">▲ 玉林北站候车厅98寸双面刷屏机——竖屏形态，旅客从侧面走过时只有1秒停留。画面需要"一刀见血"</span></div>
+
+            <h2>三、刷屏机：竖屏思维——忘掉"横版海报"</h2>
+
+            <p>南玉高铁三站部署了14组28面98寸双面刷屏机。这玩意和灯箱、LED大屏完全不同——它是竖屏、位于旅客过道两侧、每屏切换时间短。</p>
+
+            <p>刷屏机的核心参数：单屏停留约8-10秒，旅客一般看1-2秒就移开视线。这意味着画面必须在1秒内完成信息传递。</p>
+
+            <h3>坑七：把横版海报直接裁成竖版</h3>
+
+            <p>这是刷屏机上最普遍的翻车操作。品牌的横版KV直接按比例裁切塞进竖屏——结果品牌Logo被切掉一半，产品图变形，文字排版错乱。</p>
+
+            <p>刷屏机必须用原生竖版视觉。不是"把横的裁成竖的"——是从零开始按竖屏1080×1920比例做。</p>
+
+            <h3>坑八：上下信息倒置——Logo放在下半屏</h3>
+
+            <p>刷屏机装在旅客通道两侧，屏幕中心大约在1.5米高度——和大多数成年人视线平齐。但有一类广告经常犯的错就是把Logo放在画面底部，产品图放在顶部。</p>
+
+            <p>旅客走过来时，视线首先扫到的是屏幕上半部分。如果上半部分是产品图（可能不认识），下半部分是Logo和品牌名——旅客就在那1秒里没搞清楚"这谁家的广告"。</p>
+
+            <p>刷屏机的信息层级应该是：<strong>上三分之一放品牌Logo+一句话定位，中间放产品/主视觉，下三分之一放行动指引（二维码/电话/门店地址）。</strong></p>
+
+            <h2>四、南玉高铁三站：不同站点，不同视觉策略</h2>
+
+            <p>上面说的是三类媒体的通用规则。但具体到南玉高铁三个站，还有几条"因地制宜"的补充。</p>
+
+            <table>
+                <tr><th>站点</th><th>旅客特征</th><th>创意侧重</th><th>举例</th></tr>
+                <tr><td><strong>玉林北站</strong><br>（枢纽站）</td><td>商务人群占80%以上，目的明确，停留时间较长</td><td>品牌调性+信任感。画面可以"稳"一点，讲品牌故事、行业地位、服务承诺</td><td>金融产品放"成立XX年/服务XX客户"这种数据；建材品牌放工程案例实拍</td></tr>
+                <tr><td><strong>横州站</strong><br>（产业站）</td><td>茉莉花产业链上下游B端客商+少量游客</td><td>专业感+源头认证。画面要让经销商一眼觉得"这是正宗源头"</td><td>茉莉花品牌放产地实拍+有机认证标识；农产品放检测报告摘要</td></tr>
+                <tr><td><strong>兴业南站</strong><br>（产业站）</td><td>碳酸钙、健康食品等产业B端访客</td><td>产业实力+规模感。画面要传递"这个领域的头部企业"信号</td><td>新材料品牌放生产线航拍；食品品牌放工厂全景+年产能数据</td></tr>
+            </table>
+
+            <p>有品牌问过我：三个站一起投，画面统一做一套行不行？</p>
+
+            <p>行是行。但如果你预算允许，建议至少做两个版本：玉林北站用品牌调性版（偏高端、大气），横州站和兴业南站用行业专业版（偏实在、数据化）。同一品牌不同站点用不同画面——不是浪费，是尊重不同人群的阅读习惯。</p>
+
+            <h2>五、几条可以直接用的创意铁律</h2>
+
+            <p>说了这么多坑，最后总结几条拿到就能用的规则：</p>
+
+            <p><strong>1. 距离测试。</strong>设计稿在电脑上看完之后，把显示器推到2米外再看一次。如果看不清品牌名，那就得改。</p>
+
+            <p><strong>2. 三色极限。</strong>整个画面主色不超过三种。高铁站光线复杂，颜色多了混在一起就是一团灰。</p>
+
+            <p><strong>3. 先有字再有图。</strong>别先做好图再往上贴字。先定好文字的内容、大小、位置，剩余空间才是给视觉的。画面没有文字不行——但文字占主导地位。</p>
+
+            <p><strong>4. 二维码不要"顺手放"。</strong>二维码要么放得够大（画面10%面积以上）、要么干脆不放。那种犄角旮旯的小二维码——没人扫，还占地方。</p>
+
+            <p><strong>5. 拍张现场照再定稿。</strong>在最终定稿前，让你的设计师或对接人去站里实际拍一张这个点位周围环境的照片。把设计稿P进现场照片里看一看——很多时候这一眼就能发现对比度的问题。</p>
+
+            <p>这五条看着很简单，但真正做到的品牌不到三分之一。</p>
+
+            <h2>六、结语</h2>
+
+            <p>高铁站广告不是一个"创意竞赛"——它是一个"信息传递效率竞赛"。</p>
+
+            <p>在玉林北站候车厅待一个小时，你会看到几百个旅客从几十块广告牌前走过。大部分人不会刻意"看广告"，但他们的眼睛会自然扫过。你的品牌在这个"自然扫过"的瞬间，能不能被认出来、被记住——就是创意和设计水平的所有意义。</p>
+
+            <p>点位选对了，刊例价谈好了，排期也安排了。别让最后一步——画面——把你的钱打了水漂。</p>
+
+            <p>如果对南玉高铁三站具体点位的画面规范有疑问，可以直接联系我们的媒体运营团队。我们每个点位都有实景照片和尺寸参数，设计前看一眼，值回设计费。</p>
+
+            <p style="text-align:center;margin-top:32px;color:#94a3b8;font-size:15px;">—— 广西联屏传媒，南珠高铁南玉段广告独家运营商 | 李洪鑫 18878774848（微信同号）</p>
+        </div>
+
+        <div class="article-cta">
+            <h3>想看看你的广告画面上刊效果？</h3>
+            <p>联系我们获取南玉高铁三站任意点位的实景照片和尺寸参数，设计之前先了解现场环境</p>
+            <div class="cta-btns">
+                <a href="tel:18878774848" class="cta-btn primary">&#9742; 电话咨询 188-7877-4848</a>
+                <a href="mailto:57078889@qq.com" class="cta-btn secondary">&#9993; 邮箱联系</a>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="news.html">&#8592; 返回新闻列表</a>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
+        <p style="margin-top:6px">&copy; 2025 广西联屏传媒科技有限公司 | 李洪鑫 18878774848（微信同号）</p>
+        <p style="margin-top:4px;color:rgba(255,255,255,.4);font-size:12px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.4);text-decoration:none">桂ICP备20250128311号</a></p>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.article-box', { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out', clearProps: 'all' });
+gsap.from('.article-cta', { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out', clearProps: 'all' });
+window.addEventListener('load', () => ScrollTrigger.refresh());
+</script>
+
+<div class="fab-wrap">
+  <div class="fab-items" id="fabItems">
+    <a href="tel:18878774848" class="fab-item fab-phone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      <span class="f-label">📞 电话咨询</span>
+    </a>
+    <button class="fab-item fab-wechat" onclick="copyWx();return false">
+      <svg viewBox="0 0 24 24"><path d="M8.5 11a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm7 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM12 2C6.48 2 2 6.03 2 11c0 2.88 1.46 5.41 3.7 7.07l-.7 2.52 2.66-1.33c.74.2 1.48.32 2.24.34 1.22.04 2.38-.15 3.45-.45C16.16 19.7 20 15.53 20 11c0-4.97-4.48-9-8-9z"/></svg>
+      <span class="f-label">💬 复制微信</span>
+    </button>
+    <a href="mailto:57078889@qq.com" class="fab-item fab-mail">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="f-label">✉️ 邮件咨询</span>
+    </button>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+<div class="wechat-toast" id="wxToast">微信号 18878774848 已复制到剪贴板</div>
+<script>
+function toggleFab(){document.getElementById('fabItems').classList.toggle('open');document.getElementById('fabMain').classList.toggle('open')}
+function copyWx(){navigator.clipboard.writeText('18878774848').then(function(){var t=document.getElementById('wxToast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}).catch(function(){var t=document.getElementById('wxToast');t.textContent='微信号: 18878774848';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})}
+document.addEventListener('click',function(e){var f=document.getElementById('fabItems');var m=document.getElementById('fabMain');if(f&&f.classList.contains('open')&&!e.target.closest('.fab-wrap')){f.classList.remove('open');m.classList.remove('open')}});
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>
