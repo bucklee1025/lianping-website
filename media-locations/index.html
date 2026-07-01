@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-Ue373cDG3b" />
+<title>广告位分布 | 联屏传媒 · 高铁+机场广告</title>
+<meta name="description" content="南珠高铁南玉段（玉林北站、横州站、兴业南站）及南宁机场T2广告位分布图，点击查看每个站点的广告资源详情、尺寸和价格。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,::after,::before{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--card:#12121a;--card-hover:#1a1a26;
+  --border:rgba(255,255,255,.06);--border-h:rgba(255,255,255,.10);
+  --accent:#8b5cf6;--accent2:#f97316;
+  --text:#fafafa;--text2:#a1a1aa;--text3:#52525b;
+  --rad:12px;--radl:20px;
+  --shadow:0 4px 32px rgba(0,0,0,.5);
+  --font:'Outfit','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.6;font-size:14px}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .in{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{display:flex;align-items:center;gap:8px}
+nav .logo img{height:24px}
+nav .links{display:flex;gap:2px}
+nav .links a{padding:6px 14px;font-size:13px;font-weight:500;color:var(--text2);border-radius:6px;transition:all .2s}
+nav .links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav .r{display:flex;align-items:center;gap:12px}
+nav .r .tel{font-size:13px;font-weight:600;color:var(--text)}
+nav .btn{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600}
+nav .btn:hover{opacity:.9}
+@media(max-width:900px){nav .links,nav .r .tel{display:none}}
+
+/* HERO */
+.hero{min-height:100dvh;display:flex;align-items:center;padding:80px 32px 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,15,.92) 0%,rgba(10,10,15,.7) 40%,rgba(10,10,15,.5) 100%),radial-gradient(ellipse 70% 55% at 30% 40%,rgba(124,58,237,.12) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 75% 60%,rgba(249,115,22,.08) 0%,transparent 50%);background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80');background-size:cover;background-position:center;pointer-events:none}
+.hero .in{max-width:1000px;margin:0 auto;width:100%;text-align:center;position:relative;z-index:1;padding:40px 0}
+.hero h1{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--text);margin-bottom:12px;letter-spacing:-.5px}
+.hero h1 span{background:linear-gradient(135deg,#a78bfa,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{font-size:15px;color:var(--text2);margin-bottom:24px}
+.hero .stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hero .stats .s{text-align:center}
+.hero .stats .s .n{font-size:24px;font-weight:700;color:var(--text)}
+.hero .stats .s .l{font-size:12px;color:var(--text3);margin-top:2px}
+
+/* MAP SECTION */
+.map-sec{background:var(--card);border-top:1px solid var(--border)}
+.map-in{max-width:1100px;margin:0 auto;padding:60px 32px}
+.map-in h2{font-size:24px;font-weight:700;color:var(--text);text-align:center;margin-bottom:12px}
+.map-in .sub{text-align:center;font-size:14px;color:var(--text3);margin-bottom:40px}
+.map-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.map-wrap{grid-template-columns:1fr}}
+
+/* SVG Map */
+.map-svg-wrap{position:sticky;top:80px;background:rgba(255,255,255,.02);border-radius:var(--radl);border:1px solid var(--border);padding:24px;overflow:hidden}
+@media(max-width:860px){.map-svg-wrap{position:static}}
+.map-svg-wrap svg{width:100%;height:auto;display:block}
+.station-dot{cursor:pointer;transition:all .3s}
+.station-dot:hover .dot-circle{fill:var(--accent);r:10}
+.station-dot.active .dot-circle{fill:var(--accent2);r:12;stroke:#fff;stroke-width:2}
+.station-dot .dot-label{font-size:13px;font-weight:600;fill:var(--text2);transition:fill .3s}
+.station-dot:hover .dot-label{fill:var(--text)}
+.station-dot.active .dot-label{fill:var(--accent2);font-weight:700}
+.map-line{stroke-width:3;stroke:var(--border);fill:none}
+.map-line-active{stroke-width:3;stroke:url(#lineGrad);fill:none;stroke-dasharray:8 4;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-24}}
+
+/* Detail Panel */
+.detail-panel{background:var(--card);border-radius:var(--radl);border:1px solid var(--border);overflow:hidden;transition:all .4s}
+.detail-panel .empty-state{padding:60px 32px;text-align:center}
+.detail-panel .empty-state svg{width:48px;height:48px;fill:var(--text3);opacity:.3;margin-bottom:12px}
+.detail-panel .empty-state h3{font-size:16px;color:var(--text3);font-weight:500}
+.detail-panel .empty-state p{font-size:13px;color:var(--text3);margin-top:6px;opacity:.6}
+.dp-header{padding:24px 24px 16px;border-bottom:1px solid var(--border)}
+.dp-header .dp-name{font-size:18px;font-weight:700;color:var(--text)}
+.dp-header .dp-tag{display:inline-block;padding:3px 10px;border-radius:9999px;font-size:11px;font-weight:600;margin-top:6px}
+.dp-header .dp-tag.station{background:rgba(139,92,246,.12);color:var(--accent)}
+.dp-header .dp-tag.airport{background:rgba(249,115,22,.12);color:var(--accent2)}
+.dp-body{padding:16px 24px 24px}
+.dp-spot{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--rad);padding:16px;margin-bottom:12px;transition:all .3s}
+.dp-spot:hover{border-color:var(--border-h);background:var(--card-hover)}
+.dp-spot:last-child{margin-bottom:0}
+.dp-spot .spot-img{width:100%;height:160px;border-radius:8px;object-fit:cover;margin-bottom:10px;background:var(--bg)}
+.dp-spot .spot-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+.dp-spot .spot-detail{font-size:12px;color:var(--text3);margin-bottom:6px}
+.dp-spot .spot-price{font-size:16px;font-weight:700;color:var(--accent2)}
+.dp-spot .spot-cta{display:inline-block;margin-top:10px;padding:6px 16px;border-radius:6px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:12px;font-weight:600;transition:opacity .2s;cursor:pointer;border:none}
+.dp-spot .spot-cta:hover{opacity:.9}
+
+/* Category header in detail panel */
+.dp-cat-header{font-size:14px;font-weight:700;color:var(--text);margin:18px 0 10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.dp-stats{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.dp-stats span{font-size:12px;padding:4px 10px;border-radius:6px}
+.dp-stats .cat-count{background:rgba(139,92,246,.1);color:var(--accent)}
+.dp-stats .spot-count{background:rgba(249,115,22,.1);color:var(--accent2)}
+.dp-body{max-height:700px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+
+/* Contact */
+.contact-sec{padding:80px 32px;text-align:center}
+.contact-sec h2{font-size:24px;font-weight:700;color:var(--text);margin-bottom:8px}
+.contact-sec p{color:var(--text3);margin-bottom:24px}
+.contact-sec .cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:15px;font-weight:600;transition:all .3s}
+.contact-sec .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,.3)}
+.contact-sec .phones{margin-top:20px;display:flex;justify-content:center;gap:24px;font-size:14px;flex-wrap:wrap}
+.contact-sec .phones a{color:var(--accent2);font-weight:600}
+
+footer{padding:24px 32px;text-align:center;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
+footer a{color:var(--text2)}
+footer a:hover{color:var(--text)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .5s ease forwards}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+<a href="../" class="logo"><img src="../assets/logo.png" alt="联屏传媒"> 联屏传媒</a>
+<div class="links">
+  <a href="../">首页</a>
+  <a href="../#media">媒体资源</a>
+  <a href="../#adv">核心优势</a>
+  <a href="../#price">刊例价格</a>
+  <a href="../about.html">关于我们</a>
+  <a href="../news.html">资讯</a>
+  <a href="./" style="color:var(--accent);font-weight:600">广告位地图</a>
+</div>
+<div class="r">
+  <a href="tel:18878774848" class="tel">📞 188-7877-4848</a>
+  <a href="../#contact" class="btn">咨询报价</a>
+</div>
+</div></nav>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="in">
+  <h1><span>互动式</span>广告位地图</h1>
+  <p class="sub">点击地图上的站点，查看每个广告位的详细信息和价格</p>
+  <div class="stats">
+    <div class="s"><div class="n">3</div><div class="l">高铁站</div></div>
+    <div class="s"><div class="n">1</div><div class="l">机场</div></div>
+    <div class="s"><div class="n">50+</div><div class="l">广告点位</div></div>
+    <div class="s"><div class="n">2,600万</div><div class="l">年覆盖人次</div></div>
+  </div>
+</div>
+</section>
+
+<section class="map-sec">
+<div class="map-in">
+  <h2>南珠高铁南玉段 · 路线图</h2>
+  <p class="sub">点击站点查看该站广告资源</p>
+  <div class="map-wrap">
+
+    <!-- Left: SVG Map -->
+    <div class="map-svg-wrap">
+      <svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#8b5cf6"/>
+            <stop offset="50%" stop-color="#a855f7"/>
+            <stop offset="100%" stop-color="#f97316"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Background Map (simplified Guangxi outline) -->
+        <path d="M240 20 Q280 40 320 30 Q360 50 340 90 Q320 120 280 130 Q240 140 200 130 Q160 120 140 90 Q120 50 160 30 Q200 15 240 20Z" fill="rgba(139,92,246,.04)" stroke="var(--border)" stroke-width="1"/>
+
+        <!-- Railway line: Nanning to Yulin (top to bottom) -->
+        <path class="map-line" d="M60 80 Q120 120 140 160 Q160 200 170 250 Q180 300 200 350 Q220 400 260 440 Q300 480 340 510"/>
+        <path class="map-line-active" d="M60 80 Q120 120 140 160 Q160 200 170 250 Q180 300 200 350 Q220 400 260 440 Q300 480 340 510"/>
+
+        <!-- Station: Nanning (start) -->
+        <g class="station-dot" data-station="nanning">
+          <circle class="dot-circle" cx="60" cy="80" r="7" fill="rgba(255,255,255,.3)" stroke="var(--border)" stroke-width="2"/>
+          <text class="dot-label" x="60" y="65" text-anchor="middle">南宁东</text>
+        </g>
+
+        <!-- Station: 横州 -->
+        <g class="station-dot" data-station="hengzhou" onclick="selectStation('hengzhou')" style="cursor:pointer">
+          <circle class="dot-circle" cx="170" cy="250" r="8" fill="var(--accent)" stroke="#fff" stroke-width="2"/>
+          <text class="dot-label" x="170" y="235" text-anchor="middle">横州站</text>
+          <text x="170" y="270" text-anchor="middle" fill="var(--text3)" font-size="10">18个灯箱</text>
+          <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" begin="0s"/>
+        </g>
+
+        <!-- Station: 兴业南 -->
+        <g class="station-dot" data-station="xingye" onclick="selectStation('xingye')" style="cursor:pointer">
+          <circle class="dot-circle" cx="200" cy="350" r="8" fill="var(--accent)" stroke="#fff" stroke-width="2"/>
+          <text class="dot-label" x="200" y="335" text-anchor="middle">兴业南站</text>
+          <text x="200" y="370" text-anchor="middle" fill="var(--text3)" font-size="10">15个灯箱</text>
+          <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite" begin=".5s"/>
+        </g>
+
+        <!-- Station: 玉林北 -->
+        <g class="station-dot" data-station="yulin" onclick="selectStation('yulin')" style="cursor:pointer">
+          <circle class="dot-circle" cx="340" cy="510" r="10" fill="var(--accent2)" stroke="#fff" stroke-width="2.5"/>
+          <text class="dot-label" x="340" y="495" text-anchor="middle" font-weight="700">玉林北站</text>
+          <text x="340" y="530" text-anchor="middle" fill="var(--text3)" font-size="10">22个灯箱+LED+刷屏机</text>
+          <animate attributeName="r" values="10;13;10" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </g>
+
+        <!-- Airport marker (top-right) -->
+        <g class="station-dot" data-station="airport" onclick="selectStation('airport')" style="cursor:pointer">
+          <rect class="dot-circle" x="370" y="55" width="16" height="16" rx="4" fill="var(--accent2)" stroke="#fff" stroke-width="2"/>
+          <text class="dot-label" x="378" y="45" text-anchor="middle">南宁机场T2</text>
+          <text x="378" y="85" text-anchor="middle" fill="var(--accent2)" font-size="10" font-weight="600">✈ 36屏同步</text>
+          <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="3s" repeatCount="indefinite"/>
+        </g>
+
+        <!-- Legend -->
+        <circle cx="30" cy="565" r="5" fill="var(--accent)"/>
+        <text x="42" y="569" fill="var(--text3)" font-size="11">高铁站</text>
+        <rect x="110" y="561" width="10" height="10" rx="2" fill="var(--accent2)"/>
+        <text x="126" y="569" fill="var(--text3)" font-size="11">机场</text>
+      </svg>
+    </div>
+
+    <!-- Right: Detail Panel -->
+    <div class="detail-panel" id="detailPanel">
+      <div class="empty-state" id="emptyState">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <h3>点击左侧地图上的站点</h3>
+        <p>查看该站所有广告位详情及价格</p>
+      </div>
+      <div class="dp-header" id="dpHeader" style="display:none">
+        <div class="dp-name" id="dpName"></div>
+        <div class="dp-tag" id="dpTag"></div>
+      </div>
+      <div class="dp-body" id="dpBody" style="display:none"></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="contact-sec">
+<h2>想要了解具体点位排期和价格？</h2>
+<p>我们提供免费的一对一媒体方案咨询服务</p>
+<a href="tel:18878774848" class="cta-btn">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  188-7877-4848 李洪鑫
+</a>
+<div class="phones">
+  <a href="mailto:57078889@qq.com">📧 57078889@qq.com</a>
+  <span>广西南宁市东葛路绿地中央广场D1栋2908</span>
+</div>
+</section>
+
+<footer>
+<p>南珠高铁南玉段 &amp; 南宁机场T2 · 广告独家运营方</p>
+<p style="margin-top:4px">&copy; 2025 广西联屏传媒科技有限公司</p>
+<p style="margin-top:4px"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">桂ICP备20250128311号</a></p>
+</footer>
+
+<script>
+const stations = {
+  yulin: {
+    name: '玉林北站',
+    tag: '高铁站 · 南玉段核心站点',
+    tagClass: 'station',
+    desc: '覆盖人口2000万 · 日均客流3万+ · 商务占比超80%',
+    cats: [
+      { name: '🪟 候车厅灯箱', spots: [
+        { img: 'assets/yulin-a1-a8-overview.png', name: '候车厅 A1-A8（总览）', detail: '12m×3.2m · 38.40㎡/个 · 8个 · 进站候车区主视觉', price: '8万/个/月' },
+        { img: 'assets/yulin-a1.jpg', name: '候车厅 A1', detail: '12m×3.2m · 38.40㎡ · 1个 · 正对安检口方向', price: '8万/个/月' },
+        { img: 'assets/yulin-a2.jpg', name: '候车厅 A2', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车厅主墙面', price: '8万/个/月' },
+        { img: 'assets/yulin-a3.png', name: '候车厅 A3', detail: '12m×3.2m · 38.40㎡ · 1个 · 检票口上方墙面', price: '8万/个/月' },
+        { img: 'assets/yulin-a4.png', name: '候车厅 A4', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车厅侧面墙面', price: '8万/个/月' },
+        { img: 'assets/yulin-a5.png', name: '候车厅 A5', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车区主墙面', price: '8万/个/月' },
+        { img: 'assets/yulin-a6.jpg', name: '候车厅 A6', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车厅正面视觉', price: '8万/个/月' },
+        { img: 'assets/yulin-a7.png', name: '候车厅 A7', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车厅侧面墙面', price: '8万/个/月' },
+        { img: 'assets/yulin-a8.png', name: '候车厅 A8', detail: '12m×3.2m · 38.40㎡ · 1个 · 候车厅主墙面', price: '8万/个/月' }
+      ]},
+      { name: '🖥️ 站内电子屏', spots: [
+        { img: 'assets/yulin-t1-led.png', name: 'LED大屏 T1', detail: '19.86m×7.68m · 152.52㎡ · 15s/150次/天 · 候车大厅正面', price: '15万/月' },
+        { img: 'assets/yulin-b1-b14-screens.png', name: '刷屏机 B1-B14', detail: '2.16m×1.22m · 98寸双面屏幕 · 1组（14块28面）', price: '6万/组/月' }
+      ]},
+      { name: '🚉 站台层', spots: [
+        { img: 'assets/yulin-d1-d2-platform.png', name: '站台灯箱 D1-D2', detail: '3.5m×4.72m · 33.04㎡ · 1组（2个6面）· 包柱卡布灯箱', price: '5万/组/月' }
+      ]},
+      { name: '🚶 出站通道/出站层', spots: [
+        { img: 'assets/yulin-e1-e2-exit.png', name: '出站通道 E1-E2', detail: '4.85m×2.4m · 11.64㎡ · 2个 · 出站通道墙面', price: '3.5万/个/月' },
+        { img: 'assets/yulin-e3-e10-exit.png', name: '出站通道 E3-E10', detail: '4.8m×2.4m · 11.52㎡ · 8个 · 出站通道墙面', price: '3万/个/月' },
+        { img: 'assets/yulin-e11-e14-escalator.png', name: '出站扶梯上方 E11-E14', detail: '3.2m×2.1m · 6.72㎡ · 4个 · 站台出站楼梯正对面电梯上方', price: '2.5万/个/月' },
+        { img: 'assets/yulin-e15-e18-pillars.png', name: '出站立柱 E15-E18', detail: '3.16m×2.07m · 6.54㎡ · 4个 · 站台出站楼梯正对面立柱', price: '2.5万/个/月' },
+        { img: 'assets/yulin-f1-f6-pillars.png', name: '出站包柱 F1-F6', detail: '3.5m×1.74m · 146.16㎡ · 1组（6个24面）· 出站层包柱卡布灯箱', price: '15万/组/月' },
+        { img: 'assets/yulin-e19-exit.png', name: '出站层 E19', detail: '12.8m×2.45m · 31.36㎡ · 1个 · 出站层墙面', price: '6万/组/月' },
+        { img: 'assets/yulin-e20-exit-front.png', name: '出站口正对面 E20', detail: '13.7m×4.4m · 60.28㎡ · 1个 · 出站口正对面黄金位', price: '12万/个/月' },
+        { img: 'assets/yulin-e21-e22-gates.png', name: '出站闸机上方 E21-E22', detail: '8.8m×4.4m · 38.72㎡ · 2个 · 出站口正对面左右两侧', price: '6万/个/月' }
+      ]},
+      { name: '🏗️ 高架层', spots: [
+        { img: 'assets/yulin-a09-a12-elevated.jpg', name: '高架层灯箱 A09-A12', detail: '4m×2.4m · 9.6㎡ · 4个 · 高架层扶梯墙面', price: '2.5万/个/月' }
+      ]}
+    ]
+  },
+  hengzhou: {
+    name: '横州站',
+    tag: '高铁站 · 南玉段中间站',
+    tagClass: 'station',
+    desc: '日均客流3万人次 · 候车厅/出站厅/连廊/地道',
+    cats: [
+      { name: '🪟 候车厅灯箱', spots: [
+        { img: 'assets/hengzhou-cover.jpg', name: '横州站候车厅（总览）', detail: '候车厅主空间一览 · 拉布灯箱与卡布灯箱组合', price: '按点位询价' },
+        { img: 'assets/hengzhou-a1-a2.png', name: '候车厅 A1-A2', detail: '13.7m×2.98m · 40.83㎡ · 2个 · 候车厅主墙面', price: '6万/个/月' },
+        { img: 'assets/hengzhou-a3-a6.png', name: '候车厅 A3-A6', detail: '8.9m×3m · 26.7㎡ · 4个 · 候车厅两侧墙面', price: '4万/个/月' },
+        { img: 'assets/hengzhou-a7-a8.png', name: '候车厅 A7-A8', detail: '3.04m×2.98m · 9.06㎡ · 1组（2个）· 信息屏两侧', price: '4万/组/月' }
+      ]},
+      { name: '🚶 出站通道', spots: [
+        { img: 'assets/hengzhou-b1-b3.png', name: '出站通道 B1-B3', detail: '5.4m×2.4m · 12.96㎡ · 3个 · 出站厅出站口墙面', price: '3万/个/月' },
+        { img: 'assets/hengzhou-b4-b5.png', name: '出站口 B4-B5', detail: '5.4m×2.4m · 12.96㎡ · 2个 · 出站厅墙面', price: '2万/个/月' },
+        { img: 'assets/hengzhou-b6-b9.png', name: '出站地道 B6-B9', detail: '4.2m×1.8m · 7.56㎡ · 4个 · 出站地道墙面', price: '2万/个/月' }
+      ]},
+      { name: '🌉 连廊/地道', spots: [
+        { img: 'assets/hengzhou-c1-c2.png', name: '连廊 C1-C2', detail: '8.8m×2.4m · 21.12㎡ · 2个 · 进站连廊墙面', price: '4万/个/月' },
+        { img: 'assets/hengzhou-c3.png', name: '连廊 C3', detail: '8m×1.8m · 14.4㎡ · 1个 · 进站连廊墙面', price: '4万/个/月' },
+        { img: 'assets/hengzhou-c4-c5.png', name: '进站地道 C4-C5', detail: '4.2m×1.8m · 7.56㎡ · 2个 · 进站地道墙面', price: '2万/个/月' }
+      ]}
+    ]
+  },
+  xingye: {
+    name: '兴业南站',
+    tag: '高铁站 · 南玉段中间站',
+    tagClass: 'station',
+    desc: '日均客流3万人次 · 候车厅/出站口/出站通道/楼梯',
+    cats: [
+      { name: '🪟 候车厅灯箱', spots: [
+        { img: 'assets/xingye-cover.jpg', name: '兴业南站候车厅（总览）', detail: '候车厅主空间一览 · 检票口与信息屏周边灯箱', price: '按点位询价' },
+        { img: 'assets/xingye-a1-a2.png', name: '检票口上方 A1-A2', detail: '10.6m×2.98m · 31.59㎡ · 2个 · 候车厅检票口正上方左右两侧', price: '4万/个/月' },
+        { img: 'assets/xingye-a3-a6.png', name: '候车厅两侧 A3-A6', detail: '9.6m×2.77m · 26.59㎡ · 4个 · 候车厅左右两侧墙面', price: '3万/个/月' },
+        { img: 'assets/xingye-a7-a8.png', name: '信息屏两侧 A7-A8', detail: '2.94m×2.98m · 8.76㎡ · 1组（2个）· 候车厅信息屏两侧', price: '3万/组/月' }
+      ]},
+      { name: '🚶 出站通道/楼梯', spots: [
+        { img: 'assets/xingye-b1-b2.png', name: '出站口 B1-B2', detail: '4.8m×2.4m · 11.52㎡ · 2个 · 出站厅出站口墙面', price: '2.5万/个/月' },
+        { img: 'assets/xingye-b4-b7.png', name: '出站地道 B4-B7', detail: '4.8m×2.4m · 11.52㎡ · 4个 · 二站台进站/出站地道', price: '2万/个/月' },
+        { img: 'assets/xingye-b3-stairs.png', name: '出站楼梯门楣 B3', detail: '4.8m×3.13m · 15.02㎡ · 1个 · 一站台出站楼梯门楣', price: '2万/个/月' }
+      ]}
+    ]
+  },
+  airport: {
+    name: '南宁吴圩机场T2',
+    tag: '机场',
+    tagClass: 'airport',
+    desc: '年客流量1600万人次 · 覆盖航线153条',
+    cats: [
+      { name: '🖥️ 登机口刷屏机（36屏同步）', spots: [
+        { img: '../assets/airport-screen-ad.png', name: '一周', detail: '5秒 · 每天60次×36屏 · 共2160次曝光', price: '3.89万/周' },
+        { img: '../assets/airport-screen-ad.png', name: '一周', detail: '15秒 · 每天60次×36屏 · 共2160次曝光', price: '4.89万/周' },
+        { img: '../assets/airport-ad-example.jpg', name: '一个月', detail: '5秒 · 36屏全屏联动 · 覆盖153条航线', price: '23万/月' },
+        { img: '../assets/airport-ad-example.jpg', name: '一个月', detail: '15秒 · 36屏全屏联动 · 覆盖153条航线', price: '33万/月' },
+        { img: '../assets/airport-screen-ad.png', name: '季度/半年/年', detail: '15秒 · 长期投放更优惠', price: '66-298万' }
+      ]}
+    ]
+  }
+};
+
+function selectStation(id) {
+  const data = stations[id];
+  if (!data) return;
+
+  // Update active station dots
+  document.querySelectorAll('.station-dot').forEach(d => d.classList.remove('active'));
+  document.querySelector(`[data-station="${id}"]`)?.classList.add('active');
+
+  // Show header
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('dpHeader').style.display = 'block';
+  document.getElementById('dpBody').style.display = 'block';
+  document.getElementById('dpName').textContent = data.name;
+  document.getElementById('dpTag').textContent = data.tag;
+  document.getElementById('dpTag').className = 'dp-tag ' + data.tagClass;
+
+  // Build spots by category
+  let html = '<p style="font-size:13px;color:var(--text3);margin-bottom:14px">' + data.desc + '</p>';
+  
+  // Stats summary
+  let total = 0;
+  data.cats.forEach(c => { total += c.spots.length; });
+  html += '<div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap">' +
+    '<span style="font-size:12px;background:rgba(139,92,246,.1);padding:4px 10px;border-radius:6px;color:var(--accent)">' + data.cats.length + ' 类媒体</span>' +
+    '<span style="font-size:12px;background:rgba(249,115,22,.1);padding:4px 10px;border-radius:6px;color:var(--accent2)">' + total + ' 个点位</span>' +
+    '</div>';
+
+  data.cats.forEach((cat, ci) => {
+    html += '<div style="font-size:14px;font-weight:700;color:var(--text);margin:18px 0 10px;padding:8px 0;border-bottom:1px solid var(--border)">' + cat.name + '</div>';
+    cat.spots.forEach((s, si) => {
+      const delay = (ci * 0.1 + si * 0.05).toFixed(2);
+      html += '<div class="dp-spot fade-up" style="animation-delay:' + delay + 's">';
+      html += '<img class="spot-img" src="' + s.img + '" alt="' + s.name + '" loading="lazy" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 160%22><rect width=%22400%22 height=%22160%22 fill=%22%2312121a%22/><text x=%22200%22 y=%2280%22 text-anchor=%22middle%22 fill=%22%2352525b%22 font-size=%2214%22 font-family=%22Outfit%22>图片加载中</text></svg>\'">';
+      html += '<div class="spot-name">' + s.name + '</div>';
+      html += '<div class="spot-detail">' + s.detail + '</div>';
+      html += '<div class="spot-price">¥' + s.price + '</div>';
+      html += '<a class="spot-cta" href="tel:18878774848">📞 咨询此位置</a>';
+      html += '</div>';
+    });
+  });
+  document.getElementById('dpBody').innerHTML = html;
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement('script');
+  hm.src = 'https://hm.baidu.com/hm.js?be062de5bdecaf8e969418484a134876';
+  var s = document.getElementsByTagName('script')[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
